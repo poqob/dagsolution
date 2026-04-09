@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Mail, MessageCircle, ArrowRight } from 'lucide-vue-next'
+import { Mail, MessageCircle } from 'lucide-vue-next'
 
 const socialLinks = [
   { name: 'GitHub', url: 'https://github.com/poqob', icon: 'github' },
@@ -12,16 +12,16 @@ const socialLinks = [
     <div class="container-custom">
       <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">
-          Bir Projeniz mi <span class="gradient-text">Var?</span>
+          {{ $t('contact.title') }} <span class="gradient-text">{{ $t('contact.titleAccent') }}</span>
         </h2>
         <p class="text-text-secondary mb-8">
-          Fikirlerinizi hayata geçirmek için benimle iletişime geçin. Modern teknoloji çözümleri ile yanınızdayım.
+          {{ $t('contact.subtitle') }}
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <a href="mailto:mustafabicer.iletisim@gmail.com" class="btn-primary">
             <Mail class="w-5 h-5 mr-2" />
-            Email Gönder
+            {{ $t('contact.email') }}
           </a>
           <a :href="socialLinks[1].url" target="_blank" class="btn-secondary">
             <MessageCircle class="w-5 h-5 mr-2" />
@@ -29,7 +29,6 @@ const socialLinks = [
           </a>
         </div>
 
-        <!-- Social links -->
         <div class="flex justify-center gap-4">
           <a 
             v-for="link in socialLinks" 

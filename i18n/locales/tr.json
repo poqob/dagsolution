@@ -1,0 +1,185 @@
+{
+  "nav": {
+    "services": "Hizmetler",
+    "projects": "Projeler",
+    "about": "Hakkımda",
+    "contact": "İletişim",
+    "portfolio": "Portföyüm"
+  },
+  "hero": {
+    "tagline": "AI, IoT ve Mobil Teknolojiler ile Yazılım Çözümleri",
+    "description": "Teknofest finalistı ve deneyimli yazılım mühendisi. Fikirlerinizi dijital ürünlere dönüştürüyorum.",
+    "viewProjects": "Projeleri İncele",
+    "aboutMe": "Beni Tanıyın",
+    "scrollHint": "Aşağı kaydır"
+  },
+  "about": {
+    "title": "Hakkımda",
+    "titleAccent": "& Başarılarım",
+    "paragraph1": "Sakarya Üniversitesi Bilgisayar Mühendisliği mezunuyum. Yapay zeka, bilgisayarli görü ve gömülü sistemler alanlarında uzmanlaştım. Venhancer, Yeditek ve ESTER gibi şirketlerde staj yaparak deneyim kazandım.",
+    "paragraph2": "TÜBİTAK ARDEB bursiyeri olarak AI-Powered Arrhythmia Detection System projesini tamamladım. Teknofest yarışmalarında FEC ve Prometheus takımlarıyla finalist ve ilk 10 oldum. Şu anda yüksek lisans eğitimime devam ediyor ve freelance yazılım projeleri geliştiriyorum.",
+    "viewPortfolio": "Detaylı Portföyüm",
+    "location": "Bursa / Sakarya, Türkiye",
+    "freelance": "Freelance çalışıyorum",
+    "achievements": "Öne Çıkan Başarılar",
+    "teknofest2024": "Teknofest 2024 Finalist",
+    "teknofest2024Desc": "FEC Takımı - Otonom Yönlendirmeli Araç (AGV)",
+    "teknofest2022": "Teknofest 2022 İlk 10",
+    "teknofest2022Desc": "Prometheus - YOLOv5 Derin Öğrenme",
+    "award": "Sakarya Belediyesi Ödülü",
+    "awardDesc": "Görme Engelliler için RFID Navigasyon"
+  },
+  "stats": {
+    "teknofest": "2x",
+    "teknofestLabel": "Teknofest Finalist",
+    "ranking": "10.",
+    "rankingLabel": "Teknofest 2022",
+    "ai": "AI/ML",
+    "aiLabel": "Uzmanı"
+  },
+  "services": {
+    "title": "Hizmetlerim",
+    "titleAccent": "Neler Yaparız",
+    "subtitle": "Modern teknolojiler ile işletmenizi dijital dünyada güçlendirin",
+    "mobile": {
+      "title": "Mobil Uygulama Geliştirme",
+      "description": "iOS ve Android için Flutter ve React Native ile performanslı, kullanıcı dostu mobil uygulamalar geliştiriyorum."
+    },
+    "ai": {
+      "title": "Yapay Zeka & ML",
+      "description": "Makine öğrenmesi, derin öğrenme ve LLM tabanlı çözümler ile iş süreçlerinizi otomatikleştirin."
+    },
+    "web": {
+      "title": "Web Geliştirme",
+      "description": "Modern frontend ve backend teknolojileri ile responsive, hızlı ve güvenli web uygulamaları."
+    },
+    "iot": {
+      "title": "IoT & Gömülü Sistemler",
+      "description": "Mikrodenetleyiciler, sensörler ve MQTT ile akıllı sistemler ve prototipler."
+    },
+    "consulting": {
+      "title": "Teknik Danışmanlık",
+      "description": "Yazılım mimarisi, teknoloji seçimi ve proje planlama konularında uzman rehberliği."
+    },
+    "cv": {
+      "title": "Özgeçmiş Analizi",
+      "description": "CV ve LinkedIn profilinizi teknik pozisyonlar için optimize ediyorum."
+    }
+  },
+  "projects": {
+    "title": "Projeler",
+    "titleAccent": "Çalışmalarım",
+    "subtitle": "Geliştirdiğim mobil uygulamalar ve açık kaynak projeler",
+    "viewAll": "Tümünü Gör",
+    "filter": {
+      "all": "Tümü",
+      "mobile": "Mobil",
+      "ai": "AI & ML",
+      "iot": "IoT"
+    },
+    "googlePlay": "Google Play",
+    "github": "GitHub",
+    "viewProject": "Projeyi İncele"
+  },
+  "contact": {
+    "title": "İletişime",
+    "titleAccent": "Geçin",
+    "subtitle": "Bir projeniz mi var? Birlikte çalışmak ister misiniz? Her zaman yeni fikirlere açığım.",
+    "email": "Email Gönder",
+    "linkedin": "LinkedIn Üzerinden Ulaşın"
+  },
+  "footer": {
+    "description": "AI, IoT ve mobil teknolojiler ile kurumsal ve kişisel yazılım çözümleri.",
+    "quickLinks": "Hızlı Linkler",
+    "contact": "İletişim",
+    "rights": "Tüm hakları saklıdır."
+  },
+  "me": {
+    "title": "Hakkımda - Mustafa Biçer | DAGSolution",
+    "hello": "Merhaba, ben",
+    "mustafa": "Mustafa",
+    "engineer": "Computer Engineer",
+    "aiSpecialist": "AI & ML Specialist",
+    "fullStack": "Full-Stack Developer",
+    "bio": "Yazılım dünyasında sürekli öğrenen ve kendini geliştiren bir mühendis. Yapay zeka, gömülü sistemler ve modern web teknolojileri ile ilgileniyorum. Temiz ve pratik çözümler üretmek benim tutkum.",
+    "downloadCV": "CV İndir",
+    "contactMe": "İletişime Geç",
+    "storyTitle": "Hikayem",
+    "storyTitleAccent": "& Başarılarım",
+    "story1": "Yazılıma olan tutkum lise yıllarında başladı. Sakarya Üniversitesi Bilgisayar Mühendisliği bölümünde okurken, robotics kulübünde arkadaşlarıma Arduino ve yazılım eğitimi verdim. Mezun olduktan sonra Venhancer, Yeditek ve ESTER gibi şirketlerde çalışarak deneyim kazandım.",
+    "story2": "Şu anda hem freelance olarak AI ve Full Stack projeler üzerinde çalışıyor, hem de yüksek lisans eğitimime devam ediyorum. TÜBİTAK bursiyoneri olarak AI-Powered Arrhythmia Detection projesi üzerinde araştırma yaptım. Teknofest yarışmalarında FEC ve Prometheus takımlarıyla çalışarak hem teknik hem de liderlik becerilerimi geliştirdim.",
+    "experience": "Deneyimlerim",
+    "experienceAccent": "& Kariyer",
+    "education": "Eğitim",
+    "educationAccent": "& Sertifikalar",
+    "skills": "Yeteneklerim",
+    "skillsAccent": "& Teknolojiler",
+    "allProjects": "Tüm",
+    "allProjectsAccent": "Projelerim",
+    "yearsExp": "Yıl Deneyim",
+    "storeApps": "Store Uygulaması",
+    "teknofestFinalist": "Teknofest Finalist",
+    "tubitakBursar": "TÜBİTAK Bursiyeri",
+    "ongoing": "Devam Ediyor",
+    "graduated": "Mezun",
+    "letsCollaborate": "İş Birliği için",
+    "letsCollaborateAccent": "İletişime Geç"
+  },
+  "language": {
+    "switchTo": "Dil değiştir",
+    "tr": "Türkçe",
+    "en": "English"
+  },
+  "me": {
+    "experience": {
+      "freelance": {
+        "title": "Freelance AI Engineer & Full Stack Developer",
+        "period": "Ağustos 2025 - Present",
+        "location": "İstanbul, Türkiye",
+        "description": "Kafka ve FastAPI merkezli asenkron mimari üzerinde büyük ölçekli veri analizi servisleri. PostgreSQL, MongoDB, Kafka ve Redis ile modern mikroservis çözümleri."
+      },
+      "tubitak": {
+        "title": "Research Intern / Student Researcher",
+        "period": "Mart 2025 - Ekim 2025",
+        "location": "Sakarya, Türkiye",
+        "description": "AI-Powered Automatic Arrhythmia Detection System projesi. TÜBİTAK ARDEB 1005 - New Ideas and Products Grant bursiyoneri. Proje tamamlandı."
+      },
+      "ester": {
+        "title": "Mobile Developer Intern",
+        "period": "Ağustos 2025 - Eylül 2025",
+        "location": "Eskişehir, Türkiye",
+        "description": "Spor eşleştirme platformu geliştirme. Flutter ile OpenStreetMap entegrasyonu ve coğrafi konum tabanlı kullanıcı eşleştirme."
+      },
+      "venhancer": {
+        "title": "AI Engineer and R&D Intern",
+        "period": "Şubat 2025 - Haziran 2025",
+        "location": "Sakarya, Türkiye",
+        "description": "Agentic AI araştırma ve geliştirme. LLM ve RAG tabanlı otonom AI sistemleri. Sigorta veri analizi için TensorFlow/PyTorch modelleri."
+      },
+      "arduino": {
+        "title": "Arduino Eğitmeni",
+        "period": "Kasım 2024 - Ocak 2025",
+        "location": "Sakarya, Türkiye",
+        "description": "Haftalık 3 saatlik yüz yüze Arduino eğitimleri. Öğrencilere üniversite onaylı katılım sertifikası."
+      },
+      "fec": {
+        "title": "Takım Lideri & Geliştirici",
+        "period": "Ekim 2023 - Eylül 2024",
+        "location": "Sakarya, Türkiye",
+        "description": "TEKNOFEST finalist takım lideri. Otonom Yönlendirmeli Araç (AGV) teknolojileri. Özel mesh network protokolü tasarımı. YOLO, Python, Flask, Flutter."
+      },
+      "yeditek": {
+        "title": "Bilgisayarlı Görü Stajyeri",
+        "period": "Haziran 2024 - Ağustos 2024",
+        "location": "Bursa, Türkiye",
+        "description": "Endüstriyel kalite kontrol için derin öğrenme tabanlı yazılım. Babe Metal için %92 doğruluk oranıyla ürün hata sınıflandırması."
+      },
+      "prometheus": {
+        "title": "Kurucu Ortak & Geliştirici",
+        "period": "2022 - Mayıs 2023",
+        "location": "Sakarya, Türkiye",
+        "description": "YOLOv5 derin öğrenme modeli geliştirme. Yapay Zeka kategorisinde Türkiye 10.su. Ertuğrul Yapan, Arda Elmacı ve Kemal Emirhan Ceylan ile kurucu ortak."
+      }
+    }
+  }
+}

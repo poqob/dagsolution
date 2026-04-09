@@ -2,6 +2,8 @@
 import { services } from '~/data/content'
 import { Smartphone, Globe, Brain, Cpu, Lightbulb, Server } from 'lucide-vue-next'
 
+const { t } = useI18n()
+
 const iconMap: Record<string, any> = {
   Smartphone,
   Globe,
@@ -10,6 +12,9 @@ const iconMap: Record<string, any> = {
   Lightbulb,
   Server,
 }
+
+const getServiceTitle = (id: string) => t(`services.${id}.title`)
+const getServiceDescription = (id: string) => t(`services.${id}.description`)
 </script>
 
 <template>
@@ -17,10 +22,10 @@ const iconMap: Record<string, any> = {
     <div class="container-custom">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">
-          Sunduğum <span class="gradient-text">Hizmetler</span>
+          {{ $t('services.title') }} <span class="gradient-text">{{ $t('services.titleAccent') }}</span>
         </h2>
         <p class="text-text-secondary max-w-2xl mx-auto">
-          İhtiyaçlarınıza özel yazılım çözümleri ile dijital dünyada fark yaratın
+          {{ $t('services.subtitle') }}
         </p>
       </div>
 
@@ -34,8 +39,8 @@ const iconMap: Record<string, any> = {
           <div class="w-12 h-12 rounded-xl bg-accent-blue/10 flex items-center justify-center mb-4 group-hover:bg-accent-blue/20 transition-colors">
             <component :is="iconMap[service.icon]" class="w-6 h-6 text-accent-blue" />
           </div>
-          <h3 class="text-lg font-semibold text-text-primary mb-2">{{ service.title }}</h3>
-          <p class="text-text-secondary text-sm">{{ service.description }}</p>
+          <h3 class="text-lg font-semibold text-text-primary mb-2">{{ getServiceTitle(service.id) }}</h3>
+          <p class="text-text-secondary text-sm">{{ getServiceDescription(service.id) }}</p>
         </div>
       </div>
     </div>

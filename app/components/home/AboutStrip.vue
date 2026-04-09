@@ -1,26 +1,26 @@
 <script setup lang="ts">
 import { ArrowRight, MapPin, Award, Rocket, Brain } from 'lucide-vue-next'
 
-const quickStats = [
-  { icon: Award, value: '2x', label: 'Teknofest Finalist' },
-  { icon: Rocket, value: '10.', label: 'Teknofest 2022' },
-  { icon: Brain, value: 'AI/ML', label: 'Uzmanı' },
-]
+const quickStats = computed(() => [
+  { icon: Award, value: '2x', label: $t('stats.teknofestLabel') },
+  { icon: Rocket, value: '10.', label: $t('stats.rankingLabel') },
+  { icon: Brain, value: 'AI/ML', label: $t('stats.aiLabel') },
+])
 
-const achievements = [
+const achievements = computed(() => [
   {
-    title: 'Teknofest 2024 Finalist',
-    desc: 'FEC Takımı - Otonom Yönlendirmeli Araç (AGV)',
+    title: $t('about.teknofest2024'),
+    desc: $t('about.teknofest2024Desc'),
   },
   {
-    title: 'Teknofest 2022 İlk 10',
-    desc: 'Prometheus - YOLOv5 Derin Öğrenme',
+    title: $t('about.teknofest2022'),
+    desc: $t('about.teknofest2022Desc'),
   },
   {
-    title: 'Sakarya Belediyesi Ödülü',
-    desc: 'Görme Engelliler için RFID Navigasyon',
+    title: $t('about.award'),
+    desc: $t('about.awardDesc'),
   },
-]
+])
 </script>
 
 <template>
@@ -29,22 +29,21 @@ const achievements = [
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">
-            Hakkımda <span class="gradient-text">& Başarılarım</span>
+            {{ $t('about.title') }} <span class="gradient-text">{{ $t('about.titleAccent') }}</span>
           </h2>
           <p class="text-text-secondary mb-4">
-            Sakarya Üniversitesi Bilgisayar Mühendisliği mezunuyum. Yapay zeka, bilgisayarli görü ve gömülü sistemler alanlarında uzmanlaştım. Venhancer, Yeditek ve ESTER gibi şirketlerde staj yaparak deneyim kazandım.
+            {{ $t('about.paragraph1') }}
           </p>
           <p class="text-text-secondary mb-6">
-            TÜBİTAK ARDEB bursiyeri olarak AI-Powered Arrhythmia Detection System projesini tamamladım. Teknofest yarışmalarında FEC ve Prometheus takımlarıyla finalist ve ilk 10 oldum. Şu anda yüksek lisans eğitimime devam ediyor ve freelance yazılım projeleri geliştiriyorum.
+            {{ $t('about.paragraph2') }}
           </p>
           <NuxtLink href="/me" class="btn-primary">
-            Detaylı Portföyüm
+            {{ $t('about.viewPortfolio') }}
             <ArrowRight class="w-5 h-5 ml-2" />
           </NuxtLink>
         </div>
 
         <div class="space-y-6">
-          <!-- Quick stats -->
           <div class="grid grid-cols-3 gap-4">
             <div v-for="stat in quickStats" :key="stat.label" class="card text-center py-5">
               <component :is="stat.icon" class="w-6 h-6 text-accent-blue mx-auto mb-2" />
@@ -53,18 +52,16 @@ const achievements = [
             </div>
           </div>
 
-          <!-- Location -->
           <div class="card flex items-center gap-4">
             <MapPin class="w-6 h-6 text-accent-blue shrink-0" />
             <div>
-              <div class="font-medium text-text-primary">Bursa / Sakarya, Türkiye</div>
-              <div class="text-sm text-text-muted">Freelance çalışıyorum</div>
+              <div class="font-medium text-text-primary">{{ $t('about.location') }}</div>
+              <div class="text-sm text-text-muted">{{ $t('about.freelance') }}</div>
             </div>
           </div>
 
-          <!-- Achievements preview -->
           <div class="space-y-3">
-            <h3 class="text-sm font-semibold text-text-muted uppercase tracking-wider">Öne Çıkan Başarılar</h3>
+            <h3 class="text-sm font-semibold text-text-muted uppercase tracking-wider">{{ $t('about.achievements') }}</h3>
             <div 
               v-for="(achievement, index) in achievements" 
               :key="index"

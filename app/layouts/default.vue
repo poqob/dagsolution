@@ -9,10 +9,10 @@ onMounted(() => {
 })
 
 const navLinks = [
-  { label: 'Hizmetler', href: '/#services' },
-  { label: 'Projeler', href: '/#projects' },
-  { label: 'Hakkımda', href: '/#about' },
-  { label: 'İletişim', href: '/#contact' },
+  { label: 'nav.services', href: '/#services' },
+  { label: 'nav.projects', href: '/#projects' },
+  { label: 'nav.about', href: '/#about' },
+  { label: 'nav.contact', href: '/#contact' },
 ]
 </script>
 
@@ -37,11 +37,12 @@ const navLinks = [
               :href="link.href"
               class="text-text-secondary hover:text-text-primary transition-colors duration-200"
             >
-              {{ link.label }}
+              {{ $t(link.label) }}
             </NuxtLink>
           </div>
 
-          <div class="flex items-center gap-3">
+          <div class="flex items-center gap-2">
+            <LanguageSwitcher />
             <button 
               @click="toggleTheme" 
               class="p-2.5 rounded-lg bg-background-hover border border-border text-text-secondary hover:text-text-primary hover:border-accent-blue/50 transition-all duration-200"
@@ -51,7 +52,7 @@ const navLinks = [
               <Moon v-else class="w-5 h-5" />
             </button>
             <NuxtLink href="/me" class="btn-primary text-sm py-2.5">
-              Portföyüm
+              {{ $t('nav.portfolio') }}
             </NuxtLink>
             <button class="md:hidden p-2 text-text-secondary hover:text-text-primary">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -79,22 +80,22 @@ const navLinks = [
               />
               <span class="font-semibold text-lg text-text-primary">DAGSolution</span>
             </NuxtLink>
-            <p class="text-text-secondary text-sm">AI, IoT ve mobil teknolojiler ile kurumsal ve kişisel yazılım çözümleri.</p>
+            <p class="text-text-secondary text-sm">{{ $t('footer.description') }}</p>
           </div>
           
           <div>
-            <h4 class="font-semibold text-text-primary mb-4">Hızlı Linkler</h4>
+            <h4 class="font-semibold text-text-primary mb-4">{{ $t('footer.quickLinks') }}</h4>
             <ul class="space-y-2">
               <li v-for="link in navLinks" :key="link.href">
                 <NuxtLink :href="link.href" class="text-text-secondary hover:text-accent-blue transition-colors text-sm">
-                  {{ link.label }}
+                  {{ $t(link.label) }}
                 </NuxtLink>
               </li>
             </ul>
           </div>
           
           <div>
-            <h4 class="font-semibold text-text-primary mb-4">İletişim</h4>
+            <h4 class="font-semibold text-text-primary mb-4">{{ $t('footer.contact') }}</h4>
             <div class="flex gap-4">
               <a href="https://github.com/poqob" target="_blank" class="p-2 rounded-lg bg-background-hover text-text-secondary hover:text-accent-blue transition-colors">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -110,8 +111,8 @@ const navLinks = [
           </div>
         </div>
         
-        <div class="border-t border-border mt-8 pt-8 text-center text-text-muted text-sm">
-          © {{ new Date().getFullYear() }} DAGSolution. Tüm hakları saklıdır.
+          <div class="border-t border-border mt-8 pt-8 text-center text-text-muted text-sm">
+          © {{ new Date().getFullYear() }} DAGSolution. {{ $t('footer.rights') }}
         </div>
       </div>
     </footer>

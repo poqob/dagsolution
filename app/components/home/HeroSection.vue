@@ -45,7 +45,7 @@ onMounted(() => {
           :class="{ 'opacity-100 translate-y-0': isVisible, 'opacity-0 translate-y-4': !isVisible }"
           style="animation-delay: 200ms"
         >
-          AI, IoT ve Mobil Teknolojiler ile Yazılım Çözümleri
+          {{ $t('hero.tagline') }}
         </p>
 
         <p 
@@ -53,7 +53,7 @@ onMounted(() => {
           :class="{ 'opacity-100 translate-y-0': isVisible, 'opacity-0 translate-y-4': !isVisible }"
           style="animation-delay: 250ms"
         >
-          Teknofest finalistı ve deneyimli yazılım mühendisi. Fikirlerinizi dijital ürünlere dönüştürüyorum.
+          {{ $t('hero.description') }}
         </p>
 
         <div 
@@ -63,10 +63,10 @@ onMounted(() => {
         >
           <a href="#projects" class="btn-primary">
             <Sparkles class="w-5 h-5 mr-2" />
-            Projeleri İncele
+            {{ $t('hero.viewProjects') }}
           </a>
           <NuxtLink href="/me" class="btn-secondary group">
-            Beni Tanıyın
+            {{ $t('hero.aboutMe') }}
             <ArrowRight class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </NuxtLink>
         </div>
@@ -79,7 +79,8 @@ onMounted(() => {
       :class="{ 'opacity-100': isVisible, 'opacity-0': !isVisible }"
       style="animation-delay: 500ms"
     >
-      <div class="w-6 h-10 rounded-full border-2 border-text-muted flex items-start justify-center p-2">
+      <span class="text-xs text-text-muted block mb-2 text-center">{{ $t('hero.scrollHint') }}</span>
+      <div class="w-6 h-10 rounded-full border-2 border-text-muted flex items-start justify-center p-2 mx-auto">
         <div class="w-1 h-2 bg-text-muted rounded-full animate-pulse" />
       </div>
     </div>

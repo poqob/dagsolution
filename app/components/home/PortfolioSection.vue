@@ -2,12 +2,12 @@
 import { ExternalLink, Github, Play } from 'lucide-vue-next'
 import { projects } from '~/data/content'
 
-const categories = [
-  { id: 'all', label: 'Tümü' },
-  { id: 'mobile', label: 'Mobil' },
-  { id: 'ai', label: 'AI & ML' },
-  { id: 'opensource', label: 'Açık Kaynak' },
-]
+const categories = computed(() => [
+  { id: 'all', label: $t('projects.filter.all') },
+  { id: 'mobile', label: $t('projects.filter.mobile') },
+  { id: 'ai', label: $t('projects.filter.ai') },
+  { id: 'opensource', label: 'Open Source' },
+])
 
 const activeCategory = ref('all')
 
@@ -36,10 +36,10 @@ const getCategoryColor = (category: string) => {
     <div class="container-custom">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">
-          Öne Çıkan <span class="gradient-text">Çalışmalarım</span>
+          {{ $t('projects.title') }} <span class="gradient-text">{{ $t('projects.titleAccent') }}</span>
         </h2>
         <p class="text-text-secondary max-w-2xl mx-auto">
-          Geliştirdiğim mobil uygulamalar, AI/ML projeleri ve açık kaynak çalışmalarım
+          {{ $t('projects.subtitle') }}
         </p>
       </div>
 
@@ -99,7 +99,7 @@ const getCategoryColor = (category: string) => {
                 class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-green-500/10 text-green-400 text-xs hover:bg-green-500/20 transition-colors"
               >
                 <Play class="w-3.5 h-3.5" />
-                Play Store
+                {{ $t('projects.googlePlay') }}
               </a>
               <a 
                 v-if="project.links?.github" 
@@ -108,7 +108,7 @@ const getCategoryColor = (category: string) => {
                 class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-500/10 text-gray-300 text-xs hover:bg-gray-500/20 transition-colors"
               >
                 <Github class="w-3.5 h-3.5" />
-                GitHub
+                {{ $t('projects.github') }}
               </a>
               <a 
                 v-if="project.links?.live" 
@@ -117,7 +117,7 @@ const getCategoryColor = (category: string) => {
                 class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-accent-blue/10 text-accent-blue text-xs hover:bg-accent-blue/20 transition-colors"
               >
                 <ExternalLink class="w-3.5 h-3.5" />
-                Canlı
+                Live
               </a>
             </div>
           </div>
@@ -126,7 +126,7 @@ const getCategoryColor = (category: string) => {
 
       <div class="text-center mt-12">
         <NuxtLink href="/me#projects" class="btn-secondary">
-          Tüm Projeleri Gör
+          {{ $t('projects.viewAll') }}
         </NuxtLink>
       </div>
     </div>

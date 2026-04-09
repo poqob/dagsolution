@@ -11,74 +11,74 @@ const socialLinks = [
 const workExperience = [
   {
     id: 'freelance',
-    title: 'Freelance AI Engineer & Full Stack Developer',
+    titleKey: 'me.experience.freelance.title',
     company: 'Freelance',
-    period: 'Ağustos 2025 - Present',
-    location: 'İstanbul, Türkiye',
-    description: 'Kafka ve FastAPI merkezli asenkron mimari üzerinde büyük ölçekli veri analizi servisleri. PostgreSQL, MongoDB, Kafka ve Redis ile modern mikroservis çözümleri.',
+    periodKey: 'me.experience.freelance.period',
+    locationKey: 'me.experience.freelance.location',
+    descriptionKey: 'me.experience.freelance.description',
     color: 'from-blue-500 to-cyan-500',
   },
   {
     id: 'tubitak',
-    title: 'Research Intern / Student Researcher',
+    titleKey: 'me.experience.tubitak.title',
     company: 'TÜBİTAK',
-    period: 'Mart 2025 - Ekim 2025',
-    location: 'Sakarya, Türkiye',
-    description: 'AI-Powered Automatic Arrhythmia Detection System projesi. TÜBİTAK ARDEB 1005 - New Ideas and Products Grant bursiyoneri. Proje tamamlandı.',
+    periodKey: 'me.experience.tubitak.period',
+    locationKey: 'me.experience.tubitak.location',
+    descriptionKey: 'me.experience.tubitak.description',
     color: 'from-red-500 to-orange-500',
   },
   {
     id: 'ester',
-    title: 'Mobile Developer Intern',
+    titleKey: 'me.experience.ester.title',
     company: 'ESTER Teknoloji',
-    period: 'Ağustos 2025 - Eylül 2025',
-    location: 'Eskişehir, Türkiye',
-    description: 'Spor eşleştirme platformu geliştirme. Flutter ile OpenStreetMap entegrasyonu ve coğrafi konum tabanlı kullanıcı eşleştirme.',
+    periodKey: 'me.experience.ester.period',
+    locationKey: 'me.experience.ester.location',
+    descriptionKey: 'me.experience.ester.description',
     color: 'from-green-500 to-emerald-500',
   },
   {
     id: 'venhancer',
-    title: 'AI Engineer and R&D Intern',
+    titleKey: 'me.experience.venhancer.title',
     company: 'VENHANCER',
-    period: 'Şubat 2025 - Haziran 2025',
-    location: 'Sakarya, Türkiye',
-    description: 'Agentic AI araştırma ve geliştirme. LLM ve RAG tabanlı otonom AI sistemleri. Sigorta veri analizi için TensorFlow/PyTorch modelleri.',
+    periodKey: 'me.experience.venhancer.period',
+    locationKey: 'me.experience.venhancer.location',
+    descriptionKey: 'me.experience.venhancer.description',
     color: 'from-purple-500 to-pink-500',
   },
   {
     id: 'arduino-instructor',
-    title: 'Arduino Instructor',
+    titleKey: 'me.experience.arduino.title',
     company: 'Sakarya Üniversitesi Robot Topluluğu',
-    period: 'Kasım 2024 - Ocak 2025',
-    location: 'Sakarya, Türkiye',
-    description: 'Haftalık 3 saatlik yüz yüze Arduino eğitimleri. Öğrencilere üniversite onaylı katılım sertifikası.',
+    periodKey: 'me.experience.arduino.period',
+    locationKey: 'me.experience.arduino.location',
+    descriptionKey: 'me.experience.arduino.description',
     color: 'from-cyan-500 to-blue-500',
   },
   {
     id: 'fec',
-    title: 'Team Lead & Developer',
+    titleKey: 'me.experience.fec.title',
     company: 'FEC - TEKNOFEST',
-    period: 'Ekim 2023 - Eylül 2024',
-    location: 'Sakarya, Türkiye',
-    description: 'TEKNOFEST finalist takım lideri. Otonom Yönlendirmeli Araç (AGV) teknolojileri. Özel mesh network protokolü tasarımı. YOLO, Python, Flask, Flutter.',
+    periodKey: 'me.experience.fec.period',
+    locationKey: 'me.experience.fec.location',
+    descriptionKey: 'me.experience.fec.description',
     color: 'from-orange-500 to-yellow-500',
   },
   {
     id: 'yeditek',
-    title: 'Computer Vision Intern',
+    titleKey: 'me.experience.yeditek.title',
     company: 'Yeditek Yeni Dijital Teknolojiler A.Ş.',
-    period: 'Haziran 2024 - Ağustos 2024',
-    location: 'Bursa, Türkiye',
-    description: 'Endüstriyel kalite kontrol için derin öğrenme tabanlı yazılım. Babe Metal için %92 doğruluk oranıyla ürün hata sınıflandırması.',
+    periodKey: 'me.experience.yeditek.period',
+    locationKey: 'me.experience.yeditek.location',
+    descriptionKey: 'me.experience.yeditek.description',
     color: 'from-indigo-500 to-purple-500',
   },
   {
     id: 'prometheus',
-    title: 'Co-Founder & Developer',
+    titleKey: 'me.experience.prometheus.title',
     company: 'Prometheus - TEKNOFEST',
-    period: '2022 - Mayıs 2023',
-    location: 'Sakarya, Türkiye',
-    description: 'YOLOv5 derin öğrenme modeli geliştirme. Yapay Zeka kategorisinde Türkiye 10.su. Ertuğrul Yapan, Arda Elmacı ve Kemal Emirhan Ceylan ile kurucu ortak.',
+    periodKey: 'me.experience.prometheus.period',
+    locationKey: 'me.experience.prometheus.location',
+    descriptionKey: 'me.experience.prometheus.description',
     color: 'from-violet-500 to-purple-500',
   },
 ]
@@ -116,12 +116,12 @@ const education = [
   },
 ]
 
-const categories = [
-  { id: 'all', label: 'Tümü' },
-  { id: 'mobile', label: 'Mobil' },
-  { id: 'ai', label: 'AI & ML' },
-  { id: 'iot', label: 'IoT' },
-]
+const categories = computed(() => [
+  { id: 'all', label: $t('projects.filter.all') },
+  { id: 'mobile', label: $t('projects.filter.mobile') },
+  { id: 'ai', label: $t('projects.filter.ai') },
+  { id: 'iot', label: $t('projects.filter.iot') },
+])
 
 const activeCategory = ref('all')
 
@@ -205,32 +205,32 @@ const skillCategories = [
   },
 ]
 
-const achievementMedia = [
+const achievementMedia = computed(() => [
   {
     id: 'tuva-atasever',
-    title: 'Sakarya Belediyesi Ödülü',
-    subtitle: 'Görme Engelliler için RFID Navigasyon',
+    title: $t('about.award'),
+    subtitle: $t('about.awardDesc'),
     person: 'Tuva Cihangir Atasever ile',
     image: '/images/old-portfolio/bel.jpeg',
     size: 'large',
   },
   {
     id: 'fec-team',
-    title: 'Teknofest 2024 Finalist',
-    subtitle: 'FEC Takımı - Dijital Teknolojiler',
+    title: $t('about.teknofest2024'),
+    subtitle: $t('about.teknofest2024Desc'),
     person: 'Otonom Yönlendirmeli Araç Projesi',
     image: '/images/old-portfolio/2024-takim.jpeg',
     size: 'medium',
   },
   {
     id: 'prometheus',
-    title: 'Teknofest 2022 İlk 10',
-    subtitle: 'Prometheus - Yapay Zeka',
+    title: $t('about.teknofest2022'),
+    subtitle: $t('about.teknofest2022Desc'),
     person: 'YOLOv5 Deep Learning Modeli',
     image: '/images/old-portfolio/2022-prometheus.jpeg',
     size: 'medium',
   },
-]
+])
 
 useHead({
   title: 'Hakkımda - Mustafa Biçer | DAGSolution',
@@ -267,17 +267,17 @@ useHead({
           </div>
 
           <h1 class="text-3xl md:text-4xl font-bold text-text-primary mb-2">
-            Merhaba, ben <span class="gradient-text">Mustafa</span>
+            {{ $t('me.hello') }} <span class="gradient-text">{{ $t('me.mustafa') }}</span>
           </h1>
           
           <div class="flex flex-wrap justify-center gap-2 mb-4">
-            <span class="badge">Computer Engineer</span>
-            <span class="badge">AI & ML Specialist</span>
-            <span class="badge">Full-Stack Developer</span>
+            <span class="badge">{{ $t('me.engineer') }}</span>
+            <span class="badge">{{ $t('me.aiSpecialist') }}</span>
+            <span class="badge">{{ $t('me.fullStack') }}</span>
           </div>
 
           <p class="text-text-secondary max-w-2xl mx-auto mb-8">
-            Yazılım dünyasında sürekli öğrenen ve kendini geliştiren bir mühendis. Yapay zeka, gömülü sistemler ve modern web teknolojileri ile ilgileniyorum. Temiz ve pratik çözümler üretmek benim tutkum.
+            {{ $t('me.bio') }}
           </p>
 
           <div class="flex justify-center gap-4 mb-8">
@@ -295,11 +295,11 @@ useHead({
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/about-me/resumes/linkedin-resume.pdf" class="btn-primary">
               <Download class="w-5 h-5 mr-2" />
-              CV İndir
+              {{ $t('me.downloadCV') }}
             </a>
             <a href="mailto:mustafabicer.iletisim@gmail.com" class="btn-secondary">
               <Mail class="w-5 h-5 mr-2" />
-              İletişime Geç
+              {{ $t('me.contactMe') }}
             </a>
           </div>
         </div>
@@ -310,18 +310,18 @@ useHead({
     <section class="section-padding bg-background-card/30">
       <div class="container-custom">
         <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center">
-          Hikayem <span class="gradient-text">& Başarılarım</span>
+          {{ $t('me.storyTitle') }} <span class="gradient-text">{{ $t('me.storyTitleAccent') }}</span>
         </h2>
 
         <div class="max-w-3xl mx-auto mb-8">
           <div class="card mb-6">
             <p class="text-text-secondary">
-              Yazılıma olan tutkum lise yıllarında başladı. Sakarya Üniversitesi Bilgisayar Mühendisliği bölümünde okurken, robotics kulübünde arkadaşlarıma Arduino ve yazılım eğitimi verdim. Mezun olduktan sonra Venhancer, Yeditek ve ESTER gibi şirketlerde çalışarak deneyim kazandım.
+              {{ $t('me.story1') }}
             </p>
           </div>
           <div class="card">
             <p class="text-text-secondary">
-              Şu anda hem freelance olarak AI ve Full Stack projeler üzerinde çalışıyor, hem de yüksek lisans eğitimime devam ediyorum. TÜBİTAK bursiyoneri olarak AI-Powered Arrhythmia Detection projesi üzerinde araştırma yapıyorum. Teknofest yarışmalarında FEC ve Prometheus takımlarıyla çalışarak hem teknik hem de liderlik becerilerimi geliştirdim.
+              {{ $t('me.story2') }}
             </p>
           </div>
         </div>
@@ -386,23 +386,22 @@ useHead({
           </div>
         </div>
 
-        <!-- Quick Stats -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 max-w-4xl mx-auto">
           <div class="card text-center py-6">
             <div class="text-3xl font-bold gradient-text mb-1">5+</div>
-            <div class="text-text-muted text-sm">Yıl Deneyim</div>
+            <div class="text-text-muted text-sm">{{ $t('me.yearsExp') }}</div>
           </div>
           <div class="card text-center py-6">
             <div class="text-3xl font-bold gradient-text mb-1">3</div>
-            <div class="text-text-muted text-sm">Store Uygulaması</div>
+            <div class="text-text-muted text-sm">{{ $t('me.storeApps') }}</div>
           </div>
           <div class="card text-center py-6">
             <div class="text-3xl font-bold gradient-text mb-1">2x</div>
-            <div class="text-text-muted text-sm">Teknofest Finalist</div>
+            <div class="text-text-muted text-sm">{{ $t('me.teknofestFinalist') }}</div>
           </div>
           <div class="card text-center py-6">
             <div class="text-3xl font-bold gradient-text mb-1">1</div>
-            <div class="text-text-muted text-sm">TÜBİTAK Bursiyeri</div>
+            <div class="text-text-muted text-sm">{{ $t('me.tubitakBursar') }}</div>
           </div>
         </div>
       </div>
@@ -412,7 +411,7 @@ useHead({
     <section class="section-padding">
       <div class="container-custom">
         <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center">
-          Deneyimlerim <span class="gradient-text">& Kariyer</span>
+          {{ $t('me.experience') }} <span class="gradient-text">{{ $t('me.experienceAccent') }}</span>
         </h2>
 
         <div class="max-w-4xl mx-auto">
@@ -433,16 +432,16 @@ useHead({
                 <div class="card ml-4 md:ml-0" :class="index % 2 === 0 ? 'md:mr-[-2rem]' : 'md:ml-[-2rem]'">
                   <div class="flex items-center gap-3 mb-2" :class="index % 2 === 0 ? 'md:justify-end' : ''">
                     <div>
-                      <h3 class="font-semibold text-text-primary">{{ exp.title }}</h3>
+                      <h3 class="font-semibold text-text-primary">{{ $t(exp.titleKey) }}</h3>
                       <div class="flex items-center gap-2 text-text-secondary text-sm flex-wrap">
                         <span class="font-medium">{{ exp.company }}</span>
                         <span class="text-accent-blue">•</span>
-                        <span class="flex items-center gap-1"><MapPin class="w-3 h-3" />{{ exp.location }}</span>
+                        <span class="flex items-center gap-1"><MapPin class="w-3 h-3" />{{ $t(exp.locationKey) }}</span>
                       </div>
                     </div>
                   </div>
-                  <div class="text-accent-blue text-sm font-medium mb-3">{{ exp.period }}</div>
-                  <p class="text-text-muted text-sm">{{ exp.description }}</p>
+                  <div class="text-accent-blue text-sm font-medium mb-3">{{ $t(exp.periodKey) }}</div>
+                  <p class="text-text-muted text-sm">{{ $t(exp.descriptionKey) }}</p>
                 </div>
               </div>
             </div>
@@ -455,7 +454,7 @@ useHead({
     <section class="section-padding bg-background-card/30">
       <div class="container-custom">
         <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center">
-          Eğitim <span class="gradient-text">& Sertifikalar</span>
+          {{ $t('me.education') }} <span class="gradient-text">{{ $t('me.educationAccent') }}</span>
         </h2>
 
         <div class="max-w-4xl mx-auto space-y-6">
@@ -496,7 +495,7 @@ useHead({
     <section class="section-padding">
       <div class="container-custom">
         <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center">
-          Yeteneklerim <span class="gradient-text">& Teknolojiler</span>
+          {{ $t('me.skills') }} <span class="gradient-text">{{ $t('me.skillsAccent') }}</span>
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -528,7 +527,7 @@ useHead({
     <section id="projects" class="section-padding bg-background-card/30">
       <div class="container-custom">
         <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center">
-          Tüm <span class="gradient-text">Projelerim</span>
+          {{ $t('me.allProjects') }} <span class="gradient-text">{{ $t('me.allProjectsAccent') }}</span>
         </h2>
 
         <div class="flex flex-wrap justify-center gap-2 mb-12">
@@ -580,7 +579,7 @@ useHead({
                   target="_blank"
                   class="text-xs text-accent-blue hover:underline flex items-center gap-1"
                 >
-                  <Github class="w-3 h-3" /> GitHub
+                  <Github class="w-3 h-3" /> {{ $t('projects.github') }}
                 </a>
                 <a 
                   v-if="project.links?.googlePlay" 
@@ -588,7 +587,7 @@ useHead({
                   target="_blank"
                   class="text-xs text-accent-blue hover:underline flex items-center gap-1"
                 >
-                  <ExternalLink class="w-3 h-3" /> Play Store
+                  <ExternalLink class="w-3 h-3" /> {{ $t('projects.googlePlay') }}
                 </a>
               </div>
             </div>
@@ -602,20 +601,20 @@ useHead({
       <div class="container-custom">
         <div class="max-w-2xl mx-auto text-center">
           <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-4">
-            İş Birliği için <span class="gradient-text">İletişime Geç</span>
+            {{ $t('me.letsCollaborate') }} <span class="gradient-text">{{ $t('me.letsCollaborateAccent') }}</span>
           </h2>
           <p class="text-text-secondary mb-8">
-            Bir projeniz mi var? Birlikte çalışmak ister misiniz? Her zaman yeni fikirlere açığım.
+            {{ $t('contact.subtitle') }}
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:mustafabicer.iletisim@gmail.com" class="btn-primary">
               <Mail class="w-5 h-5 mr-2" />
-              Email Gönder
+              {{ $t('contact.email') }}
             </a>
             <a href="https://www.linkedin.com/in/mustafa-biçer-7164221b4" target="_blank" class="btn-secondary">
               <Linkedin class="w-5 h-5 mr-2" />
-              LinkedIn Üzerinden Ulaşın
+              {{ $t('contact.linkedin') }}
             </a>
           </div>
         </div>
