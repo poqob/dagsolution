@@ -12,15 +12,23 @@ onMounted(() => {
 </script>
 
 <template>
-    <section class="relative min-h-[calc(100vh-3.5rem)] flex flex-col items-center justify-center overflow-hidden pt-4">
-    <div class="absolute inset-0 bg-gradient-to-b from-background via-background to-background-card" />
+  <section class="relative min-h-[calc(100vh-3.5rem)] flex flex-col items-center justify-center overflow-hidden pt-4">
+    <!-- Animated gradient background -->
+    <div 
+      class="absolute inset-0 transition-colors duration-500 overflow-hidden"
+      :class="isDark ? 'hero-gradient-dark' : 'hero-gradient-light'"
+    />
     
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-blue/10 rounded-full blur-[128px] animate-pulse" />
-    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-[128px] animate-pulse" style="animation-delay: 1s" />
+    <!-- Floating liquid blobs -->
+    <div class="hero-blob hero-blob-1" />
+    <div class="hero-blob hero-blob-2" />
+    <div class="hero-blob hero-blob-3" />
+    <div class="hero-blob hero-blob-4" />
+    <div class="hero-blob hero-blob-5" />
     
     <div class="container-custom relative z-10 flex-1 flex flex-col items-center justify-center">
       <div class="max-w-4xl mx-auto text-center">
-        <!-- Logo with real image - 4x bigger -->
+        <!-- Logo with real image -->
         <div 
           class="inline-flex items-center justify-center mb-8 animate-fade-in"
           :class="{ 'opacity-100 translate-y-0': isVisible, 'opacity-0 translate-y-4': !isVisible }"
@@ -28,7 +36,8 @@ onMounted(() => {
           <img 
             :src="isDark ? '/images/dagsolution-logo.png' : '/images/dagsolution-light-logo.png'" 
             alt="DAGSolution Logo" 
-            class="w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 object-contain"
+            class="w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 object-contain drop-shadow-2xl"
+            :class="isDark ? 'drop-shadow-[0_0_30px_rgba(59,130,246,0.3)]' : 'drop-shadow-[0_0_30px_rgba(99,102,241,0.2)]'"
           />
         </div>
 
