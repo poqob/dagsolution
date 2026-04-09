@@ -83,73 +83,72 @@ const workExperience = [
   },
 ]
 
-const education = [
+const education = computed(() => [
   {
     id: 'master',
-    title: 'Yüksek Lisans',
-    school: 'Sakarya Üniversitesi',
-    department: 'Bilgisayar Mühendisliği',
-    period: 'Ocak 2026 - Aralık 2027',
-    location: 'Sakarya, Türkiye',
-    status: 'Devam Ediyor',
+    title: $t('me.educationData.master.title'),
+    school: $t('me.educationData.master.school'),
+    department: $t('me.educationData.master.department'),
+    period: $t('me.educationData.master.period'),
+    location: $t('me.educationData.master.location'),
+    status: $t('me.educationData.master.status'),
     logo: 'https://sehirhafizasi.sakarya.edu.tr/wp-content/uploads/2023/07/cropped-dikeylogo.png',
   },
   {
     id: 'bachelor',
-    title: 'Lisans',
-    school: 'Sakarya Üniversitesi',
-    department: 'Bilgisayar Mühendisliği',
-    period: 'Eylül 2020 - Temmuz 2025',
-    location: 'Sakarya, Türkiye',
-    status: 'Mezun',
+    title: $t('me.educationData.bachelor.title'),
+    school: $t('me.educationData.bachelor.school'),
+    department: $t('me.educationData.bachelor.department'),
+    period: $t('me.educationData.bachelor.period'),
+    location: $t('me.educationData.bachelor.location'),
+    status: $t('me.educationData.bachelor.status'),
     logo: 'https://sehirhafizasi.sakarya.edu.tr/wp-content/uploads/2023/07/cropped-dikeylogo.png',
   },
   {
     id: 'highschool',
-    title: 'Lise',
-    school: 'Emir Sultan Anadolu Lisesi',
-    department: '',
-    period: '2016 - 2020',
-    location: 'Türkiye',
-    status: 'Mezun (3.sü)',
+    title: $t('me.educationData.highschool.title'),
+    school: $t('me.educationData.highschool.school'),
+    period: $t('me.educationData.highschool.period'),
+    location: $t('me.educationData.highschool.location'),
+    status: $t('me.educationData.highschool.status'),
     icon: '🏫',
   },
-]
+])
 
-const certifications = [
+const certifications = computed(() => [
   {
     id: 'green-future',
-    title: 'Wasting The Green Future While Earning',
-    issuer: 'Eurodesk Network',
-    date: 'May 2024',
-    link: null,
+    title: $t('me.certificationsData.greenFuture.title'),
+    issuer: $t('me.certificationsData.greenFuture.issuer'),
+    date: $t('me.certificationsData.greenFuture.date'),
+    link: $t('me.certificationsData.greenFuture.link'),
     image: 'https://media.licdn.com/dms/image/v2/D4D0BAQGoeinYevF6pQ/company-logo_100_100/company-logo_100_100/0/1713349073559/eurodesk_network_logo?e=1777507200&v=beta&t=__Mj1ch0T-gKej_2Q7Wn193ZbUvnmxJDpPrf0TIKGuk',
   },
   {
     id: 'teknofest-industry',
-    title: 'Teknofest Sanayide Dijital Teknolojiler',
-    issuer: 'TEKNOFEST',
-    date: 'Eyl 2024',
-    link: null,
+    title: $t('me.certificationsData.teknofestIndustry.title'),
+    issuer: $t('me.certificationsData.teknofestIndustry.issuer'),
+    date: $t('me.certificationsData.teknofestIndustry.date'),
+    link: $t('me.certificationsData.teknofestIndustry.link'),
     image: 'https://media.licdn.com/dms/image/v2/D560BAQEQXJ3ZrzuieA/company-logo_100_100/company-logo_100_100/0/1723620949699/teknofest_logo?e=1777507200&v=beta&t=gdoqol7tLJSyFa83bx_TF_CO3S5Iv6ZOznuwaLxNR08',
   },
   {
     id: 'flutter-btk',
-    title: 'Google Flutter İle Mobil Uygulama Kursu Katılım Sertifikası',
-    issuer: 'BTK Akademi',
-    date: 'Şub 2023',
-    link: 'https://drive.google.com/file/d/1TkwyEXq8e4uLZ6nn8gTcRd916Q0ImcPD/view?usp=sharing',
+    title: $t('me.certificationsData.flutterBtk.title'),
+    issuer: $t('me.certificationsData.flutterBtk.issuer'),
+    date: $t('me.certificationsData.flutterBtk.date'),
+    link: $t('me.certificationsData.flutterBtk.link'),
     image: 'https://media.licdn.com/dms/image/v2/D560BAQFzhoINQt47kw/company-logo_100_100/company-logo_100_100/0/1733413650231?e=1777507200&v=beta&t=RTKTXpu5fD8W8eTwcFfeTTtIZzaKDcukLqKRXvWL5oA',
   },
   {
     id: 'teknofest-ai',
-    title: 'Teknofest Ulaşımda Yapay Zeka Katılım Belgesi',
-    issuer: 'TEKNOFEST',
-    date: 'May 2023',
-    link: 'https://drive.google.com/file/d/1X3GeHCyFN-1GchaFfhG7sbqWiPdU0tf3/view?usp=sharing',
+    title: $t('me.certificationsData.teknofestAi.title'),
+    issuer: $t('me.certificationsData.teknofestAi.issuer'),
+    date: $t('me.certificationsData.teknofestAi.date'),
+    link: $t('me.certificationsData.teknofestAi.link'),
     image: 'https://media.licdn.com/dms/image/v2/D560BAQEQXJ3ZrzuieA/company-logo_100_100/company-logo_100_100/0/1723620949699/teknofest_logo?e=1777507200&v=beta&t=gdoqol7tLJSyFa83bx_TF_CO3S5Iv6ZOznuwaLxNR08',
   },
-]
+])
 
 const categories = computed(() => [
   { id: 'all', label: $t('projects.filter.all') },
@@ -540,10 +539,13 @@ useHead({
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <div 
+          <a 
             v-for="cert in certifications" 
             :key="cert.id"
-            class="card hover:border-accent-blue/50 transition-all duration-300"
+            :href="cert.link"
+            :target="cert.link ? '_blank' : undefined"
+            :rel="cert.link ? 'noopener noreferrer' : undefined"
+            class="card hover:border-accent-blue/50 transition-all duration-300 cursor-pointer block"
           >
             <div class="flex items-start gap-4">
               <img 
@@ -555,19 +557,16 @@ useHead({
                 <h3 class="font-semibold text-text-primary text-sm leading-tight">{{ cert.title }}</h3>
                 <p class="text-text-secondary text-xs mt-1">{{ cert.issuer }}</p>
                 <p class="text-text-muted text-xs mt-1">{{ cert.date }}</p>
-                <a 
+                <span 
                   v-if="cert.link"
-                  :href="cert.link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1 text-accent-blue text-xs mt-2 hover:underline"
+                  class="inline-flex items-center gap-1 text-accent-blue text-xs mt-2"
                 >
                   {{ $t('me.viewCertificate') }}
                   <ExternalLink class="w-3 h-3" />
-                </a>
+                </span>
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>

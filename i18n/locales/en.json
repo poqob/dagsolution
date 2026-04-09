@@ -8,19 +8,19 @@
   },
   "hero": {
     "tagline": "Software Solutions with AI, IoT and Mobile Technologies",
-    "description": "Teknofest finalist and experienced software engineer. I transform your ideas into digital products.",
+    "description": "Experienced team of Teknofest finalists and AI/ML experts. We transform your ideas into digital products.",
     "viewProjects": "View Projects",
-    "aboutMe": "About Me",
+    "aboutMe": "About Us",
     "scrollHint": "Scroll down"
   },
   "about": {
     "title": "About",
     "titleAccent": "& Achievements",
-    "paragraph1": "I am a graduate of Sakarya University Computer Engineering. I specialize in artificial intelligence, computer vision, and embedded systems. I gained experience through internships at companies like Venhancer, Yeditek, and ESTER.",
-    "paragraph2": "I completed the AI-Powered Arrhythmia Detection System project as a TÜBİTAK ARDEB scholarship holder. I became a finalist and top 10 in Teknofest competitions with FEC and Prometheus teams. Currently, I am continuing my master's education and developing freelance software projects.",
+    "paragraph1": "We are a team of experts from Sakarya University Computer Engineering. We specialize in artificial intelligence, computer vision, and embedded systems. We have gained experience through collaborations with companies like Venhancer, Yeditek, and ESTER.",
+    "paragraph2": "We have participated in TÜBİTAK ARDEB supported projects. We became finalists and top 10 in Teknofest competitions with FEC and Prometheus teams. Currently, we develop freelance projects and continue to grow our team.",
     "viewPortfolio": "View Full Portfolio",
     "location": "Bursa / Sakarya, Turkey",
-    "freelance": "Working as Freelance",
+    "freelance": "Accepting freelance projects",
     "achievements": "Featured Achievements",
     "teknofest2024": "Teknofest 2024 Finalist",
     "teknofest2024Desc": "FEC Team - Autonomous Guided Vehicle (AGV)",
@@ -40,38 +40,38 @@
     "aiLabel": "Specialist"
   },
   "services": {
-    "title": "My Services",
-    "titleAccent": "What I Do",
+    "title": "Our Services",
+    "titleAccent": "What We Do",
     "subtitle": "Strengthen your business in the digital world with modern technologies",
     "mobile": {
       "title": "Mobile App Development",
-      "description": "I develop performant, user-friendly mobile apps for iOS and Android using Flutter and React Native."
+      "description": "We develop performant, user-friendly mobile apps for iOS and Android using Flutter and React Native."
     },
     "ai": {
       "title": "AI & ML Solutions",
-      "description": "Automate your business processes with machine learning, deep learning, and LLM-based solutions."
+      "description": "We automate your business processes with machine learning, deep learning, and LLM-based solutions."
     },
     "web": {
       "title": "Web Development",
-      "description": "Responsive, fast, and secure web applications with modern frontend and backend technologies."
+      "description": "We build responsive, fast, and secure web applications with modern frontend and backend technologies."
     },
     "iot": {
       "title": "IoT & Embedded Systems",
-      "description": "Smart systems and prototypes with microcontrollers, sensors, and MQTT."
+      "description": "We develop smart systems and prototypes with microcontrollers, sensors, and MQTT."
     },
     "consulting": {
       "title": "Technical Consulting",
-      "description": "Expert guidance on software architecture, technology selection, and project planning."
+      "description": "We provide expert guidance on software architecture, technology selection, and project planning."
     },
     "api": {
       "title": "API & Backend",
-      "description": "RESTful/GraphQL APIs and microservices architectures."
+      "description": "We create RESTful/GraphQL APIs and microservices architectures."
     }
   },
   "projects": {
-    "title": "My Projects",
+    "title": "Our Projects",
     "titleAccent": "& Work",
-    "subtitle": "Mobile apps and open source projects I've developed",
+    "subtitle": "Mobile apps and open source projects we've developed",
     "viewAll": "View All",
     "filter": {
       "all": "All",
@@ -86,7 +86,7 @@
   "contact": {
     "title": "Get in",
     "titleAccent": "Touch",
-    "subtitle": "Do you have a project? Would you like to work together? I'm always open to new ideas.",
+    "subtitle": "Do you have a project? Would you like to work together? We're always open to new ideas and collaborations.",
     "email": "Send Email",
     "linkedin": "Contact via LinkedIn"
   },
@@ -175,6 +175,57 @@
         "period": "2022 - May 2023",
         "location": "Sakarya, Turkey",
         "description": "YOLOv5 deep learning model development. 10th in Turkey in the Artificial Intelligence category. Co-founder with Ertuğrul Yapan, Arda Elmacı, and Kemal Emirhan Ceylan."
+      }
+    },
+    "educationData": {
+      "master": {
+        "title": "Master's Degree",
+        "school": "Sakarya University",
+        "department": "Computer Engineering",
+        "period": "January 2026 - December 2027",
+        "location": "Sakarya, Turkey",
+        "status": "Ongoing"
+      },
+      "bachelor": {
+        "title": "Bachelor's Degree",
+        "school": "Sakarya University",
+        "department": "Computer Engineering",
+        "period": "September 2020 - July 2025",
+        "location": "Sakarya, Turkey",
+        "status": "Graduated"
+      },
+      "highschool": {
+        "title": "High School (3rd place)",
+        "school": "Emir Sultan Anatolian High School",
+        "period": "2016 - 2020",
+        "location": "Bursa, Turkey",
+        "status": "Graduated"
+      }
+    },
+    "certificationsData": {
+      "greenFuture": {
+        "title": "Wasting The Green Future While Earning",
+        "issuer": "Eurodesk Network",
+        "date": "May 2024",
+        "link": "https://www.linkedin.com/posts/mustafa-bi%C3%A7er-7164221b4_i-had-the-absolute-pleasure-of-participating-activity-7205166922718437376-Kpbj?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADHlY4IBTMQOWQfVhtpogYA5E8fLTCgrujc"
+      },
+      "teknofestIndustry": {
+        "title": "Teknofest Digital Technologies in Industry",
+        "issuer": "TEKNOFEST",
+        "date": "September 2024",
+        "link": "https://www.linkedin.com/posts/mustafa-bi%C3%A7er-7164221b4_teknofest2024-sanayidedijitalteknolojiler-activity-7248741036577964032-55qG?utm_source=share&utm_medium=member_desktop&rcm=ACoAADHlY4IBTMQOWQfVhtpogYA5E8fLTCgrujc"
+      },
+      "flutterBtk": {
+        "title": "Google Flutter Mobile Application Course Certificate",
+        "issuer": "BTK Academy",
+        "date": "February 2023",
+        "link": "https://drive.google.com/file/d/1TkwyEXq8e4uLZ6nn8gTcRd916Q0ImcPD/view?usp=sharing"
+      },
+      "teknofestAi": {
+        "title": "Teknofest Artificial Intelligence in Transportation Certificate",
+        "issuer": "TEKNOFEST",
+        "date": "May 2023",
+        "link": "https://drive.google.com/file/d/1X3GeHCyFN-1GchaFfhG7sbqWiPdU0tf3/view?usp=sharing"
       }
     }
   },

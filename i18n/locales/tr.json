@@ -2,25 +2,25 @@
   "nav": {
     "services": "Hizmetler",
     "projects": "Projeler",
-    "about": "Hakkımda",
+    "about": "Hakkımızda",
     "contact": "İletişim",
-    "portfolio": "Portföyüm"
+    "portfolio": "Portföyümüz"
   },
   "hero": {
     "tagline": "AI, IoT ve Mobil Teknolojiler ile Yazılım Çözümleri",
-    "description": "Teknofest finalistı ve deneyimli yazılım mühendisi. Fikirlerinizi dijital ürünlere dönüştürüyorum.",
+    "description": "Deneyimli ekibimizle fikirlerinizi dijital ürünlere dönüştürüyoruz. Teknofest finalistı ve AI/ML uzmanlarıyız.",
     "viewProjects": "Projeleri İncele",
-    "aboutMe": "Beni Tanıyın",
+    "aboutMe": "Bizi Tanıyın",
     "scrollHint": "Aşağı kaydır"
   },
   "about": {
-    "title": "Hakkımda",
-    "titleAccent": "& Başarılarım",
-    "paragraph1": "Sakarya Üniversitesi Bilgisayar Mühendisliği mezunuyum. Yapay zeka, bilgisayarli görü ve gömülü sistemler alanlarında uzmanlaştım. Venhancer, Yeditek ve ESTER gibi şirketlerde staj yaparak deneyim kazandım.",
-    "paragraph2": "TÜBİTAK ARDEB bursiyeri olarak AI-Powered Arrhythmia Detection System projesini tamamladım. Teknofest yarışmalarında FEC ve Prometheus takımlarıyla finalist ve ilk 10 oldum. Şu anda yüksek lisans eğitimime devam ediyor ve freelance yazılım projeleri geliştiriyorum.",
-    "viewPortfolio": "Detaylı Portföyüm",
+    "title": "Hakkımızda",
+    "titleAccent": "& Başarılarımız",
+    "paragraph1": "Sakarya Üniversitesi Bilgisayar Mühendisliği bünyesinde yetişmiş bir ekibiz. Yapay zeka, bilgisayarlı görü ve gömülü sistemler alanlarında uzmanlaştık. Venhancer, Yeditek ve ESTER gibi şirketlerle işbirliği yaparak deneyim kazandık.",
+    "paragraph2": "TÜBİTAK ARDEB destekli projelerde yer aldık. Teknofest yarışmalarında FEC ve Prometheus takımlarıyla finalist ve ilk 10 olduk. Şu anda hem freelance projeler geliştiriyor hem de ekibimizi büyütüyoruz.",
+    "viewPortfolio": "Detaylı Portföyümüz",
     "location": "Bursa / Sakarya, Türkiye",
-    "freelance": "Freelance çalışıyorum",
+    "freelance": "Freelance projeler kabul ediyoruz",
     "achievements": "Öne Çıkan Başarılar",
     "teknofest2024": "Teknofest 2024 Finalist",
     "teknofest2024Desc": "FEC Takımı - Otonom Yönlendirmeli Araç (AGV)",
@@ -40,38 +40,38 @@
     "aiLabel": "Uzmanı"
   },
   "services": {
-    "title": "Hizmetlerim",
+    "title": "Hizmetlerimiz",
     "titleAccent": "Neler Yaparız",
     "subtitle": "Modern teknolojiler ile işletmenizi dijital dünyada güçlendirin",
     "mobile": {
       "title": "Mobil Uygulama Geliştirme",
-      "description": "iOS ve Android için Flutter ve React Native ile performanslı, kullanıcı dostu mobil uygulamalar geliştiriyorum."
+      "description": "iOS ve Android için Flutter ve React Native ile performanslı, kullanıcı dostu mobil uygulamalar geliştiriyoruz."
     },
     "ai": {
       "title": "Yapay Zeka & ML",
-      "description": "Makine öğrenmesi, derin öğrenme ve LLM tabanlı çözümler ile iş süreçlerinizi otomatikleştirin."
+      "description": "Makine öğrenmesi, derin öğrenme ve LLM tabanlı çözümler ile iş süreçlerinizi otomatikleştiriyoruz."
     },
     "web": {
       "title": "Web Geliştirme",
-      "description": "Modern frontend ve backend teknolojileri ile responsive, hızlı ve güvenli web uygulamaları."
+      "description": "Modern frontend ve backend teknolojileri ile responsive, hızlı ve güvenli web uygulamaları geliştiriyoruz."
     },
     "iot": {
       "title": "IoT & Gömülü Sistemler",
-      "description": "Mikrodenetleyiciler, sensörler ve MQTT ile akıllı sistemler ve prototipler."
+      "description": "Mikrodenetleyiciler, sensörler ve MQTT ile akıllı sistemler ve prototipler geliştiriyoruz."
     },
     "consulting": {
       "title": "Teknik Danışmanlık",
-      "description": "Yazılım mimarisi, teknoloji seçimi ve proje planlama konularında uzman rehberliği."
+      "description": "Yazılım mimarisi, teknoloji seçimi ve proje planlama konularında uzman rehberliği sunuyoruz."
     },
     "api": {
       "title": "API & Backend",
-      "description": "RESTful/GraphQL API'ler ve mikro servis mimarileri."
+      "description": "RESTful/GraphQL API'ler ve mikro servis mimarileri oluşturuyoruz."
     }
   },
   "projects": {
-    "title": "Projeler",
-    "titleAccent": "Çalışmalarım",
-    "subtitle": "Geliştirdiğim mobil uygulamalar ve açık kaynak projeler",
+    "title": "Projelerimiz",
+    "titleAccent": "Çalışmalarımız",
+    "subtitle": "Geliştirdiğimiz mobil uygulamalar ve açık kaynak projeler",
     "viewAll": "Tümünü Gör",
     "filter": {
       "all": "Tümü",
@@ -86,7 +86,7 @@
   "contact": {
     "title": "İletişime",
     "titleAccent": "Geçin",
-    "subtitle": "Bir projeniz mi var? Birlikte çalışmak ister misiniz? Her zaman yeni fikirlere açığım.",
+    "subtitle": "Bir projeniz mi var? Birlikte çalışmak ister misiniz? Her zaman yeni fikirlere ve işbirliklerine açığız.",
     "email": "Email Gönder",
     "linkedin": "LinkedIn Üzerinden Ulaşın"
   },
@@ -175,6 +175,57 @@
         "period": "2022 - Mayıs 2023",
         "location": "Sakarya, Türkiye",
         "description": "YOLOv5 derin öğrenme modeli geliştirme. Yapay Zeka kategorisinde Türkiye 10.su. Ertuğrul Yapan, Arda Elmacı ve Kemal Emirhan Ceylan ile kurucu ortak."
+      }
+    },
+    "educationData": {
+      "master": {
+        "title": "Yüksek Lisans",
+        "school": "Sakarya Üniversitesi",
+        "department": "Bilgisayar Mühendisliği",
+        "period": "Ocak 2026 - Aralık 2027",
+        "location": "Sakarya, Türkiye",
+        "status": "Devam Ediyor"
+      },
+      "bachelor": {
+        "title": "Lisans",
+        "school": "Sakarya Üniversitesi",
+        "department": "Bilgisayar Mühendisliği",
+        "period": "Eylül 2020 - Temmuz 2025",
+        "location": "Sakarya, Türkiye",
+        "status": "Mezun"
+      },
+      "highschool": {
+        "title": "Lise (3.lük derece ile)",
+        "school": "Emir Sultan Anadolu Lisesi",
+        "period": "2016 - 2020",
+        "location": "Bursa, Türkiye",
+        "status": "Mezun"
+      }
+    },
+    "certificationsData": {
+      "greenFuture": {
+        "title": "Wasting The Green Future While Earning",
+        "issuer": "Eurodesk Network",
+        "date": "Mayıs 2024",
+        "link": "https://www.linkedin.com/posts/mustafa-bi%C3%A7er-7164221b4_i-had-the-absolute-pleasure-of-participating-activity-7205166922718437376-Kpbj?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADHlY4IBTMQOWQfVhtpogYA5E8fLTCgrujc"
+      },
+      "teknofestIndustry": {
+        "title": "Teknofest Sanayide Dijital Teknolojiler",
+        "issuer": "TEKNOFEST",
+        "date": "Eylül 2024",
+        "link": "https://www.linkedin.com/posts/mustafa-bi%C3%A7er-7164221b4_teknofest2024-sanayidedijitalteknolojiler-activity-7248741036577964032-55qG?utm_source=share&utm_medium=member_desktop&rcm=ACoAADHlY4IBTMQOWQfVhtpogYA5E8fLTCgrujc"
+      },
+      "flutterBtk": {
+        "title": "Google Flutter İle Mobil Uygulama Kursu Katılım Sertifikası",
+        "issuer": "BTK Akademi",
+        "date": "Şubat 2023",
+        "link": "https://drive.google.com/file/d/1TkwyEXq8e4uLZ6nn8gTcRd916Q0ImcPD/view?usp=sharing"
+      },
+      "teknofestAi": {
+        "title": "Teknofest Ulaşımda Yapay Zeka Katılım Belgesi",
+        "issuer": "TEKNOFEST",
+        "date": "Mayıs 2023",
+        "link": "https://drive.google.com/file/d/1X3GeHCyFN-1GchaFfhG7sbqWiPdU0tf3/view?usp=sharing"
       }
     }
   },
