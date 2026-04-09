@@ -12,7 +12,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="relative min-h-[calc(100vh-3.5rem)] flex flex-col items-center justify-center overflow-hidden pt-4">
+  <section class="relative min-h-[calc(100vh-3.5rem)] flex flex-col items-center justify-center overflow-hidden pt-4 pb-8">
     <!-- Animated gradient background -->
     <div 
       class="absolute inset-0 transition-colors duration-500 overflow-hidden"
@@ -37,7 +37,7 @@ onMounted(() => {
             :src="isDark ? '/images/dagsolution-logo.png' : '/images/dagsolution-light-logo.png'" 
             alt="DAGSolution Logo" 
             class="w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 object-contain drop-shadow-2xl"
-            :class="isDark ? 'drop-shadow-[0_0_30px_rgba(59,130,246,0.3)]' : 'drop-shadow-[0_0_30px_rgba(99,102,241,0.2)]'"
+            :class="isDark ? 'drop-shadow-[0_0_40px_rgba(150,150,170,0.15)]' : 'drop-shadow-[0_0_30px_rgba(99,102,241,0.2)]'"
           />
         </div>
 
@@ -82,9 +82,9 @@ onMounted(() => {
       </div>
     </div>
 
-    <!-- Scroll indicator - above the bottom, after buttons -->
+    <!-- Scroll indicator - below the buttons with proper spacing -->
     <div 
-      class="absolute bottom-16 sm:bottom-20 left-1/2 -translate-x-1/2 animate-bounce"
+      class="relative z-10 w-full mt-16 sm:mt-20 animate-bounce"
       :class="{ 'opacity-100': isVisible, 'opacity-0': !isVisible }"
       style="animation-delay: 500ms"
     >

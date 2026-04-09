@@ -92,7 +92,7 @@ const education = [
     period: 'Ocak 2026 - Aralık 2027',
     location: 'Sakarya, Türkiye',
     status: 'Devam Ediyor',
-    icon: '🎓',
+    logo: 'https://sehirhafizasi.sakarya.edu.tr/wp-content/uploads/2023/07/cropped-dikeylogo.png',
   },
   {
     id: 'bachelor',
@@ -102,7 +102,7 @@ const education = [
     period: 'Eylül 2020 - Temmuz 2025',
     location: 'Sakarya, Türkiye',
     status: 'Mezun',
-    icon: '🎓',
+    logo: 'https://sehirhafizasi.sakarya.edu.tr/wp-content/uploads/2023/07/cropped-dikeylogo.png',
   },
   {
     id: 'highschool',
@@ -113,6 +113,41 @@ const education = [
     location: 'Türkiye',
     status: 'Mezun (3.sü)',
     icon: '🏫',
+  },
+]
+
+const certifications = [
+  {
+    id: 'green-future',
+    title: 'Wasting The Green Future While Earning',
+    issuer: 'Eurodesk Network',
+    date: 'May 2024',
+    link: null,
+    image: 'https://media.licdn.com/dms/image/v2/D4D0BAQGoeinYevF6pQ/company-logo_100_100/company-logo_100_100/0/1713349073559/eurodesk_network_logo?e=1777507200&v=beta&t=__Mj1ch0T-gKej_2Q7Wn193ZbUvnmxJDpPrf0TIKGuk',
+  },
+  {
+    id: 'teknofest-industry',
+    title: 'Teknofest Sanayide Dijital Teknolojiler',
+    issuer: 'TEKNOFEST',
+    date: 'Eyl 2024',
+    link: null,
+    image: 'https://media.licdn.com/dms/image/v2/D560BAQEQXJ3ZrzuieA/company-logo_100_100/company-logo_100_100/0/1723620949699/teknofest_logo?e=1777507200&v=beta&t=gdoqol7tLJSyFa83bx_TF_CO3S5Iv6ZOznuwaLxNR08',
+  },
+  {
+    id: 'flutter-btk',
+    title: 'Google Flutter İle Mobil Uygulama Kursu Katılım Sertifikası',
+    issuer: 'BTK Akademi',
+    date: 'Şub 2023',
+    link: 'https://drive.google.com/file/d/1TkwyEXq8e4uLZ6nn8gTcRd916Q0ImcPD/view?usp=sharing',
+    image: 'https://media.licdn.com/dms/image/v2/D560BAQFzhoINQt47kw/company-logo_100_100/company-logo_100_100/0/1733413650231?e=1777507200&v=beta&t=RTKTXpu5fD8W8eTwcFfeTTtIZzaKDcukLqKRXvWL5oA',
+  },
+  {
+    id: 'teknofest-ai',
+    title: 'Teknofest Ulaşımda Yapay Zeka Katılım Belgesi',
+    issuer: 'TEKNOFEST',
+    date: 'May 2023',
+    link: 'https://drive.google.com/file/d/1X3GeHCyFN-1GchaFfhG7sbqWiPdU0tf3/view?usp=sharing',
+    image: 'https://media.licdn.com/dms/image/v2/D560BAQEQXJ3ZrzuieA/company-logo_100_100/company-logo_100_100/0/1723620949699/teknofest_logo?e=1777507200&v=beta&t=gdoqol7tLJSyFa83bx_TF_CO3S5Iv6ZOznuwaLxNR08',
   },
 ]
 
@@ -464,8 +499,14 @@ useHead({
             class="card"
           >
             <div class="flex items-start gap-4">
-              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accent-blue/20 to-purple-500/20 flex items-center justify-center shrink-0">
-                <span class="text-2xl">{{ edu.icon }}</span>
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accent-blue/20 to-purple-500/20 flex items-center justify-center shrink-0 overflow-hidden">
+                <img 
+                  v-if="edu.logo"
+                  :src="edu.logo" 
+                  :alt="edu.school"
+                  class="w-10 h-10 object-contain"
+                />
+                <span v-else class="text-2xl">{{ edu.icon }}</span>
               </div>
               <div class="flex-1">
                 <div class="flex items-start justify-between flex-wrap gap-2">
@@ -484,6 +525,46 @@ useHead({
                   <span class="flex items-center gap-1"><MapPin class="w-4 h-4" />{{ edu.location }}</span>
                   <span>{{ edu.period }}</span>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section-padding bg-background-card/30">
+      <div class="container-custom">
+        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center">
+          {{ $t('me.certifications') }}
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div 
+            v-for="cert in certifications" 
+            :key="cert.id"
+            class="card hover:border-accent-blue/50 transition-all duration-300"
+          >
+            <div class="flex items-start gap-4">
+              <img 
+                :src="cert.image" 
+                :alt="cert.issuer"
+                class="w-12 h-12 rounded-xl object-contain bg-white shrink-0"
+              />
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-text-primary text-sm leading-tight">{{ cert.title }}</h3>
+                <p class="text-text-secondary text-xs mt-1">{{ cert.issuer }}</p>
+                <p class="text-text-muted text-xs mt-1">{{ cert.date }}</p>
+                <a 
+                  v-if="cert.link"
+                  :href="cert.link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 text-accent-blue text-xs mt-2 hover:underline"
+                >
+                  {{ $t('me.viewCertificate') }}
+                  <ExternalLink class="w-3 h-3" />
+                </a>
               </div>
             </div>
           </div>

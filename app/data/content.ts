@@ -88,13 +88,13 @@ export const projects: Project[] = [
   },
   // IoT & Açık Kaynak
   {
-    id: 'std-esp-env',
+    id: 'std-env-esp',
     title: 'Standard ESP Environment',
     description: 'ESP gömülü sistemler için standart geliştirme ortamı ve kütüphaneler.',
     category: 'iot',
     techStack: ['C++', 'ESP-IDF', 'Embedded', 'Arduino'],
     links: {
-      github: 'https://github.com/poqob/std-esp-env',
+      github: 'https://github.com/poqob/std-env-esp',
     },
     featured: true,
   },

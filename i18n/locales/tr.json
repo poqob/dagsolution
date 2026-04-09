@@ -26,6 +26,8 @@
     "teknofest2024Desc": "FEC Takımı - Otonom Yönlendirmeli Araç (AGV)",
     "teknofest2022": "Teknofest 2022 İlk 10",
     "teknofest2022Desc": "Prometheus - YOLOv5 Derin Öğrenme",
+    "tubitakArdeb": "TÜBİTAK Destekli Araştırma",
+    "tubitakArdebDesc": "AI-Powered Arrhythmia Detection",
     "award": "Sakarya Belediyesi Ödülü",
     "awardDesc": "Görme Engelliler için RFID Navigasyon"
   },
@@ -123,6 +125,8 @@
     "graduated": "Mezun",
     "letsCollaborate": "İş Birliği için",
     "letsCollaborateAccent": "İletişime Geç",
+    "certifications": "Sertifikalar",
+    "viewCertificate": "Sertifikayı Görüntüle",
     "experienceDetails": {
       "freelance": {
         "title": "Freelance AI Engineer & Full Stack Developer",

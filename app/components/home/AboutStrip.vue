@@ -13,8 +13,8 @@ const achievements = computed(() => [
     desc: $t('about.teknofest2024Desc'),
   },
   {
-    title: $t('about.teknofest2022'),
-    desc: $t('about.teknofest2022Desc'),
+    title: $t('about.tubitakArdeb'),
+    desc: $t('about.tubitakArdebDesc'),
   },
   {
     title: $t('about.award'),
