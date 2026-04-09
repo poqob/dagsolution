@@ -99,10 +99,10 @@
     inset: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 70% 20%, rgba(34, 211, 238, 0.06) 0%, transparent 45%);
+    background: radial-gradient(circle at 20% 30%, rgba(30, 58, 138, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(88, 28, 135, 0.35) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(131, 24, 67, 0.3) 0%, transparent 40%),
+                radial-gradient(circle at 70% 20%, rgba(22, 78, 99, 0.25) 0%, transparent 45%);
     animation: gradientFlow 25s linear infinite;
   }
 
@@ -112,9 +112,9 @@
     inset: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at 60% 40%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 30% 70%, rgba(14, 165, 233, 0.08) 0%, transparent 45%),
-                radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.07) 0%, transparent 40%);
+    background: radial-gradient(circle at 60% 40%, rgba(49, 46, 129, 0.35) 0%, transparent 50%),
+                radial-gradient(circle at 30% 70%, rgba(7, 89, 133, 0.3) 0%, transparent 45%),
+                radial-gradient(circle at 85% 30%, rgba(68, 44, 136, 0.28) 0%, transparent 40%);
     animation: gradientFlowReverse 30s linear infinite;
   }
 
@@ -128,10 +128,10 @@
     inset: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(ellipse at 15% 25%, rgba(99, 102, 241, 0.12) 0%, transparent 50%),
-                radial-gradient(ellipse at 85% 75%, rgba(236, 72, 153, 0.08) 0%, transparent 45%),
-                radial-gradient(ellipse at 45% 85%, rgba(59, 130, 246, 0.06) 0%, transparent 40%),
-                radial-gradient(ellipse at 75% 15%, rgba(168, 85, 247, 0.05) 0%, transparent 42%);
+    background: radial-gradient(ellipse at 15% 25%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 85% 75%, rgba(236, 72, 153, 0.05) 0%, transparent 45%),
+                radial-gradient(ellipse at 45% 85%, rgba(59, 130, 246, 0.04) 0%, transparent 40%),
+                radial-gradient(ellipse at 75% 15%, rgba(168, 85, 247, 0.03) 0%, transparent 42%);
     animation: gradientFlow 28s linear infinite;
   }
 
@@ -141,9 +141,9 @@
     inset: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(ellipse at 65% 35%, rgba(14, 165, 233, 0.07) 0%, transparent 48%),
-                radial-gradient(ellipse at 25% 65%, rgba(139, 92, 246, 0.06) 0%, transparent 42%),
-                radial-gradient(ellipse at 90% 50%, rgba(99, 102, 241, 0.04) 0%, transparent 38%);
+    background: radial-gradient(ellipse at 65% 35%, rgba(14, 165, 233, 0.04) 0%, transparent 48%),
+                radial-gradient(ellipse at 25% 65%, rgba(139, 92, 246, 0.03) 0%, transparent 42%),
+                radial-gradient(ellipse at 90% 50%, rgba(99, 102, 241, 0.02) 0%, transparent 38%);
     animation: gradientFlowReverse 35s linear infinite;
   }
 
@@ -162,104 +162,118 @@
     100% { transform: translate(0, 0) rotate(0deg); }
   }
 
-  /* Floating liquid blobs */
+  /* Floating liquid blobs - more visible and faster */
   .hero-blob {
     position: absolute;
     border-radius: 50%;
-    filter: blur(60px);
+    filter: blur(50px);
     will-change: transform;
+    mix-blend-mode: screen;
   }
 
   .hero-blob-1 {
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, rgba(59, 130, 246, 0.05) 50%, transparent 70%);
-    top: -200px;
-    left: -150px;
-    animation: blobFloat1 20s ease-in-out infinite;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.6) 0%, rgba(59, 130, 246, 0.2) 30%, transparent 60%);
+    top: -150px;
+    left: -100px;
+    animation: blobFloat1 12s ease-in-out infinite;
   }
 
   .hero-blob-2 {
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, rgba(168, 85, 247, 0.04) 50%, transparent 70%);
-    bottom: -100px;
-    right: -100px;
-    animation: blobFloat2 25s ease-in-out infinite;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.55) 0%, rgba(168, 85, 247, 0.15) 30%, transparent 60%);
+    bottom: -50px;
+    right: -80px;
+    animation: blobFloat2 15s ease-in-out infinite;
   }
 
   .hero-blob-3 {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, rgba(236, 72, 153, 0.03) 50%, transparent 70%);
-    top: 40%;
-    right: 5%;
-    animation: blobFloat3 22s ease-in-out infinite;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.5) 0%, rgba(236, 72, 153, 0.12) 30%, transparent 60%);
+    top: 35%;
+    right: 3%;
+    animation: blobFloat3 10s ease-in-out infinite;
   }
 
   .hero-blob-4 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(34, 211, 238, 0.12) 0%, rgba(34, 211, 238, 0.02) 50%, transparent 70%);
-    top: 25%;
-    left: 8%;
-    animation: blobFloat4 18s ease-in-out infinite;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.48) 0%, rgba(34, 211, 238, 0.1) 30%, transparent 60%);
+    top: 20%;
+    left: 5%;
+    animation: blobFloat4 13s ease-in-out infinite;
   }
 
   .hero-blob-5 {
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.02) 50%, transparent 70%);
-    bottom: 30%;
-    left: 20%;
-    animation: blobFloat5 23s ease-in-out infinite;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.45) 0%, rgba(139, 92, 246, 0.1) 30%, transparent 60%);
+    bottom: 25%;
+    left: 15%;
+    animation: blobFloat5 11s ease-in-out infinite;
   }
 
-  /* Light theme blobs - softer colors */
-  .light .hero-blob-1 { background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0.03) 50%, transparent 70%); }
-  .light .hero-blob-2 { background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, rgba(236, 72, 153, 0.02) 50%, transparent 70%); }
-  .light .hero-blob-3 { background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(59, 130, 246, 0.015) 50%, transparent 70%); }
-  .light .hero-blob-4 { background: radial-gradient(circle, rgba(168, 85, 247, 0.06) 0%, rgba(168, 85, 247, 0.01) 50%, transparent 70%); }
-  .light .hero-blob-5 { background: radial-gradient(circle, rgba(14, 165, 233, 0.05) 0%, rgba(14, 165, 233, 0.01) 50%, transparent 70%); }
+  /* Light theme blobs - still visible but softer */
+  .light .hero-blob-1 { background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, rgba(99, 102, 241, 0.05) 30%, transparent 60%); mix-blend-mode: multiply; }
+  .light .hero-blob-2 { background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, rgba(236, 72, 153, 0.03) 30%, transparent 60%); mix-blend-mode: multiply; }
+  .light .hero-blob-3 { background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.02) 30%, transparent 60%); mix-blend-mode: multiply; }
+  .light .hero-blob-4 { background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, rgba(168, 85, 247, 0.015) 30%, transparent 60%); mix-blend-mode: multiply; }
+  .light .hero-blob-5 { background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, rgba(14, 165, 233, 0.01) 30%, transparent 60%); mix-blend-mode: multiply; }
 
   @keyframes blobFloat1 {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    15% { transform: translate(50px, 30px) scale(1.1); }
-    30% { transform: translate(30px, 60px) scale(0.95); }
-    45% { transform: translate(60px, 40px) scale(1.05); }
-    60% { transform: translate(20px, 70px) scale(1.08); }
-    75% { transform: translate(70px, 20px) scale(0.98); }
-    90% { transform: translate(40px, 50px) scale(1.02); }
+    20% { transform: translate(80px, 50px) scale(1.15); }
+    40% { transform: translate(50px, 90px) scale(0.9); }
+    60% { transform: translate(100px, 60px) scale(1.1); }
+    80% { transform: translate(30px, 80px) scale(1.05); }
   }
 
   @keyframes blobFloat2 {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    20% { transform: translate(-40px, -50px) scale(1.08); }
-    40% { transform: translate(-70px, -20px) scale(0.92); }
-    60% { transform: translate(-30px, -60px) scale(1.05); }
-    80% { transform: translate(-60px, -40px) scale(1.03); }
+    25% { transform: translate(-70px, -80px) scale(1.12); }
+    50% { transform: translate(-100px, -30px) scale(0.88); }
+    75% { transform: translate(-50px, -100px) scale(1.08); }
   }
 
   @keyframes blobFloat3 {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(-50px, -30px) scale(1.12); }
-    50% { transform: translate(-20px, -50px) scale(0.88); }
-    75% { transform: translate(-60px, -10px) scale(1.06); }
+    33% { transform: translate(-80px, -50px) scale(1.18); }
+    66% { transform: translate(-40px, -80px) scale(0.85); }
   }
 
   @keyframes blobFloat4 {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(40px, -40px) scale(1.07); }
-    66% { transform: translate(10px, -60px) scale(0.93); }
+    25% { transform: translate(70px, -60px) scale(1.1); }
+    50% { transform: translate(30px, -100px) scale(0.92); }
+    75% { transform: translate(90px, -40px) scale(1.06); }
   }
 
   @keyframes blobFloat5 {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    17% { transform: translate(30px, 40px) scale(1.09); }
-    34% { transform: translate(50px, 20px) scale(0.94); }
-    51% { transform: translate(20px, 60px) scale(1.04); }
-    68% { transform: translate(60px, 30px) scale(1.01); }
-    85% { transform: translate(10px, 50px) scale(0.97); }
+    20% { transform: translate(60px, 70px) scale(1.14); }
+    40% { transform: translate(90px, 40px) scale(0.9); }
+    60% { transform: translate(40px, 100px) scale(1.07); }
+    80% { transform: translate(100px, 50px) scale(0.95); }
+  }
+
+  /* Theme transition for entire app */
+  body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  .bg-background, .bg-background-card, .bg-background-hover {
+    transition: background-color 0.5s ease;
+  }
+
+  .text-text-primary, .text-text-secondary, .text-text-muted {
+    transition: color 0.5s ease;
+  }
+
+  .border-border {
+    transition: border-color 0.5s ease;
   }
 
   .glow-effect {

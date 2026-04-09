@@ -17,8 +17,8 @@ const navLinks = [
 </script>
 
 <template>
-  <div class="min-h-screen bg-background">
-    <header class="fixed top-0 left-0 right-0 z-50 glass">
+  <div class="min-h-screen bg-background transition-colors duration-500">
+    <header class="fixed top-0 left-0 right-0 z-50 glass transition-colors duration-500">
       <div class="container-custom">
         <nav class="flex items-center justify-between h-16 md:h-20">
           <NuxtLink href="/" class="flex items-center gap-3 group">
@@ -64,11 +64,11 @@ const navLinks = [
       </div>
     </header>
 
-    <main class="pt-14 md:pt-16">
+    <main class="pt-14 md:pt-16 transition-colors duration-500">
       <slot />
     </main>
 
-    <footer class="border-t border-border bg-background-card/50">
+    <footer class="border-t border-border bg-background-card/50 transition-colors duration-500">
       <div class="container-custom py-12">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
