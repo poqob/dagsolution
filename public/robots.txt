@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dagsolution.com/sitemap.xml
+
+Host: https://dagsolution.com
