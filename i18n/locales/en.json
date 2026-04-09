@@ -61,9 +61,9 @@
       "title": "Technical Consulting",
       "description": "Expert guidance on software architecture, technology selection, and project planning."
     },
-    "cv": {
-      "title": "CV Analysis",
-      "description": "I optimize your CV and LinkedIn profile for technical positions."
+    "api": {
+      "title": "API & Backend",
+      "description": "RESTful/GraphQL APIs and microservices architectures."
     }
   },
   "projects": {
@@ -95,7 +95,6 @@
     "rights": "All rights reserved."
   },
   "me": {
-    "title": "About - Mustafa Biçer | DAGSolution",
     "hello": "Hello, I'm",
     "mustafa": "Mustafa",
     "engineer": "Computer Engineer",
@@ -123,15 +122,8 @@
     "ongoing": "Ongoing",
     "graduated": "Graduated",
     "letsCollaborate": "Let's",
-    "letsCollaborateAccent": "Collaborate"
-  },
-  "language": {
-    "switchTo": "Switch language",
-    "tr": "Türkçe",
-    "en": "English"
-  },
-  "me": {
-    "experience": {
+    "letsCollaborateAccent": "Collaborate",
+    "experienceDetails": {
       "freelance": {
         "title": "Freelance AI Engineer & Full Stack Developer",
         "period": "August 2025 - Present",
@@ -181,5 +173,10 @@
         "description": "YOLOv5 deep learning model development. 10th in Turkey in the Artificial Intelligence category. Co-founder with Ertuğrul Yapan, Arda Elmacı, and Kemal Emirhan Ceylan."
       }
     }
+  },
+  "language": {
+    "switchTo": "Switch language",
+    "tr": "Türkçe",
+    "en": "English"
   }
 }

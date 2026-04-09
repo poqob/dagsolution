@@ -61,9 +61,9 @@
       "title": "Teknik Danışmanlık",
       "description": "Yazılım mimarisi, teknoloji seçimi ve proje planlama konularında uzman rehberliği."
     },
-    "cv": {
-      "title": "Özgeçmiş Analizi",
-      "description": "CV ve LinkedIn profilinizi teknik pozisyonlar için optimize ediyorum."
+    "api": {
+      "title": "API & Backend",
+      "description": "RESTful/GraphQL API'ler ve mikro servis mimarileri."
     }
   },
   "projects": {
@@ -95,7 +95,6 @@
     "rights": "Tüm hakları saklıdır."
   },
   "me": {
-    "title": "Hakkımda - Mustafa Biçer | DAGSolution",
     "hello": "Merhaba, ben",
     "mustafa": "Mustafa",
     "engineer": "Computer Engineer",
@@ -123,15 +122,8 @@
     "ongoing": "Devam Ediyor",
     "graduated": "Mezun",
     "letsCollaborate": "İş Birliği için",
-    "letsCollaborateAccent": "İletişime Geç"
-  },
-  "language": {
-    "switchTo": "Dil değiştir",
-    "tr": "Türkçe",
-    "en": "English"
-  },
-  "me": {
-    "experience": {
+    "letsCollaborateAccent": "İletişime Geç",
+    "experienceDetails": {
       "freelance": {
         "title": "Freelance AI Engineer & Full Stack Developer",
         "period": "Ağustos 2025 - Present",
@@ -181,5 +173,10 @@
         "description": "YOLOv5 derin öğrenme modeli geliştirme. Yapay Zeka kategorisinde Türkiye 10.su. Ertuğrul Yapan, Arda Elmacı ve Kemal Emirhan Ceylan ile kurucu ortak."
       }
     }
+  },
+  "language": {
+    "switchTo": "Dil değiştir",
+    "tr": "Türkçe",
+    "en": "English"
   }
 }

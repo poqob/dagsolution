@@ -78,4 +78,12 @@ export default defineNuxtConfig({
       routes: ['/', '/me'],
     },
   },
+
+  vite: {
+    optimizeDeps: {
+      include: [
+        'lucide-vue-next',
+      ]
+    }
+  },
 })
