@@ -5,7 +5,7 @@ import { projects } from '~/data/content'
 const socialLinks = [
   { name: 'GitHub', url: 'https://github.com/poqob', icon: Github },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/mustafa-biçer-7164221b4', icon: Linkedin },
-  { name: 'Email', url: 'mailto:mustafabicer.iletisim@gmail.com', icon: Mail },
+  { name: 'Email', url: 'mailto:mustafa@dagsolution.com', icon: Mail },
 ]
 
 const workExperience = [
@@ -326,12 +326,8 @@ useHead({
             </a>
           </div>
 
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/about-me/resumes/linkedin-resume.pdf" class="btn-primary">
-              <Download class="w-5 h-5 mr-2" />
-              {{ $t('me.downloadCV') }}
-            </a>
-            <a href="mailto:mustafabicer.iletisim@gmail.com" class="btn-secondary">
+          <div class="flex justify-center gap-4">
+            <a href="mailto:mustafa@dagsolution.com" class="btn-secondary">
               <Mail class="w-5 h-5 mr-2" />
               {{ $t('me.contactMe') }}
             </a>
@@ -688,7 +684,7 @@ useHead({
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:mustafabicer.iletisim@gmail.com" class="btn-primary">
+            <a href="mailto:mustafa@dagsolution.com" class="btn-primary">
               <Mail class="w-5 h-5 mr-2" />
               {{ $t('contact.email') }}
             </a>

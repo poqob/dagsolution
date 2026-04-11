@@ -35,7 +35,7 @@ DAGSolution, yazılım çözümleri ve hizmetleri sunan bir marka olup, kurucusu
 | **Tam İsim** | Mustafa Dağ Biçer |
 | **Ünvan** | Computer Engineer, AI & ML Specialist, Agentic AI |
 | **Konum** | Bursa, Türkiye |
-| **Email** | mustafabicer.iletisim@gmail.com |
+| **Email** | mustafa@dagsolution.com |
 | **GitHub** | https://github.com/poqob |
 | **LinkedIn** | https://www.linkedin.com/in/mustafa-biçer-7164221b4 |
 | **Profil Fotoğrafı** | https://avatars.githubusercontent.com/u/62916167?v=4 |

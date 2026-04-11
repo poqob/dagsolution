@@ -19,11 +19,11 @@ const socialLinks = [
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-          <a href="mailto:mustafabicer.iletisim@gmail.com" class="btn-primary">
+          <a href="mailto:mustafa@dagsolution.com" class="btn-primary">
             <Mail class="w-5 h-5 mr-2" />
             {{ $t('contact.email') }}
           </a>
-          <a :href="socialLinks[1].url" target="_blank" class="btn-secondary">
+          <a :href="socialLinks[1]?.url" target="_blank" class="btn-secondary">
             <MessageCircle class="w-5 h-5 mr-2" />
             LinkedIn
           </a>
