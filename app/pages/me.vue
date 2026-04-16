@@ -8,6 +8,8 @@ const socialLinks = [
   { name: 'Email', url: 'mailto:mustafa@dagsolution.com', icon: Mail },
 ]
 
+const isCardFlipped = ref(false)
+
 const workExperience = [
   {
     id: 'freelance',
@@ -670,6 +672,44 @@ useHead({
                 >
                   <ExternalLink class="w-3 h-3" /> {{ $t('projects.googlePlay') }}
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <!-- Business Card Section -->
+    <section class="section-padding pb-8">
+      <div class="container-custom">
+        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-2 text-center">
+          {{ $t('me.businessCard') || 'İş Kartı' }} <span class="gradient-text">{{ $t('me.businessCardAccent') || 'Kartvizit' }}</span>
+        </h2>
+        <p class="text-text-secondary text-center mb-12 max-w-xl mx-auto">
+          {{ $t('me.businessCardDesc') || 'Kartıza tıklayarak arka yüzü görüntüleyebilirsiniz. Hover ile havalanma efektini deneyimleyin.' }}
+        </p>
+
+        <div class="max-w-md mx-auto">
+          <div 
+            class="business-card-container cursor-pointer select-none"
+            @click="isCardFlipped = !isCardFlipped"
+          >
+            <div 
+              class="business-card"
+              :class="{ 'flipped': isCardFlipped }"
+            >
+              <div class="business-card-face business-card-front">
+                <img 
+                  src="/images/bc/k2.png" 
+                  alt="Business Card Front"
+                />
+              </div>
+              <div class="business-card-face business-card-back">
+                <img 
+                  src="/images/bc/k1.png" 
+                  alt="Business Card Back"
+                />
               </div>
             </div>
           </div>

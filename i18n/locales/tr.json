@@ -91,6 +91,7 @@
     "linkedin": "LinkedIn Üzerinden Ulaşın"
   },
   "footer": {
+    "brandAlt": "dağ solution | dag solution - DAGSolution",
     "description": "AI, IoT ve mobil teknolojiler ile kurumsal ve kişisel yazılım çözümleri.",
     "quickLinks": "Hızlı Linkler",
     "contact": "İletişim",
@@ -103,6 +104,11 @@
     "aiSpecialist": "AI & ML Specialist",
     "fullStack": "Full-Stack Developer",
     "bio": "Yazılım dünyasında sürekli öğrenen ve kendini geliştiren bir mühendis. Yapay zeka, gömülü sistemler ve modern web teknolojileri ile ilgileniyorum. Temiz ve pratik çözümler üretmek benim tutkum.",
+    "businessCard": "İş",
+    "businessCardAccent": "Kartım",
+    "businessCardDesc": "Kartı tıklayarak arka yüzü görüntüleyebilirsiniz. Hover ile havalanma efektini deneyimleyin.",
+    "clickToFlip": "Tıklayarak döndür",
+    "clickToFlipBack": "Tıklayarak geri dön",
     "downloadCV": "CV İndir",
     "contactMe": "İletişime Geç",
     "storyTitle": "Hikayem",

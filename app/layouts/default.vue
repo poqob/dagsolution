@@ -75,12 +75,12 @@ const navLinks = [
             <NuxtLink href="/" class="flex items-center gap-3 mb-4">
               <img 
                 :src="isDark ? '/images/dagsolution-logo.png' : '/images/dagsolution-light-logo.png'" 
-                alt="dağ solution | dag solution - DAGSolution" 
+                :alt="$t('footer.brandAlt')" 
                 class="h-10 w-10 object-contain"
               />
               <span class="font-semibold text-lg text-text-primary"><span class="text-accent-blue">dağ</span> solution</span>
             </NuxtLink>
-            <p class="text-text-secondary text-sm">dağ solution, dag solution. AI, IoT ve mobil teknolojiler ile yazılım çözümleri. Bursa/Sakarya merkezli.</p>
+            <p class="text-text-secondary text-sm">{{ $t('footer.description') }}</p>
           </div>
           
           <div>
@@ -112,7 +112,7 @@ const navLinks = [
         </div>
         
           <div class="border-t border-border mt-8 pt-8 text-center text-text-muted text-sm">
-          © {{ new Date().getFullYear() }} <span class="text-accent-blue">dağ</span> solution | dag solution. {{ $t('footer.rights') }}
+          © {{ new Date().getFullYear() }} <span class="text-accent-blue">dağ</span> solution | dag solution — {{ $t('footer.rights') }}
         </div>
       </div>
     </footer>

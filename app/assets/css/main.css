@@ -311,6 +311,91 @@
   }
 }
 
+/* Business Card Flip Animation */
+.business-card-container {
+  perspective: 1200px;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+}
+
+.business-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+  will-change: transform;
+}
+
+.business-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.business-card:not(.flipped):hover {
+  transform: translateY(-8px) rotateX(5deg) rotateY(-3deg);
+}
+
+.business-card.flipped:hover {
+  transform: rotateY(180deg) translateY(-8px) rotateX(5deg) rotateY(3deg);
+}
+
+.business-card-face {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.business-card-face img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.business-card:not(.flipped):hover .business-card-front {
+  box-shadow: 0 20px 50px -15px rgba(99, 102, 241, 0.3), 
+              0 0 20px rgba(99, 102, 241, 0.15);
+}
+
+.business-card.flipped:hover .business-card-back {
+  box-shadow: 0 20px 50px -15px rgba(99, 102, 241, 0.3), 
+              0 0 20px rgba(99, 102, 241, 0.15);
+}
+
+.business-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: rotateY(180deg);
+}
+
+.dark .business-card-face {
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.4);
+}
+
+.dark .business-card:not(.flipped):hover .business-card-front {
+  box-shadow: 0 20px 50px -15px rgba(99, 102, 241, 0.4), 
+              0 0 25px rgba(99, 102, 241, 0.2);
+}
+
+.dark .business-card:not(.flipped):hover .business-card-front img {
+  filter: brightness(0.9);
+}
+
+.dark .business-card.flipped:hover .business-card-back img {
+  filter: brightness(0.9);
+}
+
+.flip-horizontal {
+  transform: scaleX(-1);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

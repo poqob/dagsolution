@@ -91,6 +91,7 @@
     "linkedin": "Contact via LinkedIn"
   },
   "footer": {
+    "brandAlt": "dağ solution | dag solution - DAGSolution",
     "description": "Corporate and personal software solutions with AI, IoT and mobile technologies.",
     "quickLinks": "Quick Links",
     "contact": "Contact",
@@ -103,6 +104,11 @@
     "aiSpecialist": "AI & ML Specialist",
     "fullStack": "Full-Stack Developer",
     "bio": "An engineer who is constantly learning and improving in the software world. I'm interested in artificial intelligence, embedded systems, and modern web technologies. Creating clean and practical solutions is my passion.",
+    "businessCard": "My",
+    "businessCardAccent": "Business Card",
+    "businessCardDesc": "Click the card to view the back side. Hover to experience the floating effect.",
+    "clickToFlip": "Click to flip",
+    "clickToFlipBack": "Click to flip back",
     "downloadCV": "Download CV",
     "contactMe": "Contact Me",
     "storyTitle": "My Story",
