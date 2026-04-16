@@ -4,3 +4,11 @@ Allow: /
 Sitemap: https://dagsolution.com/sitemap.xml
 
 Host: https://dagsolution.com
+
+# Hreflang alternates
+Link: <https://dagsolution.com>; rel="alternate"; hreflang="tr"
+Link: <https://dagsolution.com/en>; rel="alternate"; hreflang="en"
+Link: <https://dagsolution.com>; rel="alternate"; hreflang="x-default"
+
+# Crawl-delay for polite bots
+Crawl-delay: 1

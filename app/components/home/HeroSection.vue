@@ -46,7 +46,8 @@ onMounted(() => {
           :class="{ 'opacity-100 translate-y-0': isVisible, 'opacity-0 translate-y-4': !isVisible }"
           style="animation-delay: 100ms"
         >
-          <span class="text-text-primary">DAG</span><span class="gradient-text">Solution</span>
+          <span class="text-text-primary">dağ</span><span class="gradient-text"> solution</span>
+          <span class="sr-only"> | dag solution | dagsolution</span>
         </h1>
 
         <p 

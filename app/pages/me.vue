@@ -267,19 +267,24 @@ const achievementMedia = computed(() => [
 ])
 
 useHead({
-  title: 'Hakkımda - Mustafa Biçer | DAGSolution',
+  title: 'Hakkımda - Mustafa Biçer | dağ solution, dag solution - DAGSolution',
   meta: [
-    { name: 'description', content: 'Mustafa Biçer - Bilgisayar Mühendisi, AI & ML Specialist. Kariyer hikayem, deneyimlerim ve projelerim.' },
-    { property: 'og:title', content: 'Hakkımda - Mustafa Biçer | DAGSolution' },
-    { property: 'og:description', content: 'Bilgisayar Mühendisi, AI & ML Specialist. Kariyer hikayem, deneyimlerim ve projelerim.' },
+    { name: 'description', content: 'Mustafa Biçer - Bilgisayar Mühendisi, AI & ML Specialist. dağ solution / dag solution kurucu. Teknofest finalist, TÜBİTAK bursiyeri. Kariyer hikayem, deneyimlerim ve projelerim.' },
+    { name: 'keywords', content: 'Mustafa Biçer, dağ solution, dag solution, dagsolution, bilgisayar mühendisi, AI specialist, flutter developer, bursa, sakarya' },
+    { property: 'og:title', content: 'Hakkımda - Mustafa Biçer | dağ solution - dag solution' },
+    { property: 'og:description', content: 'Mustafa Biçer - dağ solution kurucu. Bilgisayar Mühendisi, AI & ML Specialist. Teknofest finalist.' },
     { property: 'og:type', content: 'profile' },
-    { property: 'og:image', content: '/og-image.png' },
+    { property: 'og:image', content: 'https://dagsolution.com/og-image.svg' },
     { property: 'og:url', content: 'https://dagsolution.com/me' },
+    { property: 'og:locale', content: 'tr_TR' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: 'Hakkımda - Mustafa Biçer | DAGSolution' },
-    { name: 'twitter:description', content: 'Bilgisayar Mühendisi, AI & ML Specialist.' },
-    { name: 'twitter:image', content: '/og-image.png' },
+    { name: 'twitter:description', content: 'Bilgisayar Mühendisi, AI & ML Specialist. dağ solution kurucu.' },
+    { name: 'twitter:image', content: 'https://dagsolution.com/og-image.svg' },
   ],
+  link: [
+    { rel: 'canonical', href: 'https://dagsolution.com/me' },
+  ]
 })
 </script>
 

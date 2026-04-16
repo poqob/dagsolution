@@ -28,12 +28,16 @@
   
   <!-- Brand name -->
   <text x="600" y="340" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="700" fill="white" text-anchor="middle">
-    <tspan fill="url(#accent)">DAG</tspan><tspan>Solution</tspan>
+    <tspan fill="url(#accent)">dağ</tspan><tspan> solution</tspan>
   </text>
+  
+  <!-- SEO Keywords (hidden but for alt text) -->
+  <title>dağ solution | dag solution - DAGSolution Yazılım Çözümleri | AI, Mobil, IoT</title>
+  <desc>dağ solution, dag solution olarak da bilinen DAGSolution. Bursa/Sakarya merkezli yazılım şirketi. AI, mobil uygulama geliştirme ve IoT çözümleri.</desc>
   
   <!-- Tagline -->
   <text x="600" y="400" font-family="Inter, Arial, sans-serif" font-size="24" fill="#9ca3af" text-anchor="middle">
-    Yazılım Çözümleri
+    Yazılım Çözümleri | AI • IoT • Mobil
   </text>
   
   <!-- Divider -->
