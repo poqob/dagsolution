@@ -179,7 +179,7 @@ export default defineNuxtConfig({
                 'jobTitle': 'Computer Engineer & AI Specialist',
                 'description': 'Yazılım dünyasında sürekli öğrenen ve kendini geliştiren bir mühendis. Yapay zeka, gömülü sistemler ve modern web teknolojileri ile ilgileniyorum.',
                 'url': 'https://dagsolution.com/me',
-                'image': 'https://avatars.githubusercontent.com/u/62916167?v=4',
+                'image': 'https://www.gravatar.com/avatar/522c480ffa943deea2beecdcf801a4d8?s=400&d=mp',
                 'sameAs': [
                   'https://github.com/poqob',
                   'https://www.linkedin.com/in/mustafa-biçer-7164221b4'
@@ -218,6 +218,9 @@ export default defineNuxtConfig({
   },
 
   vite: {
+    server: {
+      allowedHosts: ['raspberry.dagsolution.com', 'box.raspberry.dagsolution.com', 'localhost', '0.0.0.0']
+    },
     optimizeDeps: {
       include: [
         'lucide-vue-next',

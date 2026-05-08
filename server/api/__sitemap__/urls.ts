@@ -36,7 +36,7 @@ export default defineEventHandler((event) => {
       priority: 0.8,
       images: [
         {
-          loc: 'https://avatars.githubusercontent.com/u/62916167?v=4',
+          loc: 'https://www.gravatar.com/avatar/522c480ffa943deea2beecdcf801a4d8?s=400&d=mp',
           caption: 'Mustafa Biçer - dağ solution kurucu',
           title: 'Mustafa Biçer Profil'
         }

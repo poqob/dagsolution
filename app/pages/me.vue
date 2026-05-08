@@ -300,7 +300,7 @@ useHead({
           <div class="mb-8">
             <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-accent-blue/50 shadow-glow-blue mx-auto">
               <img 
-                src="https://avatars.githubusercontent.com/u/62916167?v=4" 
+                src="https://www.gravatar.com/avatar/522c480ffa943deea2beecdcf801a4d8?s=400&d=mp" 
                 alt="Mustafa Biçer"
                 class="w-full h-full object-cover"
               />
