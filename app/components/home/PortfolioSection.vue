@@ -62,9 +62,17 @@ const getCategoryColor = (category: string) => {
           v-for="project in filteredProjects" 
           :key="project.id"
           class="card group overflow-hidden p-0"
+          :class="{ 'cursor-pointer': project.links?.live }"
+          @click="project.links?.live ? navigateTo(project.links.live, { external: true, open: { target: '_blank' } }) : undefined"
         >
-          <div class="h-40 bg-gradient-to-br flex items-center justify-center" :class="getCategoryColor(project.category)">
-            <span class="text-4xl font-bold text-text-muted/50">{{ project.title.charAt(0) }}</span>
+          <div class="h-40 bg-gradient-to-br flex items-center justify-center overflow-hidden" :class="getCategoryColor(project.category)">
+            <img 
+              v-if="project.image"
+              :src="project.image" 
+              :alt="project.title"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <span v-else class="text-4xl font-bold text-text-muted/50">{{ project.title.charAt(0) }}</span>
           </div>
           
           <div class="p-6">
@@ -91,7 +99,7 @@ const getCategoryColor = (category: string) => {
               </span>
             </div>
 
-            <div class="flex gap-3">
+            <div class="flex gap-3" @click.stop>
               <a 
                 v-if="project.links?.googlePlay" 
                 :href="project.links.googlePlay"
@@ -100,6 +108,15 @@ const getCategoryColor = (category: string) => {
               >
                 <Play class="w-3.5 h-3.5" />
                 {{ $t('projects.googlePlay') }}
+              </a>
+              <a 
+                v-if="project.links?.appGallery" 
+                :href="project.links.appGallery"
+                target="_blank"
+                class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-500/10 text-blue-400 text-xs hover:bg-blue-500/20 transition-colors"
+              >
+                <ExternalLink class="w-3.5 h-3.5" />
+                AppGallery
               </a>
               <a 
                 v-if="project.links?.github" 

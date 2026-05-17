@@ -632,9 +632,17 @@ useHead({
             v-for="project in filteredProjects" 
             :key="project.id"
             class="card group overflow-hidden p-0"
+            :class="{ 'cursor-pointer': project.links?.live }"
+            @click="project.links?.live ? navigateTo(project.links.live, { external: true, open: { target: '_blank' } }) : undefined"
           >
-            <div class="h-32 bg-gradient-to-br from-accent-blue/20 to-purple-500/20 flex items-center justify-center">
-              <span class="text-3xl font-bold text-text-muted/50">{{ project.title.charAt(0) }}</span>
+            <div class="h-32 bg-gradient-to-br from-accent-blue/20 to-purple-500/20 flex items-center justify-center overflow-hidden">
+              <img 
+                v-if="project.image"
+                :src="project.image" 
+                :alt="project.title"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <span v-else class="text-3xl font-bold text-text-muted/50">{{ project.title.charAt(0) }}</span>
             </div>
             
             <div class="p-5">
@@ -655,11 +663,21 @@ useHead({
                 </span>
               </div>
 
-              <div class="flex gap-2">
+              <div class="flex flex-wrap gap-2">
+                <a 
+                  v-if="project.links?.live" 
+                  :href="project.links.live"
+                  target="_blank"
+                  @click.stop
+                  class="text-xs text-accent-blue hover:underline flex items-center gap-1"
+                >
+                  <ExternalLink class="w-3 h-3" /> Web
+                </a>
                 <a 
                   v-if="project.links?.github" 
                   :href="project.links.github"
                   target="_blank"
+                  @click.stop
                   class="text-xs text-accent-blue hover:underline flex items-center gap-1"
                 >
                   <Github class="w-3 h-3" /> {{ $t('projects.github') }}
@@ -668,9 +686,19 @@ useHead({
                   v-if="project.links?.googlePlay" 
                   :href="project.links.googlePlay"
                   target="_blank"
+                  @click.stop
                   class="text-xs text-accent-blue hover:underline flex items-center gap-1"
                 >
                   <ExternalLink class="w-3 h-3" /> {{ $t('projects.googlePlay') }}
+                </a>
+                <a 
+                  v-if="project.links?.appGallery" 
+                  :href="project.links.appGallery"
+                  target="_blank"
+                  @click.stop
+                  class="text-xs text-accent-blue hover:underline flex items-center gap-1"
+                >
+                  <ExternalLink class="w-3 h-3" /> AppGallery
                 </a>
               </div>
             </div>

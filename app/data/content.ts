@@ -34,7 +34,9 @@ export const projects: Project[] = [
     description: 'WiFi üzerinden kablosuz iletişim sağlayan walkie talkie uygulaması.',
     category: 'mobile',
     techStack: ['Flutter', 'Dart', 'WebSocket'],
+    image: '/images/app-icons/talkie.png',
     links: {
+      live: 'https://talkie.dagsolution.com',
       googlePlay: 'https://play.google.com/store/apps/details?id=com.dag.ptt_2026',
       appGallery: 'https://appgallery.huawei.com/#/app/C116621043',
     },
