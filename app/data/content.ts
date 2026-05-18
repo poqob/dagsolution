@@ -22,6 +22,7 @@ export const projects: Project[] = [
     description: 'QR kod tarama ve oluşturma uygulaması. Hızlı ve güvenilir QR çözümleri.',
     category: 'mobile',
     techStack: ['Flutter', 'Dart', 'Firebase'],
+    image: '/images/app-icons/qr-master.png',
     links: {
       googlePlay: 'https://play.google.com/store/apps/details?id=com.dag.qr_2026',
       appGallery: 'https://appgallery.huawei.com/#/app/C116376795',
@@ -48,6 +49,7 @@ export const projects: Project[] = [
     description: 'Katma Değer Vergisi hesaplama ve takip uygulaması.',
     category: 'mobile',
     techStack: ['Flutter', 'Dart'],
+    image: '/images/app-icons/kdv-2026.png',
     links: {
       googlePlay: 'https://play.google.com/store/apps/details?id=com.dag.kdv_2026',
       appGallery: 'https://appgallery.huawei.com/#/app/C116620695',

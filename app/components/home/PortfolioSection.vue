@@ -2,6 +2,8 @@
 import { ExternalLink, Github, Play } from 'lucide-vue-next'
 import { projects } from '~/data/content'
 
+const { container, revealed } = useStaggerReveal()
+
 const categories = computed(() => [
   { id: 'all', label: $t('projects.filter.all') },
   { id: 'demo', label: $t('projects.filter.demo') },
@@ -36,16 +38,16 @@ const getCategoryColor = (category: string) => {
 <template>
   <section id="projects" class="section-padding">
     <div class="container-custom">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+      <div class="text-center mb-12 section-header">
+        <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4 reveal" :class="{ 'reveal-visible': revealed }">
           {{ $t('projects.title') }} <span class="gradient-text">{{ $t('projects.titleAccent') }}</span>
         </h2>
-        <p class="text-text-secondary max-w-2xl mx-auto">
+        <p class="text-text-secondary max-w-2xl mx-auto reveal" :class="{ 'reveal-visible': revealed }" :style="{ transitionDelay: '100ms' }">
           {{ $t('projects.subtitle') }}
         </p>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-2 mb-12">
+      <div class="flex flex-wrap justify-center gap-2 mb-12 reveal" :class="{ 'reveal-visible': revealed }" :style="{ transitionDelay: '150ms' }">
         <button 
           v-for="cat in categories" 
           :key="cat.id"
@@ -59,12 +61,13 @@ const getCategoryColor = (category: string) => {
         </button>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div ref="container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div 
-          v-for="project in filteredProjects" 
+          v-for="(project, index) in filteredProjects" 
           :key="project.id"
-          class="card group overflow-hidden p-0"
-          :class="{ 'cursor-pointer': project.links?.live }"
+          class="card group overflow-hidden p-0 card-reveal"
+          :class="{ 'reveal-visible': revealed, 'cursor-pointer': project.links?.live }"
+          :style="{ transitionDelay: `${index * 80}ms` }"
           @click="project.links?.live ? navigateTo(project.links.live, { external: true, open: { target: '_blank' } }) : undefined"
         >
           <div class="h-40 bg-gradient-to-br flex items-center justify-center overflow-hidden" :class="getCategoryColor(project.category)">
@@ -143,7 +146,7 @@ const getCategoryColor = (category: string) => {
         </div>
       </div>
 
-      <div class="text-center mt-12">
+      <div class="text-center mt-12 reveal" :class="{ 'reveal-visible': revealed }" :style="{ transitionDelay: '300ms' }">
         <NuxtLink href="/me#projects" class="btn-secondary">
           {{ $t('projects.viewAll') }}
         </NuxtLink>

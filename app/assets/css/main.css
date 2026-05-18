@@ -422,6 +422,33 @@
   }
 }
 
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-header .reveal {
+  transform: translateY(20px);
+}
+
+.card-reveal {
+  opacity: 0;
+  transform: translateY(24px) scale(0.97);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.card-reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 /* Page transitions */
 .page-enter-active,
 .page-leave-active {

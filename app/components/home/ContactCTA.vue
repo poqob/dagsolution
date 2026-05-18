@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { Mail, MessageCircle } from 'lucide-vue-next'
 
+const { container, revealed } = useStaggerReveal()
+
 const socialLinks = [
   { name: 'GitHub', url: 'https://github.com/poqob', icon: 'github' },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/mustafa-biçer-7164221b4', icon: 'linkedin' },
@@ -9,16 +11,16 @@ const socialLinks = [
 
 <template>
   <section id="contact" class="section-padding bg-gradient-to-b from-background to-background-card">
-    <div class="container-custom">
+    <div ref="container" class="container-custom">
       <div class="max-w-2xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4 reveal" :class="{ 'reveal-visible': revealed }">
           {{ $t('contact.title') }} <span class="gradient-text">{{ $t('contact.titleAccent') }}</span>
         </h2>
-        <p class="text-text-secondary mb-8">
+        <p class="text-text-secondary mb-8 reveal" :class="{ 'reveal-visible': revealed }" :style="{ transitionDelay: '100ms' }">
           {{ $t('contact.subtitle') }}
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8 reveal" :class="{ 'reveal-visible': revealed }" :style="{ transitionDelay: '150ms' }">
           <a href="mailto:mustafa@dagsolution.com" class="btn-primary">
             <Mail class="w-5 h-5 mr-2" />
             {{ $t('contact.email') }}
@@ -29,7 +31,7 @@ const socialLinks = [
           </a>
         </div>
 
-        <div class="flex justify-center gap-4">
+        <div class="flex justify-center gap-4 reveal" :class="{ 'reveal-visible': revealed }" :style="{ transitionDelay: '200ms' }">
           <a 
             v-for="link in socialLinks" 
             :key="link.name"

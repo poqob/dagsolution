@@ -10,6 +10,13 @@ const socialLinks = [
 
 const isCardFlipped = ref(false)
 
+const { target: storyTarget, isVisible: storyVisible } = useScrollReveal()
+const { container: experienceContainer, revealed: experienceRevealed } = useStaggerReveal()
+const { container: educationContainer, revealed: educationRevealed } = useStaggerReveal()
+const { container: certContainer, revealed: certRevealed } = useStaggerReveal()
+const { container: skillsContainer, revealed: skillsRevealed } = useStaggerReveal()
+const { container: projectsContainer, revealed: projectsRevealed } = useStaggerReveal()
+
 const workExperience = [
   {
     id: 'freelance',
@@ -297,7 +304,7 @@ useHead({
     <section class="section-padding pt-32">
       <div class="container-custom">
         <div class="max-w-4xl mx-auto text-center">
-          <!-- Avatar (D badge kaldırıldı) -->
+          <!-- Avatar -->
           <div class="mb-8">
             <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-accent-blue/50 shadow-glow-blue mx-auto">
               <img 
@@ -345,13 +352,13 @@ useHead({
     </section>
 
     <!-- Hikayem & Başarılarım -->
-    <section class="section-padding bg-background-card/30">
+    <section ref="storyTarget" class="section-padding bg-background-card/30">
       <div class="container-custom">
-        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center reveal" :class="{ 'reveal-visible': storyVisible }">
           {{ $t('me.storyTitle') }} <span class="gradient-text">{{ $t('me.storyTitleAccent') }}</span>
         </h2>
 
-        <div class="max-w-3xl mx-auto mb-8">
+        <div class="max-w-3xl mx-auto mb-8 reveal" :class="{ 'reveal-visible': storyVisible }" :style="{ transitionDelay: '100ms' }">
           <div class="card mb-6">
             <p class="text-text-secondary">
               {{ $t('me.story1') }}
@@ -366,7 +373,7 @@ useHead({
 
         <!-- Achievement Media Gallery -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          <div class="md:row-span-2 card p-0 overflow-hidden group">
+          <div class="md:row-span-2 card p-0 overflow-hidden group card-reveal" :class="{ 'reveal-visible': storyVisible }" :style="{ transitionDelay: '200ms' }">
             <div class="relative h-full min-h-[300px]">
               <img 
                 :src="achievementMedia[0].image"
@@ -387,7 +394,7 @@ useHead({
             </div>
           </div>
 
-          <div class="card p-0 overflow-hidden group">
+          <div class="card p-0 overflow-hidden group card-reveal" :class="{ 'reveal-visible': storyVisible }" :style="{ transitionDelay: '300ms' }">
             <div class="relative h-48">
               <img 
                 :src="achievementMedia[1].image"
@@ -405,7 +412,7 @@ useHead({
             </div>
           </div>
 
-          <div class="card p-0 overflow-hidden group">
+          <div class="card p-0 overflow-hidden group card-reveal" :class="{ 'reveal-visible': storyVisible }" :style="{ transitionDelay: '350ms' }">
             <div class="relative h-48">
               <img 
                 :src="achievementMedia[2].image"
@@ -425,19 +432,19 @@ useHead({
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 max-w-4xl mx-auto">
-          <div class="card text-center py-6">
+          <div class="card text-center py-6 card-reveal" :class="{ 'reveal-visible': storyVisible }" :style="{ transitionDelay: '400ms' }">
             <div class="text-3xl font-bold gradient-text mb-1">5+</div>
             <div class="text-text-muted text-sm">{{ $t('me.yearsExp') }}</div>
           </div>
-          <div class="card text-center py-6">
+          <div class="card text-center py-6 card-reveal" :class="{ 'reveal-visible': storyVisible }" :style="{ transitionDelay: '450ms' }">
             <div class="text-3xl font-bold gradient-text mb-1">3</div>
             <div class="text-text-muted text-sm">{{ $t('me.storeApps') }}</div>
           </div>
-          <div class="card text-center py-6">
+          <div class="card text-center py-6 card-reveal" :class="{ 'reveal-visible': storyVisible }" :style="{ transitionDelay: '500ms' }">
             <div class="text-3xl font-bold gradient-text mb-1">2x</div>
             <div class="text-text-muted text-sm">{{ $t('me.teknofestFinalist') }}</div>
           </div>
-          <div class="card text-center py-6">
+          <div class="card text-center py-6 card-reveal" :class="{ 'reveal-visible': storyVisible }" :style="{ transitionDelay: '550ms' }">
             <div class="text-3xl font-bold gradient-text mb-1">1</div>
             <div class="text-text-muted text-sm">{{ $t('me.tubitakBursar') }}</div>
           </div>
@@ -447,8 +454,8 @@ useHead({
 
     <!-- Experience Timeline -->
     <section class="section-padding">
-      <div class="container-custom">
-        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center">
+      <div ref="experienceContainer" class="container-custom">
+        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center reveal" :class="{ 'reveal-visible': experienceRevealed }">
           {{ $t('me.experience') }} <span class="gradient-text">{{ $t('me.experienceAccent') }}</span>
         </h2>
 
@@ -460,8 +467,12 @@ useHead({
               <div 
                 v-for="(exp, index) in workExperience" 
                 :key="exp.id"
-                class="relative pl-12 md:pl-0"
-                :class="index % 2 === 0 ? 'md:pr-[52%] md:text-right' : 'md:pl-[52%] md:ml-auto'"
+                class="relative pl-12 md:pl-0 card-reveal"
+                :class="[
+                  { 'reveal-visible': experienceRevealed },
+                  index % 2 === 0 ? 'md:pr-[52%] md:text-right' : 'md:pl-[52%] md:ml-auto'
+                ]"
+                :style="{ transitionDelay: `${index * 80}ms` }"
               >
                 <div class="absolute left-0 md:left-1/2 top-0 w-8 h-8 rounded-full flex items-center justify-center transform -translate-x-1/2 shadow-lg bg-gradient-to-br" :class="exp.color">
                   <Briefcase class="w-4 h-4 text-white" />
@@ -490,16 +501,18 @@ useHead({
 
     <!-- Education -->
     <section class="section-padding bg-background-card/30">
-      <div class="container-custom">
-        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center">
+      <div ref="educationContainer" class="container-custom">
+        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center reveal" :class="{ 'reveal-visible': educationRevealed }">
           {{ $t('me.education') }} <span class="gradient-text">{{ $t('me.educationAccent') }}</span>
         </h2>
 
         <div class="max-w-4xl mx-auto space-y-6">
           <div 
-            v-for="edu in education" 
+            v-for="(edu, index) in education" 
             :key="edu.id"
-            class="card"
+            class="card card-reveal"
+            :class="{ 'reveal-visible': educationRevealed }"
+            :style="{ transitionDelay: `${index * 100}ms` }"
           >
             <div class="flex items-start gap-4">
               <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accent-blue/20 to-purple-500/20 flex items-center justify-center shrink-0 overflow-hidden">
@@ -537,19 +550,21 @@ useHead({
 
     <!-- Certifications -->
     <section class="section-padding bg-background-card/30">
-      <div class="container-custom">
-        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center">
+      <div ref="certContainer" class="container-custom">
+        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center reveal" :class="{ 'reveal-visible': certRevealed }">
           {{ $t('me.certifications') }}
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <a 
-            v-for="cert in certifications" 
+            v-for="(cert, index) in certifications" 
             :key="cert.id"
             :href="cert.link"
             :target="cert.link ? '_blank' : undefined"
             :rel="cert.link ? 'noopener noreferrer' : undefined"
-            class="card hover:border-accent-blue/50 transition-all duration-300 cursor-pointer block"
+            class="card hover:border-accent-blue/50 transition-all duration-300 cursor-pointer block card-reveal"
+            :class="{ 'reveal-visible': certRevealed }"
+            :style="{ transitionDelay: `${index * 100}ms` }"
           >
             <div class="flex items-start gap-4">
               <img 
@@ -575,18 +590,20 @@ useHead({
       </div>
     </section>
 
-    <!-- Skills Grid with Icons -->
+    <!-- Skills Grid -->
     <section class="section-padding">
-      <div class="container-custom">
-        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center">
+      <div ref="skillsContainer" class="container-custom">
+        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center reveal" :class="{ 'reveal-visible': skillsRevealed }">
           {{ $t('me.skills') }} <span class="gradient-text">{{ $t('me.skillsAccent') }}</span>
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           <div 
-            v-for="category in skillCategories" 
+            v-for="(category, index) in skillCategories" 
             :key="category.title"
-            class="card"
+            class="card card-reveal"
+            :class="{ 'reveal-visible': skillsRevealed }"
+            :style="{ transitionDelay: `${index * 80}ms` }"
           >
             <div class="flex items-center gap-3 mb-4">
               <span class="text-2xl">{{ category.icon }}</span>
@@ -609,12 +626,12 @@ useHead({
 
     <!-- Projects Section -->
     <section id="projects" class="section-padding bg-background-card/30">
-      <div class="container-custom">
-        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center">
+      <div ref="projectsContainer" class="container-custom">
+        <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-8 text-center reveal" :class="{ 'reveal-visible': projectsRevealed }">
           {{ $t('me.allProjects') }} <span class="gradient-text">{{ $t('me.allProjectsAccent') }}</span>
         </h2>
 
-        <div class="flex flex-wrap justify-center gap-2 mb-12">
+        <div class="flex flex-wrap justify-center gap-2 mb-12 reveal" :class="{ 'reveal-visible': projectsRevealed }" :style="{ transitionDelay: '100ms' }">
           <button 
             v-for="cat in categories" 
             :key="cat.id"
@@ -630,10 +647,11 @@ useHead({
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           <div 
-            v-for="project in filteredProjects" 
+            v-for="(project, index) in filteredProjects" 
             :key="project.id"
-            class="card group overflow-hidden p-0"
-            :class="{ 'cursor-pointer': project.links?.live }"
+            class="card group overflow-hidden p-0 card-reveal"
+            :class="{ 'reveal-visible': projectsRevealed, 'cursor-pointer': project.links?.live }"
+            :style="{ transitionDelay: `${index * 80}ms` }"
             @click="project.links?.live ? navigateTo(project.links.live, { external: true, open: { target: '_blank' } }) : undefined"
           >
             <div class="h-32 bg-gradient-to-br from-accent-blue/20 to-purple-500/20 flex items-center justify-center overflow-hidden">
@@ -708,7 +726,6 @@ useHead({
       </div>
     </section>
 
-    <!-- Contact CTA -->
     <!-- Business Card Section -->
     <section class="section-padding pb-8">
       <div class="container-custom">

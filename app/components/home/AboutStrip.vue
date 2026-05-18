@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ArrowRight, MapPin, Award, Rocket, Brain } from 'lucide-vue-next'
 
+const { container, revealed } = useStaggerReveal()
+
 const quickStats = computed(() => [
   { icon: Award, value: '2x', label: $t('stats.teknofestLabel') },
   { icon: Rocket, value: '10.', label: $t('stats.rankingLabel') },
@@ -25,9 +27,9 @@ const achievements = computed(() => [
 
 <template>
   <section id="about" class="section-padding bg-background-card/30">
-    <div class="container-custom">
+    <div ref="container" class="container-custom">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
+        <div class="reveal" :class="{ 'reveal-visible': revealed }">
           <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">
             {{ $t('about.title') }} <span class="gradient-text">{{ $t('about.titleAccent') }}</span>
           </h2>
@@ -45,14 +47,21 @@ const achievements = computed(() => [
 
         <div class="space-y-6">
           <div class="grid grid-cols-3 gap-4">
-            <div v-for="stat in quickStats" :key="stat.label" class="card text-center py-5">
+            <div v-for="(stat, i) in quickStats" :key="stat.label" 
+              class="card text-center py-5 card-reveal"
+              :class="{ 'reveal-visible': revealed }"
+              :style="{ transitionDelay: `${200 + i * 80}ms` }"
+            >
               <component :is="stat.icon" class="w-6 h-6 text-accent-blue mx-auto mb-2" />
               <div class="text-xl font-bold text-text-primary">{{ stat.value }}</div>
               <div class="text-xs text-text-muted">{{ stat.label }}</div>
             </div>
           </div>
 
-          <div class="card flex items-center gap-4">
+          <div class="card flex items-center gap-4 card-reveal"
+            :class="{ 'reveal-visible': revealed }"
+            :style="{ transitionDelay: '400ms' }"
+          >
             <MapPin class="w-6 h-6 text-accent-blue shrink-0" />
             <div>
               <div class="font-medium text-text-primary">{{ $t('about.location') }}</div>
@@ -61,11 +70,16 @@ const achievements = computed(() => [
           </div>
 
           <div class="space-y-3">
-            <h3 class="text-sm font-semibold text-text-muted uppercase tracking-wider">{{ $t('about.achievements') }}</h3>
+            <h3 class="text-sm font-semibold text-text-muted uppercase tracking-wider card-reveal"
+              :class="{ 'reveal-visible': revealed }"
+              :style="{ transitionDelay: '450ms' }"
+            >{{ $t('about.achievements') }}</h3>
             <div 
               v-for="(achievement, index) in achievements" 
               :key="index"
-              class="card py-4 flex items-center gap-4"
+              class="card py-4 flex items-center gap-4 card-reveal"
+              :class="{ 'reveal-visible': revealed }"
+              :style="{ transitionDelay: `${500 + index * 80}ms` }"
             >
               <div class="w-10 h-10 rounded-lg bg-accent-orange/10 flex items-center justify-center shrink-0">
                 <Award class="w-5 h-5 text-accent-orange" />
