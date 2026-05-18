@@ -75,6 +75,7 @@
     "viewAll": "Tümünü Gör",
     "filter": {
       "all": "Tümü",
+      "demo": "Demo",
       "mobile": "Mobil",
       "ai": "AI & ML",
       "iot": "IoT"

@@ -154,6 +154,7 @@ const certifications = computed(() => [
 
 const categories = computed(() => [
   { id: 'all', label: $t('projects.filter.all') },
+  { id: 'demo', label: $t('projects.filter.demo') },
   { id: 'mobile', label: $t('projects.filter.mobile') },
   { id: 'ai', label: $t('projects.filter.ai') },
   { id: 'iot', label: $t('projects.filter.iot') },

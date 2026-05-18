@@ -78,7 +78,7 @@ const navLinks = [
                 :alt="$t('footer.brandAlt')" 
                 class="h-10 w-10 object-contain"
               />
-              <span class="font-semibold text-lg text-text-primary"><span class="text-accent-blue">dağ</span> solution</span>
+              <span class="font-semibold text-lg text-text-primary"><span class="text-accent-blue">Dağ</span> solution</span>
             </NuxtLink>
             <p class="text-text-secondary text-sm">{{ $t('footer.description') }}</p>
           </div>
@@ -112,7 +112,7 @@ const navLinks = [
         </div>
         
           <div class="border-t border-border mt-8 pt-8 text-center text-text-muted text-sm">
-          © {{ new Date().getFullYear() }} <span class="text-accent-blue">dağ</span> solution | dag solution — {{ $t('footer.rights') }}
+          © {{ new Date().getFullYear() }} <span class="text-accent-blue">Dağ</span> solution | dag solution — {{ $t('footer.rights') }}
         </div>
       </div>
     </footer>

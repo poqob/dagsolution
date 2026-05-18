@@ -2,7 +2,7 @@ export interface Project {
   id: string
   title: string
   description: string
-  category: 'mobile' | 'web' | 'ai' | 'iot' | 'opensource'
+  category: 'mobile' | 'web' | 'ai' | 'iot' | 'opensource' | 'demo'
   techStack: string[]
   image?: string
   links?: {
@@ -121,6 +121,43 @@ export const projects: Project[] = [
       github: 'https://github.com/poqob',
     },
     featured: false,
+  },
+  // Demo Web Projeleri
+  {
+    id: 'balkaymak',
+    title: 'Balkaymak Kafe',
+    description: 'Dondurma & kafe web sitesi. Demo adisyon ve demo menü sistemi entegre.',
+    category: 'demo',
+    techStack: ['Nuxt', 'Vue', 'Tailwind', 'TypeScript'],
+    image: '/images/demo/balkaymak-cover.svg',
+    links: {
+      live: 'https://balkaymak.dagsolution.com',
+    },
+    featured: true,
+  },
+  {
+    id: 'pastry',
+    title: 'Pastry Kafe',
+    description: 'Pastane & kafe web sitesi. Menü ve adisyon sistemi ile komple çözüm.',
+    category: 'demo',
+    techStack: ['Nuxt', 'Vue', 'Tailwind', 'TypeScript'],
+    image: '/images/demo/pastry-cover.jpeg',
+    links: {
+      live: 'https://pastry.dagsolution.com',
+    },
+    featured: true,
+  },
+  {
+    id: 'berber',
+    title: 'Berber Sıra',
+    description: 'Berberlere özel ücretsiz kuyruk & sıra yazılımı. PWA, WhatsApp entegrasyonu, geçmiş müşteri kaydı ve tek tuşla arama.',
+    category: 'demo',
+    techStack: ['Vue', 'Vite', 'TypeScript', 'Tailwind', 'PWA'],
+    image: '/images/demo/berber-app-icon.svg',
+    links: {
+      live: 'https://berber.dagsolution.com',
+    },
+    featured: true,
   },
 ]
 

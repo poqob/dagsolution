@@ -4,6 +4,7 @@ import { projects } from '~/data/content'
 
 const categories = computed(() => [
   { id: 'all', label: $t('projects.filter.all') },
+  { id: 'demo', label: $t('projects.filter.demo') },
   { id: 'mobile', label: $t('projects.filter.mobile') },
   { id: 'ai', label: $t('projects.filter.ai') },
   { id: 'opensource', label: 'Open Source' },
@@ -26,6 +27,7 @@ const getCategoryColor = (category: string) => {
     case 'mobile': return 'from-green-500/20 to-emerald-500/20'
     case 'ai': return 'from-purple-500/20 to-pink-500/20'
     case 'iot': return 'from-blue-500/20 to-cyan-500/20'
+    case 'demo': return 'from-orange-500/20 to-yellow-500/20'
     default: return 'from-accent-blue/20 to-purple-500/20'
   }
 }

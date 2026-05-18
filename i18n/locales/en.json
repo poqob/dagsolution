@@ -75,6 +75,7 @@
     "viewAll": "View All",
     "filter": {
       "all": "All",
+      "demo": "Demo",
       "mobile": "Mobile",
       "ai": "AI & ML",
       "iot": "IoT"
