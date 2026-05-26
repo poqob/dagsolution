@@ -137,6 +137,17 @@ export const projects: Project[] = [
     },
     featured: false,
   },
+  {
+    id: 'ssid-spoofer-pro',
+    title: 'ESP32 SSID Spoofer Pro',
+    description: 'ESP32 tabanlı web kontrollü SSID beacon flooding aracı. Bağlantı girişimi kaydı, OUI vendor tespiti, per-SSID kilit yönetimi.',
+    category: 'iot',
+    techStack: ['C', 'C++', 'ESP-IDF', 'PlatformIO', 'WiFi', 'Embedded'],
+    links: {
+      github: 'https://github.com/poqob/esp32-ssid-spoofer-pro',
+    },
+    featured: true,
+  },
   // Demo Web Projeleri
   {
     id: 'balkaymak',
