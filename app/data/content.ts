@@ -44,6 +44,19 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: 'harmonia',
+    title: 'Harmonia',
+    description: 'Frekans tabanlı ses terapi uygulaması. Solfeggio, binaural beats ve isochronic atımlar.',
+    category: 'mobile',
+    techStack: ['Flutter', 'Dart'],
+    image: '/images/app-icons/harmonia.png',
+    links: {
+      live: 'https://harmonia.dagsolution.com',
+      googlePlay: 'https://play.google.com/store/apps/details?id=com.dag.harmonia',
+    },
+    featured: true,
+  },
+  {
     id: 'kdv-2026',
     title: 'KDV 2026',
     description: 'Katma Değer Vergisi hesaplama ve takip uygulaması.',
