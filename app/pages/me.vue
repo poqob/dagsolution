@@ -2,6 +2,8 @@
 import { Github, Linkedin, Mail, Download, ExternalLink, GraduationCap, MapPin, Award, Briefcase, Code } from 'lucide-vue-next'
 import { projects } from '~/data/content'
 
+const { locale } = useI18n()
+
 const socialLinks = [
   { name: 'GitHub', url: 'https://github.com/poqob', icon: Github },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/mustafa-biçer-7164221b4', icon: Linkedin },
@@ -169,9 +171,17 @@ const categories = computed(() => [
 
 const activeCategory = ref('all')
 
+const localizedProjects = computed(() =>
+  projects.map(p => ({
+    ...p,
+    title: locale.value === 'en' ? p.titleEn : p.title,
+    description: locale.value === 'en' ? p.descriptionEn : p.description,
+  }))
+)
+
 const filteredProjects = computed(() => {
-  if (activeCategory.value === 'all') return projects
-  return projects.filter(p => p.category === activeCategory.value)
+  if (activeCategory.value === 'all') return localizedProjects.value
+  return localizedProjects.value.filter(p => p.category === activeCategory.value)
 })
 
 const skillCategories = [

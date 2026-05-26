@@ -3,6 +3,7 @@ import { ExternalLink, Github, Play } from 'lucide-vue-next'
 import { projects } from '~/data/content'
 
 const { container, revealed } = useStaggerReveal()
+const { locale } = useI18n()
 
 const categories = computed(() => [
   { id: 'all', label: $t('projects.filter.all') },
@@ -14,14 +15,22 @@ const categories = computed(() => [
 
 const activeCategory = ref('all')
 
+const localizedProjects = computed(() =>
+  projects.map(p => ({
+    ...p,
+    title: locale.value === 'en' ? p.titleEn : p.title,
+    description: locale.value === 'en' ? p.descriptionEn : p.description,
+  }))
+)
+
 const filteredProjects = computed(() => {
   if (activeCategory.value === 'all') {
-    return projects.filter(p => p.featured)
+    return localizedProjects.value.filter(p => p.featured)
   }
   if (activeCategory.value === 'opensource') {
-    return projects.filter(p => p.category === 'ai' || p.category === 'iot')
+    return localizedProjects.value.filter(p => p.category === 'ai' || p.category === 'iot')
   }
-  return projects.filter(p => p.category === activeCategory.value)
+  return localizedProjects.value.filter(p => p.category === activeCategory.value)
 })
 
 const getCategoryColor = (category: string) => {
