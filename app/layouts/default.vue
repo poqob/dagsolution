@@ -11,6 +11,7 @@ onMounted(() => {
 const navLinks = [
   { label: 'nav.services', href: '/#services' },
   { label: 'nav.projects', href: '/#projects' },
+  { label: 'nav.brand', href: '/brand' },
   { label: 'nav.about', href: '/#about' },
   { label: 'nav.contact', href: '/#contact' },
 ]

@@ -2,6 +2,7 @@
   "nav": {
     "services": "Hizmetler",
     "projects": "Projeler",
+    "brand": "Marka Kiti",
     "about": "Hakkımızda",
     "contact": "İletişim",
     "portfolio": "Portföyümüz"
@@ -235,6 +236,25 @@
         "link": "https://drive.google.com/file/d/1X3GeHCyFN-1GchaFfhG7sbqWiPdU0tf3/view?usp=sharing"
       }
     }
+  },
+  "brand": {
+    "title": "Marka Kiti",
+    "titleAccent": "DAGSolution",
+    "subtitle": "Marka varlıklarımızı keşfedin ve indirin. Logolar, renk paleti ve tipografi.",
+    "logos": "Logolar",
+    "logosDesc": "Dark ve light tema için PNG logolar. Tüm boyutları zip olarak indirebilirsiniz.",
+    "downloadZip": "Tümünü İndir (ZIP)",
+    "colors": "Renk Paleti",
+    "colorsDesc": "Markamızın görsel kimliğini oluşturan renkler.",
+    "copyHex": "Kopyala",
+    "copied": "Kopyalandı!",
+    "typography": "Tipografi",
+    "typographyDesc": "Marka iletişiminde kullanılan yazı tipleri.",
+    "fontWeights": "Font ağırlıkları",
+    "download": "İndir",
+    "brandKit": "Marka Kiti",
+    "usage": "Kullanım",
+    "usageDesc": "Logoları bozmayın, renkleri değiştirmeyin, dark temada dark logo, light temada light logo kullanın."
   },
   "language": {
     "switchTo": "Dil değiştir",

@@ -2,6 +2,7 @@
   "nav": {
     "services": "Services",
     "projects": "Projects",
+    "brand": "Brand Kit",
     "about": "About",
     "contact": "Contact",
     "portfolio": "Portfolio"
@@ -235,6 +236,25 @@
         "link": "https://drive.google.com/file/d/1X3GeHCyFN-1GchaFfhG7sbqWiPdU0tf3/view?usp=sharing"
       }
     }
+  },
+  "brand": {
+    "title": "Brand Kit",
+    "titleAccent": "DAGSolution",
+    "subtitle": "Explore and download our brand assets. Logos, color palette, and typography.",
+    "logos": "Logos",
+    "logosDesc": "Dark and light theme PNG logos. Download all sizes as a zip.",
+    "downloadZip": "Download All (ZIP)",
+    "colors": "Color Palette",
+    "colorsDesc": "Colors that define our brand identity.",
+    "copyHex": "Copy",
+    "copied": "Copied!",
+    "typography": "Typography",
+    "typographyDesc": "Fonts used in brand communication.",
+    "fontWeights": "Font weights",
+    "download": "Download",
+    "brandKit": "Brand Kit",
+    "usage": "Usage",
+    "usageDesc": "Do not distort logos, do not alter colors, use dark logo on dark theme and light logo on light theme."
   },
   "language": {
     "switchTo": "Switch language",

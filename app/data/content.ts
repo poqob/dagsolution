@@ -255,3 +255,38 @@ export const services = [
     icon: 'Server',
   },
 ]
+
+export interface BrandColor {
+  name: string
+  hex: string
+  description: string
+  descriptionEn: string
+}
+
+export const brandColors: BrandColor[] = [
+  { name: 'accent-blue', hex: '#3B82F6', description: 'Ana marka rengi — butonlar, linkler, vurgular', descriptionEn: 'Primary brand color — buttons, links, accents' },
+  { name: 'accent-blue-light', hex: '#60A5FA', description: 'Açık mavi — gradienler, hover durumları', descriptionEn: 'Light blue — gradients, hover states' },
+  { name: 'accent-orange', hex: '#F97316', description: 'Vurgu rengi — CTA, öne çıkan öğeler', descriptionEn: 'Accent color — CTAs, highlights' },
+  { name: 'metal-start', hex: '#60A5FA', description: 'Gradient başlangıç — metalik efektler', descriptionEn: 'Gradient start — metallic effects' },
+  { name: 'metal-end', hex: '#A78BFA', description: 'Gradient bitiş — metalik efektler', descriptionEn: 'Gradient end — metallic effects' },
+  { name: 'text-primary', hex: '#FAFAFA', description: 'Koyu temada ana metin rengi', descriptionEn: 'Dark theme primary text' },
+  { name: 'text-primary-light', hex: '#09090B', description: 'Açık temada ana metin rengi', descriptionEn: 'Light theme primary text' },
+  { name: 'bg-dark', hex: '#09090B', description: 'Koyu tema arka plan', descriptionEn: 'Dark theme background' },
+  { name: 'bg-light', hex: '#FFFFFF', description: 'Açık tema arka plan', descriptionEn: 'Light theme background' },
+]
+
+export interface LogoVariant {
+  name: string
+  file: string
+  sizes: number[]
+}
+
+export const logoVariants: LogoVariant[] = [
+  { name: 'dark', file: '/images/dagsolution-logo.png', sizes: [1024, 512, 384, 192, 128, 64, 32] },
+  { name: 'light', file: '/images/dagsolution-light-logo.png', sizes: [1024, 512, 384, 192, 128, 64, 32] },
+]
+
+export const brandFonts = [
+  { name: 'Inter', type: 'sans-serif', usage: 'Başlıklar, body metin, UI öğeleri', usageEn: 'Headings, body text, UI elements', weights: [400, 500, 600, 700] },
+  { name: 'JetBrains Mono', type: 'monospace', usage: 'Kod blokları, teknik içerik', usageEn: 'Code blocks, technical content', weights: [400, 500] },
+]

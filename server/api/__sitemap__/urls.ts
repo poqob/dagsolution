@@ -48,5 +48,17 @@ export default defineEventHandler((event) => {
       changefreq: 'monthly',
       priority: 0.7,
     },
+    {
+      loc: `${baseUrl}/brand`,
+      lastmod: now,
+      changefreq: 'monthly',
+      priority: 0.8,
+    },
+    {
+      loc: `${baseUrl}/en/brand`,
+      lastmod: now,
+      changefreq: 'monthly',
+      priority: 0.7,
+    },
   ]
 })
