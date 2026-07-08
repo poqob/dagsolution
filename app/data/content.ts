@@ -61,6 +61,7 @@ export const projects: Project[] = [
     links: {
       live: 'https://harmonia.dagsolution.com',
       googlePlay: 'https://play.google.com/store/apps/details?id=com.dag.harmonia',
+      appGallery: 'https://appgallery.huawei.com/app/C118239253',
     },
     featured: true,
   },
