@@ -26,7 +26,7 @@
                 </thead>
                 <tbody>
                     <tr class="border-b border-gray-200">
-                        <td class="py-1 px-2 text-gray-700 font-bold">{{ $t('proposal.calc.frontend') }} <span class="text-gray-500 font-normal">({{ Math.max(8, pageCount || 8) }} pages)</span></td>
+                        <td class="py-1 px-2 text-gray-700 font-bold">{{ coreDevTitle }} <span class="text-gray-500 font-normal" v-if="projectType === 'mobile' || projectType === 'web'">({{ Math.max(projectType === 'mobile' ? 8 : 5, pageCount || (projectType === 'mobile' ? 8 : 5)) }} pages)</span></td>
                         <td class="py-1 px-2 text-right font-mono">${{ frontendPrice }}</td>
                     </tr>
                     <tr v-if="backendEnabled" class="border-b border-gray-200">
@@ -38,7 +38,7 @@
                         <td class="py-1 px-2 text-right font-mono">${{ deliveryFee }}</td>
                     </tr>
                     <tr v-for="f in features.filter(x => x.type === 'number' ? x.count > 0 : x.selected)" :key="f.id" class="border-b border-gray-100">
-                        <td class="py-0.5 px-2 text-gray-600 pl-4">• {{ $t(`proposal.features.${f.id}`) }} <span v-if="f.type === 'number'">({{ f.count }})</span></td>
+                        <td class="py-0.5 px-2 text-gray-600 pl-4">• {{ f.labelTr ? (locale === 'tr' ? f.labelTr : f.labelEn) : $t(`proposal.features.${f.id}`) }} <span v-if="f.type === 'number'">({{ f.count }})</span></td>
                         <td class="py-0.5 px-2 text-right font-mono text-gray-600">${{ f.type === 'number' ? f.count * f.price : f.price }}</td>
                     </tr>
                 </tbody>
@@ -128,7 +128,41 @@
                     <p class="text-gray-500">{{ $t('proposal.calc.desc') }}</p>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Project Type Selector -->
+                <div class="mb-10 flex flex-wrap gap-3">
+                    <button v-for="type in projectTypes" :key="type.id" 
+                        @click="projectType = type.id"
+                        class="px-6 py-3 rounded-xl border transition-all flex items-center gap-2 font-medium"
+                        :class="projectType === type.id ? 'border-zinc-900 bg-zinc-900 text-white shadow-md' : 'border-gray-200 bg-white text-gray-600 hover:border-gray-400'">
+                        <span>{{ type.icon }}</span>
+                        {{ locale === 'tr' ? type.labelTr : type.labelEn }}
+                    </button>
+                </div>
+
+                <div v-if="projectType === 'custom'" class="bg-white border border-gray-200 rounded-3xl p-12 text-center max-w-4xl mx-auto shadow-sm">
+                    <div class="w-20 h-20 bg-zinc-900 rounded-full flex items-center justify-center text-white mx-auto mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-4">{{ locale === 'tr' ? 'Projeniz benzersiz ise, çözümümüz de benzersiz olmalı.' : 'If your project is unique, our solution must be too.' }}</h3>
+                    <p class="text-gray-500 mb-8 text-lg">{{ locale === 'tr' ? 'Size özel teknoloji yığınları, modüller ve bütçe planlaması için bizimle iletişime geçin. Ekibimiz detayları görüşmek için hazır.' : 'Contact us for custom tech stacks, modules and budget planning. Our team is ready to discuss the details with you.' }}</p>
+                    
+                    <div class="flex flex-col md:flex-row gap-4 justify-center flex-wrap">
+                        <a href="mailto:mustafa@dagsolution.com" class="px-6 py-4 bg-zinc-900 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-zinc-800 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            mustafa@dagsolution.com
+                        </a>
+                        <a href="mailto:mustafabicer.iletisim@gmail.com" class="px-6 py-4 bg-white border border-gray-200 text-gray-900 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-gray-50 transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            mustafabicer.iletisim@gmail.com
+                        </a>
+                        <a href="https://t.me/poqob0" target="_blank" class="px-6 py-4 bg-[#229ED9] text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#1C88BA] transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            @poqob0
+                        </a>
+                    </div>
+                </div>
+
+                <div v-else class="grid grid-cols-1 lg:grid-cols-12 gap-8">
                     <!-- Selector -->
                     <div class="lg:col-span-7 space-y-6">
                         
@@ -170,20 +204,23 @@
                             <div class="space-y-3">
                                 <div class="flex items-center justify-between p-4 rounded-xl border border-gray-100 bg-gray-50/50">
                                     <div>
-                                        <p class="font-semibold text-gray-800">{{ $t('proposal.calc.frontend') }}</p>
-                                        <p class="text-xs text-gray-500">{{ $t('proposal.calc.frontendDesc') }}</p>
+                                        <p class="font-semibold text-gray-800">{{ coreDevTitle }}</p>
+                                        <p class="text-xs text-gray-500" v-if="projectType === 'mobile'">{{ $t('proposal.calc.frontendDesc') }}</p>
                                     </div>
                                     <div class="flex items-center gap-3">
-                                        <input type="number" v-model.number="pageCount" min="8" class="w-16 p-2 border border-gray-300 rounded text-center text-sm outline-none focus:border-blue-500 transition">
+                                        <div v-if="projectType === 'mobile' || projectType === 'web'" class="flex items-center gap-2">
+                                            <input type="number" v-model.number="pageCount" :min="projectType === 'mobile' ? 8 : 5" class="w-16 p-2 border border-gray-300 rounded text-center text-sm outline-none focus:border-blue-500 transition">
+                                            <span class="text-sm font-medium text-gray-600">{{ locale === 'tr' ? 'Sayfa' : 'Pages' }}</span>
+                                        </div>
                                         <span class="font-mono font-bold text-gray-800">${{ frontendPrice }}</span>
                                     </div>
                                 </div>
-                                <label class="flex items-center justify-between p-4 rounded-xl border border-gray-100 bg-gray-50/50 cursor-pointer transition-all hover:border-gray-300">
+                                <label v-if="projectType === 'mobile' || projectType === 'web'" class="flex items-center justify-between p-4 rounded-xl border border-gray-100 bg-gray-50/50 cursor-pointer transition-all hover:border-gray-300">
                                     <div class="flex items-center gap-3">
                                         <input type="checkbox" v-model="backendEnabled" class="w-5 h-5 accent-zinc-800 cursor-pointer">
                                         <span class="font-semibold text-gray-800">{{ $t('proposal.calc.backend') }}</span>
                                     </div>
-                                    <span class="font-mono font-bold text-gray-800">${{ backendEnabled ? 300 : 0 }}</span>
+                                    <span class="font-mono font-bold text-gray-800">${{ projectType === 'web' ? (backendEnabled ? 150 : 0) : (backendEnabled ? 300 : 0) }}</span>
                                 </label>
                             </div>
                         </div>
@@ -197,7 +234,7 @@
                                 <label v-for="f in features" :key="f.id" class="flex items-center justify-between p-3 rounded-lg border transition-all" :class="f.selected ? 'border-gray-800 bg-gray-50' : 'border-gray-200 hover:border-gray-300', f.type !== 'number' ? 'cursor-pointer' : ''">
                                     <div class="flex items-center gap-3 w-full">
                                         <input v-if="f.type !== 'number'" type="checkbox" v-model="f.selected" class="w-5 h-5 accent-zinc-800 cursor-pointer flex-shrink-0">
-                                        <span class="text-sm font-medium text-gray-700 flex-1">{{ $t(`proposal.features.${f.id}`) }}</span>
+                                        <span class="text-sm font-medium text-gray-700 flex-1">{{ f.labelTr ? (locale === 'tr' ? f.labelTr : f.labelEn) : $t(`proposal.features.${f.id}`) }}</span>
                                         
                                         <div v-if="f.type === 'number'" class="flex items-center gap-2">
                                             <input type="number" v-model.number="f.count" min="0" class="w-12 p-1 border border-gray-300 rounded text-center text-sm outline-none focus:border-zinc-800">
@@ -242,7 +279,7 @@
             </section>
 
             <!-- Timeline Section -->
-            <section id="timeline" class="py-16">
+            <section v-if="projectType !== 'custom'" id="timeline" class="py-16">
                 <div class="mb-12 max-w-3xl">
                     <h2 class="text-3xl font-bold mb-4 tracking-tight">{{ $t('proposal.timeline.title', { days: deliveryTime }) }}</h2>
                     <p class="text-gray-500">{{ $t('proposal.timeline.desc') }}</p>
@@ -256,8 +293,8 @@
                                 <span class="font-bold text-gray-700 text-xs md:text-sm">{{ stepRanges[0] }}</span>
                             </div>
                             <div class="bg-white p-5 md:p-6 rounded-2xl border border-gray-200 flex-1 shadow-sm hover:border-gray-400 transition-colors">
-                                <h3 class="font-bold text-lg md:text-xl mb-2 text-gray-900">{{ $t('proposal.timeline.step1') }}</h3>
-                                <p class="text-gray-500 text-xs md:text-sm">{{ $t('proposal.timeline.step1d') }}</p>
+                                <h3 class="font-bold text-lg md:text-xl mb-2 text-gray-900">{{ currentTimeline[0].title }}</h3>
+                                <p class="text-gray-500 text-xs md:text-sm">{{ currentTimeline[0].desc }}</p>
                             </div>
                         </div>
 
@@ -266,8 +303,8 @@
                                 <span class="font-bold text-gray-700 text-xs md:text-sm">{{ stepRanges[1] }}</span>
                             </div>
                             <div class="bg-white p-5 md:p-6 rounded-2xl border border-gray-200 flex-1 shadow-sm hover:border-gray-400 transition-colors">
-                                <h3 class="font-bold text-lg md:text-xl mb-2 text-gray-900">{{ $t('proposal.timeline.step2') }}</h3>
-                                <p class="text-gray-500 text-xs md:text-sm">{{ $t('proposal.timeline.step2d') }}</p>
+                                <h3 class="font-bold text-lg md:text-xl mb-2 text-gray-900">{{ currentTimeline[1].title }}</h3>
+                                <p class="text-gray-500 text-xs md:text-sm">{{ currentTimeline[1].desc }}</p>
                             </div>
                         </div>
 
@@ -276,8 +313,8 @@
                                 <span class="font-bold text-gray-700 text-xs md:text-sm">{{ stepRanges[2] }}</span>
                             </div>
                             <div class="bg-white p-5 md:p-6 rounded-2xl border border-gray-200 flex-1 shadow-sm hover:border-gray-400 transition-colors">
-                                <h3 class="font-bold text-lg md:text-xl mb-2 text-gray-900">{{ $t('proposal.timeline.step3') }}</h3>
-                                <p class="text-gray-500 text-xs md:text-sm">{{ $t('proposal.timeline.step3d') }}</p>
+                                <h3 class="font-bold text-lg md:text-xl mb-2 text-gray-900">{{ currentTimeline[2].title }}</h3>
+                                <p class="text-gray-500 text-xs md:text-sm">{{ currentTimeline[2].desc }}</p>
                             </div>
                         </div>
                     </div>
@@ -285,64 +322,32 @@
             </section>
 
             <!-- Tech Stack -->
-            <section id="techstack" class="py-16">
+            <section v-if="projectType !== 'custom'" id="techstack" class="py-16">
                 <div class="mb-12 max-w-3xl">
                     <h2 class="text-3xl font-bold mb-4 tracking-tight">{{ $t('proposal.techStack.title') }}</h2>
                     <p class="text-gray-500">{{ $t('proposal.techStack.desc') }}</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition">
-                        <h3 class="font-bold text-lg mb-2 text-gray-900">{{ $t('proposal.techStack.mobile') }}</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">{{ $t('proposal.techStack.mobileDesc') }}</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition">
-                        <h3 class="font-bold text-lg mb-2 text-gray-900">{{ $t('proposal.techStack.state') }}</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">{{ $t('proposal.techStack.stateDesc') }}</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition">
-                        <h3 class="font-bold text-lg mb-2 text-gray-900">{{ $t('proposal.techStack.native') }}</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">{{ $t('proposal.techStack.nativeDesc') }}</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition">
-                        <h3 class="font-bold text-lg mb-2 text-gray-900">{{ $t('proposal.techStack.backend') }}</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">{{ $t('proposal.techStack.backendDesc') }}</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition lg:col-span-2">
-                        <h3 class="font-bold text-lg mb-2 text-gray-900">{{ $t('proposal.techStack.devops') }}</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">{{ $t('proposal.techStack.devopsDesc') }}</p>
+                    <div v-for="(tech, i) in currentTechStack" :key="i" class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition" :class="tech.fullWidth ? 'lg:col-span-2' : ''">
+                        <h3 class="font-bold text-lg mb-2 text-gray-900">{{ tech.title }}</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">{{ tech.desc }}</p>
                     </div>
                 </div>
             </section>
 
             <!-- Terms & Rules -->
-            <section id="terms" class="py-16">
+            <section v-if="projectType !== 'custom'" id="terms" class="py-16">
                 <div class="bg-white border border-gray-200 text-gray-800 p-10 rounded-3xl shadow-sm">
                     <h2 class="text-3xl font-bold mb-8 tracking-tight text-gray-900">{{ $t('proposal.terms.title') }}</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-sm">
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-4 uppercase tracking-widest text-xs">{{ $t('proposal.terms.t1') }}</h4>
+                        <div v-for="(col, i) in currentTerms" :key="i">
+                            <h4 class="font-bold text-gray-900 mb-4 uppercase tracking-widest text-xs">{{ col.title }}</h4>
                             <ul class="space-y-3 text-gray-600">
-                                <li class="flex items-start gap-2"><span class="mr-2 text-gray-400">•</span> <span>{{ $t('proposal.terms.t1_1') }}</span></li>
-                                <li class="flex items-start gap-2"><span class="mr-2 text-gray-400">•</span> <span>{{ $t('proposal.terms.t1_2') }}</span></li>
-                                <li class="flex items-start gap-2"><span class="mr-2 text-gray-400">•</span> <span>{{ $t('proposal.terms.t1_3') }}</span></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-4 uppercase tracking-widest text-xs">{{ $t('proposal.terms.t3') }}</h4>
-                            <ul class="space-y-3 text-gray-600">
-                                <li class="flex items-start gap-2"><span class="mr-2 text-gray-400">$</span> <span>{{ $t('proposal.terms.t3_1') }}</span></li>
-                                <li class="flex items-start gap-2"><span class="mr-2 text-gray-400">$</span> <span>{{ $t('proposal.terms.t3_2') }}</span></li>
-                                <li class="flex items-start gap-2"><span class="mr-2 text-gray-400">$</span> <span>{{ $t('proposal.terms.t3_3') }}</span></li>
-                                <li class="flex items-start gap-2"><span class="mr-2 text-gray-400">$</span> <span>{{ $t('proposal.terms.t3_4') }}</span></li>
-                                <li class="flex items-start gap-2"><span class="mr-2 text-gray-400">$</span> <span>{{ $t('proposal.terms.t3_5') }}</span></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 mb-4 uppercase tracking-widest text-xs">{{ $t('proposal.terms.t2') }}</h4>
-                            <ul class="space-y-3 text-gray-600">
-                                <li class="flex items-start gap-2"><span class="mr-2 text-gray-400">•</span> <span>{{ $t('proposal.terms.t2_1') }}</span></li>
-                                <li class="flex items-start gap-2"><span class="mr-2 text-gray-400">•</span> <span>{{ $t('proposal.terms.t2_2') }}</span></li>
-                                <li class="flex items-start gap-2"><span class="mr-2 text-gray-400">•</span> <span>{{ $t('proposal.terms.t2_3') }}</span></li>
+                                <li v-for="(item, j) in col.items" :key="j" class="flex items-start gap-2">
+                                    <span class="mr-2 text-gray-400" v-if="i === 1 && projectType === 'mobile'">$</span>
+                                    <span class="mr-2 text-gray-400" v-else>•</span>
+                                    <span>{{ item }}</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -379,13 +384,27 @@ definePageMeta({
 })
 
 const activeSection = ref('hero')
+
+const projectTypes = [
+    { id: 'mobile', icon: '📱', labelTr: 'Mobil Uygulama', labelEn: 'Mobile App' },
+    { id: 'automation', icon: '🤖', labelTr: 'Otomasyon', labelEn: 'Automation' },
+    { id: 'web', icon: '🌐', labelTr: 'Web Sitesi', labelEn: 'Website' },
+    { id: 'crm', icon: '📊', labelTr: 'CRM Sistemi', labelEn: 'CRM System' },
+    { id: 'custom', icon: '✨', labelTr: 'Özel Proje', labelEn: 'Custom Project' }
+]
+const projectType = ref('mobile')
+
 const pageCount = ref(8)
 const backendEnabled = ref(false)
-const backendPrice = computed(() => backendEnabled.value ? 300 : 0)
+const backendPrice = computed(() => {
+    if (!backendEnabled.value) return 0
+    if (projectType.value === 'web') return 150
+    return 300
+})
 const deliveryTime = ref(28)
 const clientName = ref('')
 
-const features = ref([
+const defaultMobileFeatures = [
     { id: 'auth', price: 10, type: 'number', count: 0 },
     { id: 'ai', price: 100, selected: false },
     { id: 'revenuecat', price: 50, selected: false },
@@ -401,11 +420,222 @@ const features = ref([
     { id: 'support', price: 150, selected: false },
     { id: 'landing', price: 100, selected: false },
     { id: 'admin', price: 50, selected: false }
-])
+]
+
+const features = ref(JSON.parse(JSON.stringify(defaultMobileFeatures)))
+
+watch(projectType, (newType) => {
+    backendEnabled.value = false
+    pageCount.value = newType === 'web' ? 5 : 8
+
+    if (newType === 'mobile') {
+        features.value = JSON.parse(JSON.stringify(defaultMobileFeatures))
+    } else if (newType === 'automation') {
+        features.value = [
+            { id: 'auth', price: 10, type: 'number', count: 0 },
+            { id: 'scraping', price: 200, selected: false, labelTr: 'Veri Çekme (Scraping)', labelEn: 'Data Scraping' },
+            { id: 'cron', price: 100, selected: false, labelTr: 'Zamanlanmış Görevler', labelEn: 'Cron Jobs' },
+            { id: 'ai_analysis', price: 300, selected: false, labelTr: 'Yapay Zeka Analizi', labelEn: 'AI Analysis' },
+            { id: 'reporting', price: 150, selected: false, labelTr: 'Otomatik Raporlama', labelEn: 'Automated Reporting' },
+            { id: 'api_integration', price: 150, selected: false, labelTr: '3. Parti API Entegrasyonu', labelEn: '3rd Party API' }
+        ]
+    } else if (newType === 'web') {
+        features.value = [
+            { id: 'auth', price: 10, type: 'number', count: 0 },
+            { id: 'seo_advanced', price: 150, selected: false, labelTr: 'Gelişmiş SEO Paketi', labelEn: 'Advanced SEO' },
+            { id: 'blog', price: 100, selected: false, labelTr: 'Blog Sistemi', labelEn: 'Blog System' },
+            { id: 'ecommerce', price: 400, selected: false, labelTr: 'E-Ticaret Modülü', labelEn: 'E-Commerce' },
+            { id: 'payment', price: 150, selected: false, labelTr: 'Ödeme Geçidi', labelEn: 'Payment Gateway' }
+        ]
+    } else if (newType === 'crm') {
+        features.value = [
+            { id: 'auth', price: 10, type: 'number', count: 0 },
+            { id: 'roles', price: 200, selected: false, labelTr: 'Gelişmiş Rol Yönetimi', labelEn: 'Advanced Roles' },
+            { id: 'kanban', price: 250, selected: false, labelTr: 'Kanban Görev Panosu', labelEn: 'Kanban Board' },
+            { id: 'mail_integration', price: 200, selected: false, labelTr: 'Mail Entegrasyonu', labelEn: 'Mail Integration' },
+            { id: 'export', price: 100, selected: false, labelTr: 'Excel/PDF Dışa Aktarım', labelEn: 'Export Excel/PDF' }
+        ]
+    } else {
+        features.value = [
+            { id: 'custom_module1', price: 100, selected: false, labelTr: 'Özel Modül 1', labelEn: 'Custom Module 1' },
+            { id: 'custom_module2', price: 150, selected: false, labelTr: 'Özel Modül 2', labelEn: 'Custom Module 2' }
+        ]
+    }
+})
+
+const coreDevTitle = computed(() => {
+    if (projectType.value === 'mobile') return t('proposal.calc.frontend')
+    if (projectType.value === 'web') return locale.value === 'tr' ? 'Web Tasarım & Geliştirme' : 'Web Design & Development'
+    if (projectType.value === 'automation') return locale.value === 'tr' ? 'Otomasyon Core Script' : 'Automation Core Script'
+    if (projectType.value === 'crm') return locale.value === 'tr' ? 'CRM Altyapısı' : 'CRM Infrastructure'
+    return locale.value === 'tr' ? 'Özel Geliştirme' : 'Custom Development'
+})
 
 const frontendPrice = computed(() => {
-    const pc = Math.max(8, pageCount.value || 8)
-    return 300 + ((pc - 8) * 20)
+    if (projectType.value === 'mobile') return 300 + ((Math.max(8, pageCount.value || 8) - 8) * 20)
+    if (projectType.value === 'web') return 150 + ((Math.max(5, pageCount.value || 5) - 5) * 15)
+    if (projectType.value === 'automation') return 400
+    if (projectType.value === 'crm') return 800
+    return 0
+})
+
+const currentTimeline = computed(() => {
+    if (projectType.value === 'automation') {
+        return [
+            { title: locale.value === 'tr' ? 'Analiz & Tasarım' : 'Analysis & Design', desc: locale.value === 'tr' ? 'Otomasyon senaryolarının çıkarılması ve akış şemalarının hazırlanması.' : 'Extracting automation scenarios and preparing flowcharts.' },
+            { title: locale.value === 'tr' ? 'Scripting & Test' : 'Scripting & Testing', desc: locale.value === 'tr' ? 'Botların yazılması, sınır koşullarının test edilmesi ve optimizasyon.' : 'Writing bots, testing edge cases and optimization.' },
+            { title: locale.value === 'tr' ? 'Yayına Alma' : 'Deployment', desc: locale.value === 'tr' ? 'Sunucu kurulumu, zamanlanmış görevlerin (cron) ayarlanması ve teslimat.' : 'Server setup, setting up cron jobs and delivery.' }
+        ]
+    } else if (projectType.value === 'crm') {
+        return [
+            { title: locale.value === 'tr' ? 'Mimari Planlama' : 'Architecture Planning', desc: locale.value === 'tr' ? 'Veritabanı şemasının, rollerin ve yetkilendirme katmanlarının planlanması.' : 'Planning database schema, roles and authorizations.' },
+            { title: locale.value === 'tr' ? 'Core Development' : 'Core Development', desc: locale.value === 'tr' ? 'Backend API, Admin paneli ve temel iş kurallarının kodlanması.' : 'Coding Backend API, Admin panel and core business rules.' },
+            { title: locale.value === 'tr' ? 'Entegrasyon & Teslim' : 'Integration & Delivery', desc: locale.value === 'tr' ? '3. Parti servislerin entegrasyonu, veri aktarımı ve ekibe eğitim.' : 'Integration of 3rd Party services, data transfer and team training.' }
+        ]
+    } else if (projectType.value === 'web') {
+        return [
+            { title: locale.value === 'tr' ? 'UI/UX Tasarımı' : 'UI/UX Design', desc: locale.value === 'tr' ? 'Marka kimliğine uygun, özgün kurumsal web sitesi arayüz tasarımı.' : 'Corporate website interface design suitable for brand identity.' },
+            { title: locale.value === 'tr' ? 'Frontend & CMS' : 'Frontend & CMS', desc: locale.value === 'tr' ? 'Tasarımların kodlanması ve içerik yönetim sistemine (CMS) bağlanması.' : 'Coding designs and connecting to content management system.' },
+            { title: locale.value === 'tr' ? 'SEO & Yayına Alma' : 'SEO & Launch', desc: locale.value === 'tr' ? 'Site içi SEO ayarları, performans optimizasyonu ve canlıya alma süreci.' : 'On-page SEO settings, performance optimization and launch.' }
+        ]
+    } else {
+        return [
+            { title: t('proposal.timeline.step1'), desc: t('proposal.timeline.step1d') },
+            { title: t('proposal.timeline.step2'), desc: t('proposal.timeline.step2d') },
+            { title: t('proposal.timeline.step3'), desc: t('proposal.timeline.step3d') }
+        ]
+    }
+})
+
+const currentTerms = computed(() => {
+    if (projectType.value === 'automation') {
+        return [
+            {
+                title: locale.value === 'tr' ? 'BAKIM & DESTEK' : 'MAINTENANCE & SUPPORT',
+                items: [
+                    locale.value === 'tr' ? '1 Ay Ücretsiz Bakım' : '1 Month Free Maintenance',
+                    locale.value === 'tr' ? 'Hedef site değişimlerinde ek ücret' : 'Additional fee for target site changes',
+                    locale.value === 'tr' ? '7/24 Kesintisiz Sunucu İzleme' : '24/7 Server Monitoring'
+                ]
+            },
+            {
+                title: locale.value === 'tr' ? 'ÖDEME PLANI' : 'PAYMENT PLAN',
+                items: [
+                    locale.value === 'tr' ? '%50 Peşinat' : '50% Upfront',
+                    locale.value === 'tr' ? '%50 Proje Teslimi' : '50% on Delivery'
+                ]
+            },
+            {
+                title: locale.value === 'tr' ? 'HUKUKİ SORUMLULUK' : 'LEGAL RESPONSIBILITY',
+                items: [
+                    locale.value === 'tr' ? 'Hedef site politikaları müşteri sorumluluğundadır.' : 'Target site policies are customer responsibility.',
+                    locale.value === 'tr' ? 'GDPR/KVKK uyumluluğu gözetilir.' : 'GDPR/KVKK compliance is observed.'
+                ]
+            }
+        ]
+    } else if (projectType.value === 'crm') {
+        return [
+            {
+                title: locale.value === 'tr' ? 'VERİ GÜVENLİĞİ' : 'DATA SECURITY',
+                items: [
+                    locale.value === 'tr' ? 'Uçtan uca şifreleme' : 'End-to-end encryption',
+                    locale.value === 'tr' ? 'Düzenli yedekleme (Günlük)' : 'Regular backup (Daily)',
+                    locale.value === 'tr' ? 'Rol bazlı erişim denetimi (RBAC)' : 'Role-based access control (RBAC)'
+                ]
+            },
+            {
+                title: locale.value === 'tr' ? 'ÖDEME PLANI' : 'PAYMENT PLAN',
+                items: [
+                    locale.value === 'tr' ? '%40 Peşinat' : '40% Upfront',
+                    locale.value === 'tr' ? '%30 Ara Sürüm (Alpha)' : '30% Alpha Release',
+                    locale.value === 'tr' ? '%30 Proje Teslimi' : '30% on Delivery'
+                ]
+            },
+            {
+                title: locale.value === 'tr' ? 'KAYNAK KOD' : 'SOURCE CODE',
+                items: [
+                    locale.value === 'tr' ? 'Teslimat sonrası %100 mülkiyet' : '100% ownership after delivery',
+                    locale.value === 'tr' ? 'Dokümantasyon dahildir' : 'Documentation included'
+                ]
+            }
+        ]
+    } else if (projectType.value === 'web') {
+        return [
+            {
+                title: locale.value === 'tr' ? 'İÇERİK YÖNETİMİ' : 'CONTENT MANAGEMENT',
+                items: [
+                    locale.value === 'tr' ? 'Özelleştirilebilir Admin Paneli' : 'Customizable Admin Panel',
+                    locale.value === 'tr' ? 'SEO Dostu Altyapı' : 'SEO Friendly Infrastructure',
+                    locale.value === 'tr' ? '1 Yıl Ücretsiz Hosting & Domain' : '1 Year Free Hosting & Domain'
+                ]
+            },
+            {
+                title: locale.value === 'tr' ? 'ÖDEME PLANI' : 'PAYMENT PLAN',
+                items: [
+                    locale.value === 'tr' ? '%50 Peşinat' : '50% Upfront',
+                    locale.value === 'tr' ? '%50 Proje Teslimi' : '50% on Delivery'
+                ]
+            },
+            {
+                title: locale.value === 'tr' ? 'REVİZYON HAKKI' : 'REVISION RIGHTS',
+                items: [
+                    locale.value === 'tr' ? 'Tasarım aşamasında 2 büyük revizyon' : '2 major revisions during design',
+                    locale.value === 'tr' ? 'Yazılım aşamasında minör düzeltmeler' : 'Minor fixes during software phase'
+                ]
+            }
+        ]
+    } else {
+        return [
+            {
+                title: t('proposal.terms.t1'),
+                items: [t('proposal.terms.t1_1'), t('proposal.terms.t1_2'), t('proposal.terms.t1_3')]
+            },
+            {
+                title: t('proposal.terms.t3'),
+                items: [t('proposal.terms.t3_1'), t('proposal.terms.t3_2'), t('proposal.terms.t3_3'), t('proposal.terms.t3_4'), t('proposal.terms.t3_5')]
+            },
+            {
+                title: t('proposal.terms.t2'),
+                items: [t('proposal.terms.t2_1'), t('proposal.terms.t2_2'), t('proposal.terms.t2_3')]
+            }
+        ]
+    }
+})
+
+const currentTechStack = computed(() => {
+    if (projectType.value === 'mobile') {
+        return [
+            { title: t('proposal.techStack.mobile'), desc: t('proposal.techStack.mobileDesc') },
+            { title: t('proposal.techStack.state'), desc: t('proposal.techStack.stateDesc') },
+            { title: t('proposal.techStack.native'), desc: t('proposal.techStack.nativeDesc') },
+            { title: t('proposal.techStack.backend'), desc: t('proposal.techStack.backendDesc') },
+            { title: t('proposal.techStack.devops'), desc: t('proposal.techStack.devopsDesc'), fullWidth: true }
+        ]
+    } else if (projectType.value === 'automation') {
+        return [
+            { title: locale.value === 'tr' ? 'Scripting & Bot' : 'Scripting & Bot', desc: 'Python, Node.js, Puppeteer, Selenium' },
+            { title: locale.value === 'tr' ? 'Veri İşleme' : 'Data Processing', desc: 'Pandas, NumPy, Apache Kafka' },
+            { title: locale.value === 'tr' ? 'Veritabanı' : 'Database', desc: 'MongoDB, PostgreSQL, Redis' }
+        ]
+    } else if (projectType.value === 'web') {
+        return [
+            { title: locale.value === 'tr' ? 'Frontend Framework' : 'Frontend Framework', desc: 'Nuxt 4, Vue 3, TailwindCSS' },
+            { title: locale.value === 'tr' ? 'Backend API' : 'Backend API', desc: 'Node.js, Nitro Server' },
+            { title: locale.value === 'tr' ? 'Veritabanı' : 'Database', desc: 'PostgreSQL, Prisma ORM' },
+            { title: locale.value === 'tr' ? 'Sunucu' : 'Deployment', desc: 'Docker, Vercel / Cloudflare' }
+        ]
+    } else if (projectType.value === 'crm') {
+        return [
+            { title: locale.value === 'tr' ? 'Mimari' : 'Architecture', desc: 'Microservices, REST API, GraphQL' },
+            { title: locale.value === 'tr' ? 'Backend Core' : 'Backend Core', desc: 'FastAPI (Python) / Node.js' },
+            { title: locale.value === 'tr' ? 'Frontend' : 'Frontend', desc: 'React, Next.js, Material UI' },
+            { title: locale.value === 'tr' ? 'Güvenlik & Auth' : 'Security & Auth', desc: 'JWT, OAuth2, RBAC' }
+        ]
+    } else {
+        return [
+            { title: locale.value === 'tr' ? 'Özel Mimari' : 'Custom Architecture', desc: locale.value === 'tr' ? 'Projenize özel teknoloji yığını belirlenecektir.' : 'Tech stack will be determined specifically for your project.' }
+        ]
+    }
 })
 
 const deliveryFee = computed(() => {
