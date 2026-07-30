@@ -386,7 +386,7 @@ const deliveryTime = ref(28)
 const clientName = ref('')
 
 const features = ref([
-    { id: 'auth', price: 20, selected: false },
+    { id: 'auth', price: 10, type: 'number', count: 0 },
     { id: 'ai', price: 100, selected: false },
     { id: 'revenuecat', price: 50, selected: false },
     { id: 'credits', price: 50, selected: false },
@@ -394,12 +394,12 @@ const features = ref([
     { id: 'bug', price: 10, selected: false },
     { id: 'ios', price: 200, selected: false },
     { id: 'android', price: 200, selected: false },
-    { id: 'appgallery', price: 200, selected: false },
-    { id: 'store_meta', price: 10, selected: false },
+    { id: 'appgallery', price: 100, selected: false },
+    { id: 'store_meta', price: 30, selected: false },
     { id: 'branding', price: 100, selected: false },
     { id: 'source', price: 200, selected: false },
     { id: 'support', price: 150, selected: false },
-    { id: 'landing', price: 120, selected: false },
+    { id: 'landing', price: 100, selected: false },
     { id: 'admin', price: 50, selected: false }
 ])
 
@@ -409,7 +409,7 @@ const frontendPrice = computed(() => {
 })
 
 const deliveryFee = computed(() => {
-    if (deliveryTime.value === 14) return 100
+    if (deliveryTime.value === 14) return 150
     if (deliveryTime.value === 21) return 50
     return 0
 })
