@@ -380,25 +380,25 @@ definePageMeta({
 
 const activeSection = ref('hero')
 const pageCount = ref(8)
-const backendEnabled = ref(true)
+const backendEnabled = ref(false)
 const backendPrice = computed(() => backendEnabled.value ? 400 : 0)
 const deliveryTime = ref(28)
 const clientName = ref('')
 
 const features = ref([
-    { id: 'auth', price: 20, selected: true },
-    { id: 'ai', price: 100, selected: true },
-    { id: 'revenuecat', price: 50, selected: true },
-    { id: 'credits', price: 50, selected: true },
-    { id: 'l10n', price: 5, type: 'number', count: 1 },
-    { id: 'bug', price: 10, selected: true },
-    { id: 'ios', price: 200, selected: true },
-    { id: 'android', price: 200, selected: true },
+    { id: 'auth', price: 20, selected: false },
+    { id: 'ai', price: 100, selected: false },
+    { id: 'revenuecat', price: 50, selected: false },
+    { id: 'credits', price: 50, selected: false },
+    { id: 'l10n', price: 5, type: 'number', count: 0 },
+    { id: 'bug', price: 10, selected: false },
+    { id: 'ios', price: 200, selected: false },
+    { id: 'android', price: 200, selected: false },
     { id: 'appgallery', price: 200, selected: false },
-    { id: 'store_meta', price: 10, selected: true },
-    { id: 'branding', price: 100, selected: true },
+    { id: 'store_meta', price: 10, selected: false },
+    { id: 'branding', price: 100, selected: false },
     { id: 'source', price: 200, selected: false },
-    { id: 'support', price: 150, selected: true },
+    { id: 'support', price: 150, selected: false },
     { id: 'landing', price: 120, selected: false },
     { id: 'admin', price: 50, selected: false }
 ])
@@ -424,7 +424,7 @@ const featuresTotal = computed(() => {
 })
 
 const totalPrice = computed(() => {
-    return frontendPrice.value + backendPrice + featuresTotal.value + deliveryFee.value
+    return frontendPrice.value + backendPrice.value + featuresTotal.value + deliveryFee.value
 })
 
 const stepRanges = computed(() => {
@@ -439,16 +439,29 @@ let chartInstance = null
 const updateChart = () => {
     if (!priceChartCanvas.value) return
 
-    const newData = [frontendPrice.value, backendPrice.value, featuresTotal.value, deliveryFee.value].filter(v => v > 0)
+    const newData = []
+    const newLabels = []
+    const colors = []
     
-    // Create labels dynamically based on non-zero values
-    const allLabels = [t('proposal.chart.frontend'), t('proposal.chart.backend'), t('proposal.chart.modules'), t('proposal.chart.delivery')]
-    const newLabels = [allLabels[0], allLabels[1], allLabels[2]]
-    const colors = ['#27272a', '#a1a1aa', '#d4d4d8']
-    
+    if (frontendPrice.value > 0) {
+        newData.push(frontendPrice.value)
+        newLabels.push(t('proposal.chart.frontend'))
+        colors.push('#27272a')
+    }
+    if (backendPrice.value > 0) {
+        newData.push(backendPrice.value)
+        newLabels.push(t('proposal.chart.backend'))
+        colors.push('#a1a1aa')
+    }
+    if (featuresTotal.value > 0) {
+        newData.push(featuresTotal.value)
+        newLabels.push(t('proposal.chart.modules'))
+        colors.push('#d4d4d8')
+    }
     if (deliveryFee.value > 0) {
-        newLabels.push(allLabels[3])
-        colors.push('#3b82f6') // Blue accent for delivery fee
+        newData.push(deliveryFee.value)
+        newLabels.push(t('proposal.chart.delivery'))
+        colors.push('#3b82f6')
     }
 
     if (chartInstance) {
