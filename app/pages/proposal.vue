@@ -78,9 +78,9 @@
         <!-- Navbar -->
         <nav class="sticky top-0 z-50 glass-card py-4 border-b border-gray-200">
             <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2 md:gap-3">
                     <img src="/images/dagsolution-logo.png" class="h-6 md:h-8" alt="DAGSOLUTION" />
-                    <span class="font-bold text-xl tracking-tight hidden sm:block">DAGSOLUTION</span>
+                    <span class="font-bold text-lg md:text-xl tracking-tight">DAGSOLUTION</span>
                 </div>
                 <div class="hidden md:flex gap-8 font-medium text-sm text-gray-600">
                     <button @click="scrollToSection('hero')" class="nav-link" :class="{ active: activeSection === 'hero' }">{{ $t('proposal.nav.start') }}</button>
@@ -98,8 +98,8 @@
 
         <main class="max-w-6xl mx-auto px-6 pb-20">
             <!-- Hero Section -->
-            <section id="hero" class="py-20 text-center">
-                <h1 class="text-5xl md:text-6xl font-extrabold mb-6 text-gray-900 leading-tight tracking-tight">
+            <section id="hero" class="py-12 md:py-20 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-gray-900 leading-tight tracking-tight">
                     {{ $t('proposal.hero.title1') }} <span class="text-blue-600">{{ $t('proposal.hero.title2') }}</span> <br v-if="$t('proposal.hero.title3')">{{ $t('proposal.hero.title3') }}
                 </h1>
                 <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-12">
@@ -157,7 +157,7 @@
                                         <input type="radio" v-model="deliveryTime" :value="14" class="w-5 h-5 accent-blue-600">
                                         <span class="font-medium text-gray-800">{{ $t('proposal.calc.days14') }}</span>
                                     </div>
-                                    <span class="font-mono font-bold text-blue-600">+$100</span>
+                                    <span class="font-mono font-bold text-blue-600">+$150</span>
                                 </label>
                             </div>
                         </div>
@@ -183,7 +183,7 @@
                                         <input type="checkbox" v-model="backendEnabled" class="w-5 h-5 accent-zinc-800 cursor-pointer">
                                         <span class="font-semibold text-gray-800">{{ $t('proposal.calc.backend') }}</span>
                                     </div>
-                                    <span class="font-mono font-bold text-gray-800">${{ backendEnabled ? 400 : 0 }}</span>
+                                    <span class="font-mono font-bold text-gray-800">${{ backendEnabled ? 300 : 0 }}</span>
                                 </label>
                             </div>
                         </div>
@@ -249,35 +249,35 @@
                 </div>
 
                 <div class="relative max-w-4xl">
-                    <div class="absolute left-8 top-0 bottom-0 w-px bg-gray-200"></div>
-                    <div class="space-y-12 relative">
-                        <div class="flex items-start gap-8 timeline-step">
-                            <div class="w-16 h-16 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center z-10 step-circle transition-all">
-                                <span class="font-bold text-gray-700 text-sm">{{ stepRanges[0] }}</span>
+                    <div class="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gray-200"></div>
+                    <div class="space-y-8 md:space-y-12 relative">
+                        <div class="flex items-start gap-4 md:gap-8 timeline-step">
+                            <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center z-10 step-circle transition-all flex-shrink-0">
+                                <span class="font-bold text-gray-700 text-xs md:text-sm">{{ stepRanges[0] }}</span>
                             </div>
-                            <div class="bg-white p-6 rounded-2xl border border-gray-200 flex-1 shadow-sm hover:border-gray-400 transition-colors">
-                                <h3 class="font-bold text-xl mb-2 text-gray-900">{{ $t('proposal.timeline.step1') }}</h3>
-                                <p class="text-gray-500 text-sm">{{ $t('proposal.timeline.step1d') }}</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-8 timeline-step">
-                            <div class="w-16 h-16 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center z-10 step-circle transition-all">
-                                <span class="font-bold text-gray-700 text-sm">{{ stepRanges[1] }}</span>
-                            </div>
-                            <div class="bg-white p-6 rounded-2xl border border-gray-200 flex-1 shadow-sm hover:border-gray-400 transition-colors">
-                                <h3 class="font-bold text-xl mb-2 text-gray-900">{{ $t('proposal.timeline.step2') }}</h3>
-                                <p class="text-gray-500 text-sm">{{ $t('proposal.timeline.step2d') }}</p>
+                            <div class="bg-white p-5 md:p-6 rounded-2xl border border-gray-200 flex-1 shadow-sm hover:border-gray-400 transition-colors">
+                                <h3 class="font-bold text-lg md:text-xl mb-2 text-gray-900">{{ $t('proposal.timeline.step1') }}</h3>
+                                <p class="text-gray-500 text-xs md:text-sm">{{ $t('proposal.timeline.step1d') }}</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-8 timeline-step">
-                            <div class="w-16 h-16 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center z-10 step-circle transition-all">
-                                <span class="font-bold text-gray-700 text-sm">{{ stepRanges[2] }}</span>
+                        <div class="flex items-start gap-4 md:gap-8 timeline-step">
+                            <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center z-10 step-circle transition-all flex-shrink-0">
+                                <span class="font-bold text-gray-700 text-xs md:text-sm">{{ stepRanges[1] }}</span>
                             </div>
-                            <div class="bg-white p-6 rounded-2xl border border-gray-200 flex-1 shadow-sm hover:border-gray-400 transition-colors">
-                                <h3 class="font-bold text-xl mb-2 text-gray-900">{{ $t('proposal.timeline.step3') }}</h3>
-                                <p class="text-gray-500 text-sm">{{ $t('proposal.timeline.step3d') }}</p>
+                            <div class="bg-white p-5 md:p-6 rounded-2xl border border-gray-200 flex-1 shadow-sm hover:border-gray-400 transition-colors">
+                                <h3 class="font-bold text-lg md:text-xl mb-2 text-gray-900">{{ $t('proposal.timeline.step2') }}</h3>
+                                <p class="text-gray-500 text-xs md:text-sm">{{ $t('proposal.timeline.step2d') }}</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 md:gap-8 timeline-step">
+                            <div class="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center z-10 step-circle transition-all flex-shrink-0">
+                                <span class="font-bold text-gray-700 text-xs md:text-sm">{{ stepRanges[2] }}</span>
+                            </div>
+                            <div class="bg-white p-5 md:p-6 rounded-2xl border border-gray-200 flex-1 shadow-sm hover:border-gray-400 transition-colors">
+                                <h3 class="font-bold text-lg md:text-xl mb-2 text-gray-900">{{ $t('proposal.timeline.step3') }}</h3>
+                                <p class="text-gray-500 text-xs md:text-sm">{{ $t('proposal.timeline.step3d') }}</p>
                             </div>
                         </div>
                     </div>
@@ -381,7 +381,7 @@ definePageMeta({
 const activeSection = ref('hero')
 const pageCount = ref(8)
 const backendEnabled = ref(false)
-const backendPrice = computed(() => backendEnabled.value ? 400 : 0)
+const backendPrice = computed(() => backendEnabled.value ? 300 : 0)
 const deliveryTime = ref(28)
 const clientName = ref('')
 
@@ -392,11 +392,11 @@ const features = ref([
     { id: 'credits', price: 50, selected: false },
     { id: 'l10n', price: 5, type: 'number', count: 0 },
     { id: 'bug', price: 10, selected: false },
-    { id: 'ios', price: 200, selected: false },
-    { id: 'android', price: 200, selected: false },
+    { id: 'ios', price: 100, selected: false },
+    { id: 'android', price: 100, selected: false },
     { id: 'appgallery', price: 100, selected: false },
     { id: 'store_meta', price: 30, selected: false },
-    { id: 'branding', price: 100, selected: false },
+    { id: 'branding', price: 150, selected: false },
     { id: 'source', price: 200, selected: false },
     { id: 'support', price: 150, selected: false },
     { id: 'landing', price: 100, selected: false },
