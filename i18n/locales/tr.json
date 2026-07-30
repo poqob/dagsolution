@@ -260,5 +260,121 @@
     "switchTo": "Dil değiştir",
     "tr": "Türkçe",
     "en": "English"
+  },
+  "proposal": {
+    "title": "Dagsolution - İnteraktif Proje Teklifi",
+    "nav": {
+      "start": "Başlangıç",
+      "budget": "Bütçe",
+      "process": "Süreç",
+      "terms": "Şartlar"
+    },
+    "hero": {
+      "title1": "Fikirleriniz",
+      "title2": "14 Günde",
+      "title3": "Dünyaya Açılsın",
+      "desc": "Hız, ölçeklenebilirlik ve yüksek performans. Dagsolution olarak modern teknoloji yığınımızla mobil uygulamanızı sadece 2 haftada canlıya alıyoruz.",
+      "f1": "Çevik",
+      "f1d": "Dinamik Geliştirme",
+      "f2": "Ölçeklenebilir",
+      "f2d": "Kapsamlı Mimari",
+      "f3": "Performans",
+      "f3d": "Üst Düzey Optimizasyon"
+    },
+    "calc": {
+      "title": "Proje Kapsamı ve Bütçe Planlama",
+      "desc": "Bu bölüm, projeniz için seçtiğiniz modülleri ve yatırımın nasıl dağıldığını interaktif olarak görmenizi sağlar. Her seçim, toplam maliyeti ve bütçe dengesini anında günceller.",
+      "core": "Temel Geliştirme",
+      "frontend": "Frontend (Flutter)",
+      "frontendDesc": "İlk 8 sayfa taban fiyattır.",
+      "backend": "Backend Mimari",
+      "features": "Özellikler ve Entegrasyonlar",
+      "estimateLabel": "Tahmini Proje Bütçesi",
+      "delivery": "Teslimat Süresi",
+      "deliveryVal": "{days} Gün",
+      "deliveryTime": "Teslimat Süresi",
+      "days14": "14 Gün (+$100 Hızlı Teslimat)",
+      "days21": "21 Gün (+$50 Öncelikli)",
+      "days28": "28 Gün (Standart)",
+      "tech": "Teknoloji Yığını",
+      "techVal": "Flutter, FastAPI, PostgreSQL",
+      "print": "Teklifi PDF Olarak Kaydet"
+    },
+    "timeline": {
+      "title": "{days} Günlük Geliştirme Süreci",
+      "desc": "Zamanın en kıymetli hazine olduğunun farkındayız. Agresif takvimimiz, kaliteden ödün vermeden paralelleştirilmiş iş akışları üzerine kuruludur.",
+      "step1": "Altyapı ve Veri Mimarisi",
+      "step1d": "Sunucu kurulumu, Backend temelleri (Go), Veritabanı şemaları (Mongo/Redis) ve YZ FAISS entegrasyonu tamamlanır.",
+      "step2": "Mobil Arayüz ve Entegrasyon",
+      "step2d": "Flutter ile mobil uygulama örülür. Dil altyapısı, RevenueCat ve kredi sistemleri backend ile bağlanır.",
+      "step3": "Test ve Mağaza Onayı",
+      "step3d": "Hata ayıklama, görsel içerik hazırlığı ve App Store/Play Store onaya gönderim işlemleri gerçekleştirilir."
+    },
+    "techStack": {
+      "title": "Teknoloji Yığını ve Uzmanlık Alanları",
+      "desc": "Projelerimizde modern, ölçeklenebilir ve sağlam mimariler kurmak için endüstri standartlarında teknolojiler kullanıyoruz.",
+      "mobile": "Mobil Geliştirme",
+      "mobileDesc": "Flutter & Dart (Uzman), React Native, Clean Architecture, MVVM, SOLID Prensipleri.",
+      "state": "Durum Yönetimi (State)",
+      "stateDesc": "Riverpod, Provider, BLoC, Cubit.",
+      "native": "Yerel (Native) & Özellikler",
+      "nativeDesc": "Android, iOS (Temel), Harita Entegrasyonu, 3D, AR, RevenueCat (Para Kazanma).",
+      "backend": "Backend & Veritabanı",
+      "backendDesc": "Dart, Python, FastAPI, REST API, PostgreSQL, MongoDB, Redis.",
+      "devops": "DevOps & CI/CD",
+      "devopsDesc": "GitLab CI, Fastlane, Dart CI, Otomatik Testler, Docker, Kubernetes, Git."
+    },
+    "terms": {
+      "title": "Hukuki ve Teknik Şartlar",
+      "t1": "Süreç ve Revizyon (Ücretsiz)",
+      "t1_1": "Taban fiyata dahil 8 sayfa: Splash, Giriş, Ayarlar, Hakkında ve 4 özel sayfa.",
+      "t1_2": "Ücretsiz revizyon hakları: 4 adet minör (frontend/görsel) ve 1 adet majör (mekanik) revizyon.",
+      "t1_3": "14 günlük süre, onaylanan modüller ve bu revizyonlar için geçerlidir.",
+      "t2": "Ödeme ve Harcamalar",
+      "t2_1": "Ödeme Planı: %40 Başlangıç, %40 Test, %20 Onay.",
+      "t2_2": "Sunucu ve API (Harita, YZ vb.) kullanım bedelleri müşteriye aittir.",
+      "t2_3": "Kaynak kod teslimi seçilen pakete göre opsiyoneldir.",
+      "t3": "Ekstra Talepler ve Ücretlendirme",
+      "t3_1": "Frontend değişiklik talebi: $10",
+      "t3_2": "Frontend yeni sayfa eklemesi: $25",
+      "t3_3": "Backend değişiklik talebi: Kapsama göre değerlendirilir (küçük/büyük).",
+      "t3_4": "Backend yeni endpoint eklemesi: $25",
+      "t3_5": "Backend yeni mekanik/mantık eklemesi: $25'den başlar."
+    },
+    "features": {
+        "auth": "Giriş Yöntemleri (Auth)",
+        "ai": "AI Entegrasyonu",
+        "revenuecat": "RevenueCat Entegrasyonu",
+        "credits": "Ödeme Sistemi (Monetization)",
+        "l10n": "Çoklu Dil Desteği (+ Dil)",
+        "bug": "Hata Raporlama Modülü",
+        "ios": "App Store Yükleme/Onay",
+        "android": "Play Store Yükleme/Onay",
+        "appgallery": "AppGallery Yükleme/Onay",
+        "store_meta": "Mağaza SEO/Giriş Ayarları",
+        "branding": "Görsel İçerik & Branding",
+        "source": "Kaynak Kod Teslimi",
+        "support": "14 Günlük 12 Kişi ile Test Süreci",
+        "landing": "Uygulama Tanıtım Web Sayfası",
+        "admin": "Admin Paneli"
+    },
+    "chart": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "modules": "Modüller",
+      "delivery": "Teslimat"
+    },
+    "pdf": {
+      "title": "Dagsolution Teklifidir",
+      "clientPlaceholder": "Firma veya Müşteri Adı (Opsiyonel)",
+      "clientName": "Sayın {name}",
+      "service": "Hizmet / Modül",
+      "price": "Fiyat",
+      "total": "Genel Toplam",
+      "validity": "Bu teklif, iletildiği tarihten itibaren 15 gün süreyle geçerlidir. Onaylamak için lütfen imzalayarak tarafımıza iletiniz.",
+      "clientSignature": "Müşteri Onayı",
+      "companySignature": "Dagsolution Onayı",
+      "signLine": "Ad Soyad / İmza / Tarih"
+    }
   }
 }

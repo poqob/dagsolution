@@ -260,5 +260,121 @@
     "switchTo": "Switch language",
     "tr": "Türkçe",
     "en": "English"
+  },
+  "proposal": {
+    "title": "Dagsolution - Interactive Project Proposal",
+    "nav": {
+      "start": "Start",
+      "budget": "Budget",
+      "process": "Process",
+      "terms": "Terms"
+    },
+    "hero": {
+      "title1": "Launch Your Ideas in",
+      "title2": "14 Days",
+      "title3": "",
+      "desc": "Speed, scalability, and high performance. At Dagsolution, we launch your mobile app in just 2 weeks with our modern tech stack.",
+      "f1": "Agile",
+      "f1d": "Dynamic Development",
+      "f2": "Scalable",
+      "f2d": "Comprehensive Architecture",
+      "f3": "Performance",
+      "f3d": "High-Level Optimization"
+    },
+    "calc": {
+      "title": "Project Scope and Budget Planning",
+      "desc": "This section allows you to interactively see the modules you choose for your project and how the investment is distributed. Each selection instantly updates the total cost and budget balance.",
+      "core": "Core Development",
+      "frontend": "Frontend (Flutter)",
+      "frontendDesc": "First 8 pages are base price.",
+      "backend": "Backend Architecture",
+      "features": "Features and Integrations",
+      "estimateLabel": "Estimated Project Budget",
+      "delivery": "Delivery Time",
+      "deliveryVal": "{days} Days",
+      "deliveryTime": "Delivery Time",
+      "days14": "14 Days (+$100 Express)",
+      "days21": "21 Days (+$50 Priority)",
+      "days28": "28 Days (Standard)",
+      "tech": "Tech Stack",
+      "techVal": "Flutter, FastAPI, PostgreSQL",
+      "print": "Save Proposal as PDF"
+    },
+    "timeline": {
+      "title": "{days}-Day Accelerated Process",
+      "desc": "We know time is the most valuable asset. Our aggressive schedule is built on parallelized workflows without compromising quality.",
+      "step1": "Infrastructure & Data Architecture",
+      "step1d": "Server setup, Backend basics (Go), Database schemas (Mongo/Redis), and AI FAISS integration are completed.",
+      "step2": "Mobile UI & Integration",
+      "step2d": "Mobile app is woven with Flutter. Language infrastructure, RevenueCat, and credit systems are connected to the backend.",
+      "step3": "Testing & Store Approval",
+      "step3d": "Debugging, visual content preparation, and App Store/Play Store submission processes are carried out."
+    },
+    "techStack": {
+      "title": "Technology Stack & Expertise",
+      "desc": "We use industry-standard technologies to build modern, scalable, and robust architectures in our projects.",
+      "mobile": "Mobile Development",
+      "mobileDesc": "Flutter & Dart (Expert), React Native, Clean Architecture, MVVM, SOLID Principles.",
+      "state": "State Management",
+      "stateDesc": "Riverpod, Provider, BLoC, Cubit.",
+      "native": "Native & Features",
+      "nativeDesc": "Android, iOS (Basic), Map Integration, 3D, AR, RevenueCat (Monetization).",
+      "backend": "Backend & Database",
+      "backendDesc": "Dart, Python, FastAPI, REST APIs, PostgreSQL, MongoDB, Redis.",
+      "devops": "DevOps & CI/CD",
+      "devopsDesc": "GitLab CI, Fastlane, Dart CI, Automated Testing, Docker, Kubernetes, Git."
+    },
+    "terms": {
+      "title": "Legal and Technical Terms",
+      "t1": "Process and Revisions (Free)",
+      "t1_1": "8 base pages included: Splash, Login, Settings, About, and 4 custom pages.",
+      "t1_2": "Free revision rights: 4 minor (frontend/visual) and 1 major (mechanics) revisions.",
+      "t1_3": "The 14-day period is valid for approved modules and these revisions.",
+      "t2": "Payment and Expenses",
+      "t2_1": "Payment Plan: 40% Start, 40% Test, 20% Approval.",
+      "t2_2": "Server and API (Map, AI etc.) usage fees belong to the customer.",
+      "t2_3": "Source code delivery is optional depending on the chosen package.",
+      "t3": "Extra Requests and Pricing",
+      "t3_1": "Frontend change request: $10",
+      "t3_2": "Frontend new page addition: $25",
+      "t3_3": "Backend change request: Evaluated based on scope (minor/major).",
+      "t3_4": "Backend new endpoint addition: $25",
+      "t3_5": "Backend new mechanics addition: Starts from $25."
+    },
+    "features": {
+        "auth": "Authentication Methods (Auth)",
+        "ai": "AI Integration",
+        "revenuecat": "RevenueCat Integration",
+        "credits": "Payment System (Monetization)",
+        "l10n": "Multi-language Support (+ Lang)",
+        "bug": "Bug Reporting Module",
+        "ios": "App Store Upload/Approval",
+        "android": "Play Store Upload/Approval",
+        "appgallery": "AppGallery Upload/Approval",
+        "store_meta": "Store SEO/Entry Settings",
+        "branding": "Visual Content & Branding",
+        "source": "Source Code Delivery",
+        "support": "14-Day 12-Person Test Process",
+        "landing": "App Promo Web Page",
+        "admin": "Admin Panel"
+    },
+    "chart": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "modules": "Modules",
+      "delivery": "Delivery"
+    },
+    "pdf": {
+      "title": "Dagsolution Proposal",
+      "clientPlaceholder": "Company or Client Name (Optional)",
+      "clientName": "Dear {name}",
+      "service": "Service / Module",
+      "price": "Price",
+      "total": "Grand Total",
+      "validity": "This proposal is valid for 15 days from the date of issue. To accept, please sign and return this document.",
+      "clientSignature": "Client Approval",
+      "companySignature": "Dagsolution Approval",
+      "signLine": "Name / Signature / Date"
+    }
   }
 }
