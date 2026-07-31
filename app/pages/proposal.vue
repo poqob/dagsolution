@@ -4,7 +4,7 @@
     <!-- Printable PDF Layout (Hidden on Screen) -->
     <div class="print-only hidden font-sans text-gray-900 bg-white mx-auto min-h-screen flex-col">
         <div class="flex justify-between items-center border-b-2 border-gray-800 pb-2 mb-4">
-            <img src="/images/dagsolution-logo.png" class="h-14 object-contain" alt="DAGSOLUTION" />
+            <img src="/images/dagsolution-light-logo.png" class="h-14 object-contain" alt="DAGSOLUTION" />
             <div class="text-right">
                 <h1 class="text-xl font-bold text-gray-800 uppercase tracking-wide m-0">{{ $t('proposal.pdf.title') }}</h1>
                 <p class="text-gray-500 mt-1 m-0">Tarih: {{ new Date().toLocaleDateString(locale === 'tr' ? 'tr-TR' : 'en-US') }}</p>
@@ -79,7 +79,7 @@
         <nav class="sticky top-0 z-50 glass-card py-4 border-b border-gray-200">
             <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
                 <div class="flex items-center gap-2 md:gap-3">
-                    <img src="/images/dagsolution-logo.png" class="h-6 md:h-8" alt="DAGSOLUTION" />
+                    <img src="/images/dagsolution-light-logo.png" class="h-6 md:h-8" alt="DAGSOLUTION" />
                     <span class="font-bold text-lg md:text-xl tracking-tight">DAGSOLUTION</span>
                 </div>
                 <div class="hidden md:flex gap-8 font-medium text-sm text-gray-600">
@@ -129,33 +129,33 @@
                 </div>
 
                 <!-- Project Type Selector -->
-                <div class="mb-10 flex flex-wrap gap-3">
+                <div class="mb-8 md:mb-10 flex flex-wrap justify-center gap-2 md:gap-3">
                     <button v-for="type in projectTypes" :key="type.id" 
                         @click="projectType = type.id"
-                        class="px-6 py-3 rounded-xl border transition-all flex items-center gap-2 font-medium"
+                        class="px-4 py-2 md:px-6 md:py-3 text-sm md:text-base rounded-xl border transition-all flex items-center gap-2 font-medium"
                         :class="projectType === type.id ? 'border-zinc-900 bg-zinc-900 text-white shadow-md' : 'border-gray-200 bg-white text-gray-600 hover:border-gray-400'">
                         <span>{{ type.icon }}</span>
                         {{ locale === 'tr' ? type.labelTr : type.labelEn }}
                     </button>
                 </div>
 
-                <div v-if="projectType === 'custom'" class="bg-white border border-gray-200 rounded-3xl p-12 text-center max-w-4xl mx-auto shadow-sm">
-                    <div class="w-20 h-20 bg-zinc-900 rounded-full flex items-center justify-center text-white mx-auto mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <div v-if="projectType === 'custom'" class="bg-white border border-gray-200 rounded-2xl md:rounded-3xl p-6 md:p-12 text-center max-w-4xl mx-auto shadow-sm">
+                    <div class="w-16 h-16 md:w-20 md:h-20 bg-zinc-900 rounded-full flex items-center justify-center text-white mx-auto mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     </div>
-                    <h3 class="text-3xl font-bold text-gray-900 mb-4">{{ locale === 'tr' ? 'Projeniz benzersiz ise, çözümümüz de benzersiz olmalı.' : 'If your project is unique, our solution must be too.' }}</h3>
-                    <p class="text-gray-500 mb-8 text-lg">{{ locale === 'tr' ? 'Size özel teknoloji yığınları, modüller ve bütçe planlaması için bizimle iletişime geçin. Ekibimiz detayları görüşmek için hazır.' : 'Contact us for custom tech stacks, modules and budget planning. Our team is ready to discuss the details with you.' }}</p>
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{{ locale === 'tr' ? 'Projeniz benzersiz ise, çözümümüz de benzersiz olmalı.' : 'If your project is unique, our solution must be too.' }}</h3>
+                    <p class="text-gray-500 mb-8 text-base md:text-lg">{{ locale === 'tr' ? 'Size özel teknoloji yığınları, modüller ve bütçe planlaması için bizimle iletişime geçin. Ekibimiz detayları görüşmek için hazır.' : 'Contact us for custom tech stacks, modules and budget planning. Our team is ready to discuss the details with you.' }}</p>
                     
-                    <div class="flex flex-col md:flex-row gap-4 justify-center flex-wrap">
-                        <a href="mailto:mustafa@dagsolution.com" class="px-6 py-4 bg-zinc-900 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-zinc-800 transition">
+                    <div class="flex flex-col md:flex-row gap-3 md:gap-4 justify-center flex-wrap">
+                        <a href="mailto:mustafa@dagsolution.com" class="px-5 py-3 md:px-6 md:py-4 bg-zinc-900 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-zinc-800 transition text-sm md:text-base">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                             mustafa@dagsolution.com
                         </a>
-                        <a href="mailto:mustafabicer.iletisim@gmail.com" class="px-6 py-4 bg-white border border-gray-200 text-gray-900 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-gray-50 transition">
+                        <a href="mailto:mustafabicer.iletisim@gmail.com" class="px-5 py-3 md:px-6 md:py-4 bg-white border border-gray-200 text-gray-900 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-gray-50 transition text-sm md:text-base">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                             mustafabicer.iletisim@gmail.com
                         </a>
-                        <a href="https://t.me/poqob0" target="_blank" class="px-6 py-4 bg-[#229ED9] text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#1C88BA] transition">
+                        <a href="https://t.me/poqob0" target="_blank" class="px-5 py-3 md:px-6 md:py-4 bg-[#229ED9] text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#1C88BA] transition text-sm md:text-base">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                             @poqob0
                         </a>
@@ -358,7 +358,7 @@
         <footer class="bg-white border-t border-gray-200 py-12">
             <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="flex items-center gap-3">
-                    <img src="/images/dagsolution-logo.png" class="h-5" alt="DAGSOLUTION" />
+                    <img src="/images/dagsolution-light-logo.png" class="h-5" alt="DAGSOLUTION" />
                     <a href="https://www.dagsolution.com" class="font-bold text-gray-400 hover:text-gray-900 transition">DAGSOLUTION</a>
                 </div>
                 <p class="text-sm text-gray-400">© 2026 Dagsolution Yazılım Çözümleri. {{ $t('footer.rights') }}</p>
@@ -376,7 +376,7 @@ import Chart from 'chart.js/auto'
 const { t, locale, setLocale } = useI18n()
 
 useHead({
-    title: computed(() => t('proposal.title')),
+    title: 'Proje Teklifi - Project Proposal',
 })
 
 definePageMeta({
