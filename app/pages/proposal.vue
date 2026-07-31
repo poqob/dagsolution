@@ -513,7 +513,7 @@ const currentTerms = computed(() => {
             {
                 title: locale.value === 'tr' ? 'BAKIM & DESTEK' : 'MAINTENANCE & SUPPORT',
                 items: [
-                    locale.value === 'tr' ? '1 Ay Ücretsiz Bakım' : '1 Month Free Maintenance',
+                    locale.value === 'tr' ? '14 Gün Ücretsiz Bakım' : '14 Days Free Maintenance',
                     locale.value === 'tr' ? 'Hedef site değişimlerinde ek ücret' : 'Additional fee for target site changes',
                     locale.value === 'tr' ? '7/24 Kesintisiz Sunucu İzleme' : '24/7 Server Monitoring'
                 ]
@@ -565,8 +565,7 @@ const currentTerms = computed(() => {
                 title: locale.value === 'tr' ? 'İÇERİK YÖNETİMİ' : 'CONTENT MANAGEMENT',
                 items: [
                     locale.value === 'tr' ? 'Özelleştirilebilir Admin Paneli' : 'Customizable Admin Panel',
-                    locale.value === 'tr' ? 'SEO Dostu Altyapı' : 'SEO Friendly Infrastructure',
-                    locale.value === 'tr' ? '1 Yıl Ücretsiz Hosting & Domain' : '1 Year Free Hosting & Domain'
+                    locale.value === 'tr' ? 'SEO Dostu Altyapı' : 'SEO Friendly Infrastructure'
                 ]
             },
             {
@@ -579,8 +578,8 @@ const currentTerms = computed(() => {
             {
                 title: locale.value === 'tr' ? 'REVİZYON HAKKI' : 'REVISION RIGHTS',
                 items: [
-                    locale.value === 'tr' ? 'Tasarım aşamasında 2 büyük revizyon' : '2 major revisions during design',
-                    locale.value === 'tr' ? 'Yazılım aşamasında minör düzeltmeler' : 'Minor fixes during software phase'
+                    locale.value === 'tr' ? 'Tasarım aşamasında 1 büyük revizyon' : '1 major revision during design',
+                    locale.value === 'tr' ? 'Yazılım aşamasında minör düzeltmeler (4 Değişiklik Hakkı)' : 'Minor fixes during software phase (4 Rights)'
                 ]
             }
         ]
