@@ -28,14 +28,23 @@ export default defineNuxtConfig({
   site: {
     url: 'https://dagsolution.com',
     name: 'dağ solution | dag solution - DAGSolution Yazılım Çözümleri',
+    trailingSlash: true,
   },
 
   sitemap: {
     siteUrl: 'https://dagsolution.com',
     sources: ['/api/__sitemap__/urls'],
+    exclude: ['/proposal', '/proposal/**'],
     defaults: {
       changefreq: 'weekly',
       priority: 0.8,
+    },
+  },
+
+  routeRules: {
+    '/proposal': {
+      robots: false,
+      sitemap: false,
     },
   },
 
@@ -54,7 +63,7 @@ export default defineNuxtConfig({
         { name: 'googlebot', content: 'index, follow' },
         { property: 'og:site_name', content: 'dağ solution | dag solution - DAGSolution' },
         { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: 'https://dagsolution.com' },
+        { property: 'og:url', content: 'https://dagsolution.com/' },
         { property: 'og:locale', content: 'tr_TR' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
@@ -66,10 +75,6 @@ export default defineNuxtConfig({
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap' },
-        { rel: 'canonical', href: 'https://dagsolution.com' },
-        { rel: 'alternate', hreflang: 'tr', href: 'https://dagsolution.com' },
-        { rel: 'alternate', hreflang: 'en', href: 'https://dagsolution.com/en' },
-        { rel: 'alternate', hreflang: 'x-default', href: 'https://dagsolution.com' },
       ],
       script: [
         {

@@ -23,6 +23,27 @@ const logoPreviewSrc = computed(() =>
 const displaySizes = [1024, 512, 192, 64]
 
 const zipUrl = '/downloads/dagsolution-marka-kiti.zip'
+
+useHead({
+  title: 'Marka Kiti - Brand Assets | dağ solution, dag solution - DAGSolution',
+  meta: [
+    { name: 'description', content: 'DAGSolution resmi logo, renk paleti, tipografi ve marka varlıkları. PNG, SVG formatlarında logolar ve tasarım rehberi.' },
+    { name: 'keywords', content: 'DAGSolution marka kiti, logo indir, brand assets, dağ solution logo, dag solution, renk kodları' },
+    { property: 'og:title', content: 'Marka Kiti - DAGSolution Brand Assets' },
+    { property: 'og:description', content: 'DAGSolution resmi marka varlıkları, logolar, renk paleti ve tipografi rehberi.' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:image', content: 'https://dagsolution.com/brand/png/dark-512x512.png' },
+    { property: 'og:url', content: 'https://dagsolution.com/brand/' },
+    { property: 'og:locale', content: 'tr_TR' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: 'Marka Kiti - DAGSolution' },
+    { name: 'twitter:description', content: 'DAGSolution marka kiti, logo paketleri ve kurumsal kimlik varlıkları.' },
+    { name: 'twitter:image', content: 'https://dagsolution.com/brand/png/dark-512x512.png' },
+  ],
+  link: [
+    { rel: 'canonical', href: 'https://dagsolution.com/brand/' },
+  ]
+})
 </script>
 
 <template>

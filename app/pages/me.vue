@@ -295,7 +295,7 @@ useHead({
     { property: 'og:description', content: 'Mustafa Biçer - dağ solution kurucu. Bilgisayar Mühendisi, AI & ML Specialist. Teknofest finalist.' },
     { property: 'og:type', content: 'profile' },
     { property: 'og:image', content: 'https://dagsolution.com/og-image.svg' },
-    { property: 'og:url', content: 'https://dagsolution.com/me' },
+    { property: 'og:url', content: 'https://dagsolution.com/me/' },
     { property: 'og:locale', content: 'tr_TR' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: 'Hakkımda - Mustafa Biçer | DAGSolution' },
@@ -303,7 +303,7 @@ useHead({
     { name: 'twitter:image', content: 'https://dagsolution.com/og-image.svg' },
   ],
   link: [
-    { rel: 'canonical', href: 'https://dagsolution.com/me' },
+    { rel: 'canonical', href: 'https://dagsolution.com/me/' },
   ]
 })
 </script>

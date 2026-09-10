@@ -377,10 +377,14 @@ const { t, locale, setLocale } = useI18n()
 
 useHead({
     title: 'Proje Teklifi - Project Proposal',
+    meta: [
+        { name: 'robots', content: 'noindex, nofollow' }
+    ]
 })
 
 definePageMeta({
     layout: false,
+    sitemap: false,
 })
 
 const activeSection = ref('hero')

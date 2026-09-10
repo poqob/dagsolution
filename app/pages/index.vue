@@ -8,7 +8,7 @@ useHead({
     { property: 'og:description', content: 'dağ solution, dag solution. AI, IoT ve mobil teknolojiler ile kurumsal ve kişisel yazılım çözümleri. Bursa/Sakarya merkezli.' },
     { property: 'og:type', content: 'website' },
     { property: 'og:image', content: 'https://dagsolution.com/og-image.svg' },
-    { property: 'og:url', content: 'https://dagsolution.com' },
+    { property: 'og:url', content: 'https://dagsolution.com/' },
     { property: 'og:locale', content: 'tr_TR' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: 'dağ solution | dag solution - DAGSolution Yazılım Çözümleri' },
@@ -16,7 +16,7 @@ useHead({
     { name: 'twitter:image', content: 'https://dagsolution.com/og-image.svg' },
   ],
   link: [
-    { rel: 'canonical', href: 'https://dagsolution.com' },
+    { rel: 'canonical', href: 'https://dagsolution.com/' },
   ]
 })
 </script>
