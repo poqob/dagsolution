@@ -2,13 +2,7 @@
 import { ArrowRight, Sparkles } from 'lucide-vue-next'
 
 const { isDark } = useTheme()
-const isVisible = ref(false)
-
-onMounted(() => {
-  setTimeout(() => {
-    isVisible.value = true
-  }, 100)
-})
+const isVisible = ref(true)
 </script>
 
 <template>
@@ -28,17 +22,25 @@ onMounted(() => {
     
     <div class="container-custom relative z-10 flex-1 flex flex-col items-center justify-center">
       <div class="max-w-4xl mx-auto text-center">
-        <!-- Logo with real image -->
+        <!-- Logo with optimized image and larger size -->
         <div 
           class="inline-flex items-center justify-center mb-8 animate-fade-in"
           :class="{ 'opacity-100 translate-y-0': isVisible, 'opacity-0 translate-y-4': !isVisible }"
         >
-          <img 
-            :src="isDark ? '/images/dagsolution-logo.png' : '/images/dagsolution-light-logo.png'" 
-            alt="DAGSolution Logo" 
-            class="w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 object-contain drop-shadow-2xl"
-            :class="isDark ? 'drop-shadow-[0_0_40px_rgba(150,150,170,0.15)]' : 'drop-shadow-[0_0_30px_rgba(99,102,241,0.2)]'"
-          />
+          <picture class="inline-flex items-center justify-center">
+            <source :srcset="isDark ? '/images/dagsolution-logo.webp' : '/images/dagsolution-light-logo.webp'" type="image/webp" />
+            <img 
+              :src="isDark ? '/images/dagsolution-logo.png' : '/images/dagsolution-light-logo.png'" 
+              alt="DAGSolution Logo" 
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              width="512"
+              height="512"
+              class="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] object-contain drop-shadow-2xl transition-transform duration-300 hover:scale-105"
+              :class="isDark ? 'drop-shadow-[0_0_40px_rgba(150,150,170,0.15)]' : 'drop-shadow-[0_0_30px_rgba(99,102,241,0.2)]'"
+            />
+          </picture>
         </div>
 
         <h1 
@@ -46,7 +48,7 @@ onMounted(() => {
           :class="{ 'opacity-100 translate-y-0': isVisible, 'opacity-0 translate-y-4': !isVisible }"
           style="animation-delay: 100ms"
         >
-          <span class="text-text-primary">dağ</span><span class="gradient-text"> solution</span>
+          <span class="text-text-primary">Dağ</span><span class="gradient-text"> solution</span>
           <span class="sr-only"> | dag solution | dagsolution</span>
         </h1>
 

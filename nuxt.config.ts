@@ -72,6 +72,7 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'preload', as: 'image', href: '/images/dagsolution-logo.webp', type: 'image/webp' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap' },
@@ -138,6 +139,18 @@ export default defineNuxtConfig({
               },
               {
                 '@type': 'SoftwareApplication',
+                'name': 'Mobil PDKS',
+                'applicationCategory': 'BusinessApplication',
+                'operatingSystem': 'Web, iOS, Android',
+                'offers': {
+                  '@type': 'Offer',
+                  'price': '0',
+                  'priceCurrency': 'TRY'
+                },
+                'url': 'https://pdks.dagsolution.com'
+              },
+              {
+                '@type': 'SoftwareApplication',
                 'name': 'QR Master',
                 'applicationCategory': 'MobileApplication',
                 'operatingSystem': 'Android',
@@ -176,6 +189,54 @@ export default defineNuxtConfig({
                   'priceCurrency': 'USD'
                 },
                 'url': 'https://play.google.com/store/apps/details?id=com.dag.kdv_2026'
+              },
+              {
+                '@type': 'SoftwareApplication',
+                'name': '3D StoreLink',
+                'applicationCategory': 'BusinessApplication',
+                'operatingSystem': 'Web, Cloud',
+                'offers': {
+                  '@type': 'Offer',
+                  'price': '0',
+                  'priceCurrency': 'USD'
+                },
+                'url': 'https://3dstorelink.com'
+              },
+              {
+                '@type': 'SoftwareApplication',
+                'name': 'Redfirst',
+                'applicationCategory': 'BusinessApplication',
+                'operatingSystem': 'Web, Cloud',
+                'offers': {
+                  '@type': 'Offer',
+                  'price': '0',
+                  'priceCurrency': 'USD'
+                },
+                'url': 'https://www.redfirst.net'
+              },
+              {
+                '@type': 'SoftwareApplication',
+                'name': 'Replai - Reply AI',
+                'applicationCategory': 'UtilitiesApplication',
+                'operatingSystem': 'Android, iOS',
+                'offers': {
+                  '@type': 'Offer',
+                  'price': '0',
+                  'priceCurrency': 'USD'
+                },
+                'url': 'https://github.com/poqob/reply-ai'
+              },
+              {
+                '@type': 'SoftwareApplication',
+                'name': 'GEÇER - SMMM Yeterlilik Soru Bankası',
+                'applicationCategory': 'EducationalApplication',
+                'operatingSystem': 'Android, iOS',
+                'offers': {
+                  '@type': 'Offer',
+                  'price': '0',
+                  'priceCurrency': 'TRY'
+                },
+                'url': 'https://gecer.dagsolution.com'
               },
               {
                 '@type': 'Person',

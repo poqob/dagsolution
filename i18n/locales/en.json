@@ -2,6 +2,7 @@
   "nav": {
     "services": "Services",
     "projects": "Projects",
+    "faq": "FAQ",
     "brand": "Brand Kit",
     "about": "About",
     "contact": "Contact",
@@ -75,15 +76,21 @@
     "subtitle": "Mobile apps and open source projects we've developed",
     "viewAll": "View All",
     "filter": {
-      "all": "All",
-      "demo": "Demo",
+      "commercial": "Commercial",
+      "devops": "DevOps / MCP",
       "mobile": "Mobile",
+      "demo": "Demo",
       "ai": "AI & ML",
-      "iot": "IoT"
+      "iot": "IoT",
+      "all": "All"
     },
     "googlePlay": "Google Play",
     "github": "GitHub",
-    "viewProject": "View Project"
+    "viewProject": "View Project",
+    "viewDetails": "View Details",
+    "visitSite": "Open Live Project",
+    "features": "Key Features",
+    "technologies": "Tech Stack"
   },
   "contact": {
     "title": "Get in",

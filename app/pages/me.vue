@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Github, Linkedin, Mail, Download, ExternalLink, GraduationCap, MapPin, Award, Briefcase, Code } from 'lucide-vue-next'
-import { projects } from '~/data/content'
+import { Github, Linkedin, Mail, Download, ExternalLink, GraduationCap, MapPin, Award, Briefcase, Code, Sparkles, Info, Play, Video, Apple } from 'lucide-vue-next'
+import { projects, type Project } from '~/data/content'
 
 const { locale } = useI18n()
 
@@ -133,7 +133,8 @@ const certifications = computed(() => [
     issuer: $t('me.certificationsData.greenFuture.issuer'),
     date: $t('me.certificationsData.greenFuture.date'),
     link: $t('me.certificationsData.greenFuture.link'),
-    image: 'https://media.licdn.com/dms/image/v2/D4D0BAQGoeinYevF6pQ/company-logo_100_100/company-logo_100_100/0/1713349073559/eurodesk_network_logo?e=1777507200&v=beta&t=__Mj1ch0T-gKej_2Q7Wn193ZbUvnmxJDpPrf0TIKGuk',
+    icon: Award,
+    color: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30',
   },
   {
     id: 'teknofest-industry',
@@ -141,7 +142,8 @@ const certifications = computed(() => [
     issuer: $t('me.certificationsData.teknofestIndustry.issuer'),
     date: $t('me.certificationsData.teknofestIndustry.date'),
     link: $t('me.certificationsData.teknofestIndustry.link'),
-    image: 'https://media.licdn.com/dms/image/v2/D560BAQEQXJ3ZrzuieA/company-logo_100_100/company-logo_100_100/0/1723620949699/teknofest_logo?e=1777507200&v=beta&t=gdoqol7tLJSyFa83bx_TF_CO3S5Iv6ZOznuwaLxNR08',
+    icon: Award,
+    color: 'text-red-400 bg-red-500/10 border-red-500/30',
   },
   {
     id: 'flutter-btk',
@@ -149,7 +151,8 @@ const certifications = computed(() => [
     issuer: $t('me.certificationsData.flutterBtk.issuer'),
     date: $t('me.certificationsData.flutterBtk.date'),
     link: $t('me.certificationsData.flutterBtk.link'),
-    image: 'https://media.licdn.com/dms/image/v2/D560BAQFzhoINQt47kw/company-logo_100_100/company-logo_100_100/0/1733413650231?e=1777507200&v=beta&t=RTKTXpu5fD8W8eTwcFfeTTtIZzaKDcukLqKRXvWL5oA',
+    icon: GraduationCap,
+    color: 'text-cyan-400 bg-cyan-500/10 border-cyan-500/30',
   },
   {
     id: 'teknofest-ai',
@@ -157,19 +160,30 @@ const certifications = computed(() => [
     issuer: $t('me.certificationsData.teknofestAi.issuer'),
     date: $t('me.certificationsData.teknofestAi.date'),
     link: $t('me.certificationsData.teknofestAi.link'),
-    image: 'https://media.licdn.com/dms/image/v2/D560BAQEQXJ3ZrzuieA/company-logo_100_100/company-logo_100_100/0/1723620949699/teknofest_logo?e=1777507200&v=beta&t=gdoqol7tLJSyFa83bx_TF_CO3S5Iv6ZOznuwaLxNR08',
+    icon: Sparkles,
+    color: 'text-purple-400 bg-purple-500/10 border-purple-500/30',
   },
 ])
 
 const categories = computed(() => [
-  { id: 'all', label: $t('projects.filter.all') },
-  { id: 'demo', label: $t('projects.filter.demo') },
+  { id: 'commercial', label: $t('projects.filter.commercial') },
+  { id: 'devops', label: $t('projects.filter.devops') },
   { id: 'mobile', label: $t('projects.filter.mobile') },
+  { id: 'demo', label: $t('projects.filter.demo') },
   { id: 'ai', label: $t('projects.filter.ai') },
   { id: 'iot', label: $t('projects.filter.iot') },
+  { id: 'opensource', label: 'Open Source' },
+  { id: 'all', label: $t('projects.filter.all') },
 ])
 
-const activeCategory = ref('all')
+const activeCategory = ref('commercial')
+const selectedProject = ref<Project | null>(null)
+const isModalOpen = ref(false)
+
+const openModal = (project: Project) => {
+  selectedProject.value = project
+  isModalOpen.value = true
+}
 
 const localizedProjects = computed(() =>
   projects.map(p => ({
@@ -181,8 +195,23 @@ const localizedProjects = computed(() =>
 
 const filteredProjects = computed(() => {
   if (activeCategory.value === 'all') return localizedProjects.value
-  return localizedProjects.value.filter(p => p.category === activeCategory.value)
+  if (activeCategory.value === 'opensource') {
+    return localizedProjects.value.filter(p => p.category === 'ai' || p.category === 'iot' || p.category === 'devops' || p.categories?.includes('opensource'))
+  }
+  return localizedProjects.value.filter(p => p.category === activeCategory.value || p.categories?.includes(activeCategory.value as any))
 })
+
+const getCategoryColor = (category: string) => {
+  switch (category) {
+    case 'commercial': return 'from-blue-600/30 to-indigo-600/30'
+    case 'devops': return 'from-purple-600/30 to-indigo-600/30'
+    case 'mobile': return 'from-green-500/20 to-emerald-500/20'
+    case 'ai': return 'from-purple-500/20 to-pink-500/20'
+    case 'iot': return 'from-amber-500/20 to-cyan-500/20'
+    case 'demo': return 'from-orange-500/20 to-yellow-500/20'
+    default: return 'from-accent-blue/20 to-purple-500/20'
+  }
+}
 
 const skillCategories = [
   {
@@ -572,23 +601,21 @@ useHead({
             :href="cert.link"
             :target="cert.link ? '_blank' : undefined"
             :rel="cert.link ? 'noopener noreferrer' : undefined"
-            class="card hover:border-accent-blue/50 transition-all duration-300 cursor-pointer block card-reveal"
+            class="card hover:border-accent-blue/50 transition-all duration-300 cursor-pointer block card-reveal group"
             :class="{ 'reveal-visible': certRevealed }"
             :style="{ transitionDelay: `${index * 100}ms` }"
           >
             <div class="flex items-start gap-4">
-              <img 
-                :src="cert.image" 
-                :alt="cert.issuer"
-                class="w-12 h-12 rounded-xl object-contain bg-white shrink-0"
-              />
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 border transition-transform duration-300 group-hover:scale-105" :class="cert.color">
+                <component :is="cert.icon" class="w-6 h-6" />
+              </div>
               <div class="flex-1 min-w-0">
-                <h3 class="font-semibold text-text-primary text-sm leading-tight">{{ cert.title }}</h3>
+                <h3 class="font-semibold text-text-primary text-sm leading-tight group-hover:text-accent-blue transition-colors">{{ cert.title }}</h3>
                 <p class="text-text-secondary text-xs mt-1">{{ cert.issuer }}</p>
                 <p class="text-text-muted text-xs mt-1">{{ cert.date }}</p>
                 <span 
                   v-if="cert.link"
-                  class="inline-flex items-center gap-1 text-accent-blue text-xs mt-2"
+                  class="inline-flex items-center gap-1 text-accent-blue text-xs mt-2 group-hover:underline"
                 >
                   {{ $t('me.viewCertificate') }}
                   <ExternalLink class="w-3 h-3" />
@@ -659,30 +686,40 @@ useHead({
           <div 
             v-for="(project, index) in filteredProjects" 
             :key="project.id"
-            class="card group overflow-hidden p-0 card-reveal"
-            :class="{ 'reveal-visible': projectsRevealed, 'cursor-pointer': project.links?.live }"
+            class="card group overflow-hidden p-0 card-reveal cursor-pointer hover:border-accent-blue/50 hover:shadow-xl transition-all duration-300 flex flex-col"
+            :class="{ 'reveal-visible': projectsRevealed }"
             :style="{ transitionDelay: `${index * 80}ms` }"
-            @click="project.links?.live ? navigateTo(project.links.live, { external: true, open: { target: '_blank' } }) : undefined"
+            @click="openModal(project)"
           >
-            <div class="h-32 bg-gradient-to-br from-accent-blue/20 to-purple-500/20 flex items-center justify-center overflow-hidden">
+            <div class="h-44 bg-gradient-to-br flex items-center justify-center overflow-hidden relative" :class="getCategoryColor(project.category)">
               <img 
                 v-if="project.image"
                 :src="project.image" 
                 :alt="project.title"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <span v-else class="text-3xl font-bold text-text-muted/50">{{ project.title.charAt(0) }}</span>
+              <span v-else class="text-4xl font-bold text-text-muted/50">{{ project.title.charAt(0) }}</span>
+
+              <!-- Quick View Overlay on Hover -->
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white text-xs font-semibold backdrop-blur-[2px]">
+                <Info class="w-4 h-4" />
+                <span>{{ $t('projects.viewDetails') }}</span>
+              </div>
             </div>
             
-            <div class="p-5">
-              <h3 class="font-semibold text-text-primary mb-2 group-hover:text-accent-blue transition-colors">
-                {{ project.title }}
-              </h3>
-              <p class="text-text-secondary text-sm mb-4 line-clamp-2">
+            <div class="p-6 flex-1 flex flex-col">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-lg font-bold text-text-primary group-hover:text-accent-blue transition-colors">
+                  {{ project.title }}
+                </h3>
+                <span class="badge text-xs uppercase font-semibold">{{ project.category === 'devops' ? 'DevOps / MCP' : project.category }}</span>
+              </div>
+              
+              <p class="text-text-secondary text-sm mb-4 line-clamp-3 leading-relaxed flex-1">
                 {{ project.description }}
               </p>
               
-              <div class="flex flex-wrap gap-2 mb-4">
+              <div class="flex flex-wrap gap-2 mb-5">
                 <span 
                   v-for="tech in project.techStack.slice(0, 3)" 
                   :key="tech"
@@ -690,50 +727,87 @@ useHead({
                 >
                   {{ tech }}
                 </span>
+                <span v-if="project.techStack.length > 3" class="badge text-xs">
+                  +{{ project.techStack.length - 3 }}
+                </span>
               </div>
 
-              <div class="flex flex-wrap gap-2">
-                <a 
-                  v-if="project.links?.live" 
-                  :href="project.links.live"
-                  target="_blank"
-                  @click.stop
-                  class="text-xs text-accent-blue hover:underline flex items-center gap-1"
+              <div class="flex items-center justify-between pt-3 border-t border-border/40 mt-auto" @click.stop>
+                <button 
+                  @click="openModal(project)"
+                  class="text-xs font-medium text-accent-blue hover:underline flex items-center gap-1"
                 >
-                  <ExternalLink class="w-3 h-3" /> Web
-                </a>
-                <a 
-                  v-if="project.links?.github" 
-                  :href="project.links.github"
-                  target="_blank"
-                  @click.stop
-                  class="text-xs text-accent-blue hover:underline flex items-center gap-1"
-                >
-                  <Github class="w-3 h-3" /> {{ $t('projects.github') }}
-                </a>
-                <a 
-                  v-if="project.links?.googlePlay" 
-                  :href="project.links.googlePlay"
-                  target="_blank"
-                  @click.stop
-                  class="text-xs text-accent-blue hover:underline flex items-center gap-1"
-                >
-                  <ExternalLink class="w-3 h-3" /> {{ $t('projects.googlePlay') }}
-                </a>
-                <a 
-                  v-if="project.links?.appGallery" 
-                  :href="project.links.appGallery"
-                  target="_blank"
-                  @click.stop
-                  class="text-xs text-accent-blue hover:underline flex items-center gap-1"
-                >
-                  <ExternalLink class="w-3 h-3" /> AppGallery
-                </a>
+                  {{ $t('projects.viewDetails') }} →
+                </button>
+
+                <div class="flex gap-2">
+                  <a 
+                    v-if="project.links?.googlePlay" 
+                    :href="project.links.googlePlay" 
+                    target="_blank"
+                    class="flex items-center gap-1 px-2.5 py-1 rounded-md bg-green-500/10 text-green-400 text-xs hover:bg-green-500/20 transition-colors"
+                    title="Google Play"
+                  >
+                    <Play class="w-3 h-3" />
+                  </a>
+                  <a 
+                    v-if="project.links?.appStore" 
+                    :href="project.links.appStore" 
+                    target="_blank"
+                    class="flex items-center gap-1 px-2.5 py-1 rounded-md bg-zinc-700/20 text-zinc-300 text-xs hover:bg-zinc-700/40 transition-colors"
+                    title="App Store"
+                  >
+                    <Apple class="w-3 h-3" />
+                  </a>
+                  <a 
+                    v-if="project.links?.appGallery" 
+                    :href="project.links.appGallery" 
+                    target="_blank"
+                    class="flex items-center gap-1 px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-400 text-xs hover:bg-blue-500/20 transition-colors"
+                    title="AppGallery"
+                  >
+                    <ExternalLink class="w-3 h-3" />
+                  </a>
+                  <a 
+                    v-if="project.links?.youtube" 
+                    :href="project.links.youtube"
+                    target="_blank"
+                    class="flex items-center gap-1 px-2.5 py-1 rounded-md bg-red-500/10 text-red-400 text-xs hover:bg-red-500/20 transition-colors"
+                    title="YouTube Tutorial"
+                  >
+                    <Video class="w-3 h-3" />
+                  </a>
+                  <a 
+                    v-if="project.links?.github" 
+                    :href="project.links.github"
+                    target="_blank"
+                    class="flex items-center gap-1 px-2.5 py-1 rounded-md bg-gray-500/10 text-gray-300 text-xs hover:bg-gray-500/20 transition-colors"
+                    title="GitHub"
+                  >
+                    <Github class="w-3 h-3" />
+                  </a>
+                  <a 
+                    v-if="project.links?.live" 
+                    :href="project.links.live"
+                    target="_blank"
+                    class="flex items-center gap-1.5 px-3 py-1 rounded-md bg-accent-blue/10 text-accent-blue text-xs hover:bg-accent-blue/20 transition-colors font-medium"
+                  >
+                    <ExternalLink class="w-3 h-3" />
+                    Live
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Project Detail Modal -->
+      <UiProjectModal 
+        :project="selectedProject" 
+        :is-open="isModalOpen" 
+        @close="isModalOpen = false" 
+      />
     </section>
 
     <!-- Business Card Section -->

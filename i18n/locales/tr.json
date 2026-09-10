@@ -2,6 +2,7 @@
   "nav": {
     "services": "Hizmetler",
     "projects": "Projeler",
+    "faq": "SSS",
     "brand": "Marka Kiti",
     "about": "Hakkımızda",
     "contact": "İletişim",
@@ -75,15 +76,21 @@
     "subtitle": "Geliştirdiğimiz mobil uygulamalar ve açık kaynak projeler",
     "viewAll": "Tümünü Gör",
     "filter": {
-      "all": "Tümü",
-      "demo": "Demo",
+      "commercial": "Kurumsal",
+      "devops": "DevOps / MCP",
       "mobile": "Mobil",
+      "demo": "Demo",
       "ai": "AI & ML",
-      "iot": "IoT"
+      "iot": "IoT",
+      "all": "Tümü"
     },
     "googlePlay": "Google Play",
     "github": "GitHub",
-    "viewProject": "Projeyi İncele"
+    "viewProject": "Projeyi İncele",
+    "viewDetails": "Detayları Gör",
+    "visitSite": "Canlı Projeyi Aç",
+    "features": "Öne Çıkan Özellikler",
+    "technologies": "Kullanılan Teknolojiler"
   },
   "contact": {
     "title": "İletişime",

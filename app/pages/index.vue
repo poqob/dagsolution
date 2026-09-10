@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import HomeFaqSection from '~/components/home/FaqSection.vue'
+
 useHead({
   title: 'dağ solution | dag solution - DAGSolution Yazılım Çözümleri | AI, Mobil, IoT',
   meta: [
@@ -27,6 +29,7 @@ useHead({
     <HomeAboutStrip />
     <HomeServicesSection />
     <HomePortfolioSection />
+    <HomeFaqSection />
     <HomeContactCTA />
   </div>
 </template>

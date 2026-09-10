@@ -11,6 +11,7 @@ onMounted(() => {
 const navLinks = [
   { label: 'nav.services', href: '/#services' },
   { label: 'nav.projects', href: '/#projects' },
+  { label: 'nav.faq', href: '/#faq' },
   { label: 'nav.brand', href: '/brand' },
   { label: 'nav.about', href: '/#about' },
   { label: 'nav.contact', href: '/#contact' },
@@ -23,12 +24,17 @@ const navLinks = [
       <div class="container-custom">
         <nav class="flex items-center justify-between h-16 md:h-20">
           <NuxtLink href="/" class="flex items-center gap-3 group">
-            <img 
-              :src="isDark ? '/images/dagsolution-logo.png' : '/images/dagsolution-light-logo.png'" 
-              alt="DAGSolution" 
-              class="h-10 w-10 object-contain"
-            />
-            <span class="font-semibold text-lg text-text-primary hidden sm:block">DAGSolution</span>
+            <picture class="flex items-center">
+              <source :srcset="isDark ? '/images/dagsolution-logo.webp' : '/images/dagsolution-light-logo.webp'" type="image/webp" />
+              <img 
+                :src="isDark ? '/images/dagsolution-logo.png' : '/images/dagsolution-light-logo.png'" 
+                alt="DAGSolution" 
+                loading="eager"
+                decoding="async"
+                class="h-12 w-12 sm:h-14 sm:w-14 object-contain transition-transform duration-200 group-hover:scale-105"
+              />
+            </picture>
+            <span class="font-semibold text-xl text-text-primary hidden sm:block tracking-tight">DAGSolution</span>
           </NuxtLink>
 
           <div class="hidden md:flex items-center gap-8">
@@ -74,11 +80,15 @@ const navLinks = [
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <NuxtLink href="/" class="flex items-center gap-3 mb-4">
-              <img 
-                :src="isDark ? '/images/dagsolution-logo.png' : '/images/dagsolution-light-logo.png'" 
-                :alt="$t('footer.brandAlt')" 
-                class="h-10 w-10 object-contain"
-              />
+              <picture class="flex items-center">
+                <source :srcset="isDark ? '/images/dagsolution-logo.webp' : '/images/dagsolution-light-logo.webp'" type="image/webp" />
+                <img 
+                  :src="isDark ? '/images/dagsolution-logo.png' : '/images/dagsolution-light-logo.png'" 
+                  :alt="$t('footer.brandAlt')" 
+                  loading="lazy"
+                  class="h-12 w-12 object-contain"
+                />
+              </picture>
               <span class="font-semibold text-lg text-text-primary"><span class="text-accent-blue">Dağ</span> solution</span>
             </NuxtLink>
             <p class="text-text-secondary text-sm">{{ $t('footer.description') }}</p>
