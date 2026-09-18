@@ -79,6 +79,12 @@ export default defineNuxtConfig({
       ],
       script: [
         {
+          src: 'https://agent.dagsolution.com/v1/loader.js',
+          'data-bot-id': 'bot_live_2e2b2aa7a4a0',
+          defer: true,
+          tagPosition: 'bodyClose',
+        },
+        {
           type: 'application/ld+json',
           innerHTML: JSON.stringify({
             '@context': 'https://schema.org',
