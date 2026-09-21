@@ -127,6 +127,43 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: 'tracemailer',
+    title: 'TraceMailer — E-Posta Kampanya, Dağıtım ve Teslimat Zekası',
+    description: 'Yapay zeka destekli alıcı hijyeni, STO (Kişiselleştirilmiş Gönderim Saati Optimizasyonu), kesin coğrafi konum telemetrisi ve Excel entegrasyonlu Go tabanlı kurumsal e-posta dağıtım platformu.',
+    titleEn: 'TraceMailer — Email Campaign, Delivery & Telemetry Intelligence',
+    descriptionEn: 'High-performance Go-powered enterprise email delivery platform featuring AI list hygiene, Send Time Optimization (STO), precision geo-telemetry, and Excel campaign orchestration.',
+    longDescription: 'Modern işletmeler ve pazarlama ekipleri için geliştirilmiş; görsel e-posta tasarımı (GrapesJS), çok sayfalı Excel entegrasyonlu toplu gönderim, gerçek zamanlı 1x1 piksel ve link tıklama takibi, derin kampanya analitiği ve yapay zeka destekli liste hijyeni sunan Go tabanlı kurumsal e-posta dağıtım ve telemetri platformu. Harici ağır konteyner bağımlılıkları gerektirmeden, Go\'nun embed.FS mimarisiyle tüm web şablonlarını ve statik dosyalarını tek bir çalıştırılabilir binary içerisinde barındırarak Linux sunucularda minimal kaynak (RAM/CPU) tüketimiyle çalışır. Spam filtrelerine takılmayı önlemek için insan benzeri 3-5 saniyelik rastgele gecikme (jitter) ve dakikada 15-60 mail akış kontrolü uygular. Apple Mail Privacy ve kurumsal proxy filtrelerini aşarak Cloudflare başlıkları üzerinden %99+ kesin fiziksel şehir ve ülke tespiti yapar. 7x24 saatlik etkileşim ısı haritası (heatmap), Time-To-Read (TTR) dağılımı ve 1.000 gönderim eşiğine dayalı kalibre edilen Send Time Optimization (STO) motoruyla e-postaların doğrudan gelen kutusuna (inbox) en doğru saat ve dakikada ulaşmasını sağlar.',
+    longDescriptionEn: 'An enterprise-grade, Go-powered email distribution and delivery intelligence platform engineered for marketing teams and high-volume senders. Features a drag-and-drop visual email builder (GrapesJS), multi-sheet Excel campaign orchestration with dynamic template variable mapping, real-time 1x1 invisible pixel and link redirect telemetry, and AI-driven contact list hygiene. Built with Go\'s embed.FS technology to bundle all templates and static assets into a single lightweight binary that operates with minimal CPU and memory footprint. Employs human-like random jitter delays (3-5s) and automated rate-limiting to protect sender domain reputation and maximize inbox placement (~92%). Bypasses Apple Mail Privacy Protection and corporate proxy distortions via Cloudflare telemetry headers for 99%+ physical city and country resolution. Offers 24/7 engagement heatmaps, Time-To-Read (TTR) analytics, and a calibrated Send Time Optimization (STO) engine delivering messages at the recipient\'s peak active minute.',
+    highlights: [
+      'Yapay Zeka Destekli Liste Hijyeni: Zombi alıcıları, spam tuzaklarını ve inaktif adresleri makine öğrenmesiyle tespit edip tek tıkla karantinaya alma',
+      'Send Time Optimization (STO): Alıcıların geçmiş açılma saatlerini analiz ederek her bir alıcının en aktif olduğu saat ve dakikada teslimat',
+      'Kesin Coğrafi Konum & Proxy Tespiti: Apple MPP ve Google Proxy sapmalarını filtreleyerek Cloudflare üzerinden %99+ kesin şehir ve ülke tespiti',
+      'Excel Kampanya Sihirbazı: Çok sayfalı (.xlsx) tabloları otomatik tanıma, dinamik {{.AdSoyad}} değişken eşleme ve anlık önizleme',
+      'Anti-Spam Akıllı Dağıtım Motoru: Spam filtrelerine takılmayı önleyen dakikada 15-60 mail akış kontrolü ve 3-5 saniyelik rastgele gecikme (jitter)',
+      'Zaman Serisi & 7x24 Isı Haritası (Heatmap): Haftanın 7 günü 24 saati alıcı açılma yoğunluğu, TTR (İlk Okuma Hızı) ve CTOR analitiği',
+      'Görsel Şablon Editörü: GrapesJS entegrasyonu ile sürükle-bırak responsive e-posta tasarımı, şablon kütüphanesi ve dinamik takip butonları',
+      'Go embed.FS Tek Binary Mimarisi: Harici konteyner yükü olmadan tek bir çalıştırılabilir dosya ile ultra düşük RAM/CPU tüketimi ve Chi Router hızı'
+    ],
+    highlightsEn: [
+      'AI-Driven Contact List Hygiene: Automated machine learning detection of zombie contacts, spam traps, and inactive addresses with one-click quarantine',
+      'Send Time Optimization (STO): Tailored delivery timing matching individual recipient past engagement patterns at peak active hours',
+      'Precision Geo-Location Telemetry: Eliminates Apple MPP and proxy skews using Cloudflare headers for 99%+ accurate city and country tracking',
+      'Excel Campaign Orchestrator: Multi-sheet XLSX parsing, dynamic template variable mapping ({{.FullName}}), and live preview prior to dispatch',
+      'Smart Anti-Spam Throttling: Human-like 3-5s randomized jitter delays and 15-60 emails/min adaptive rate limiting for high inbox deliverability',
+      '24/7 Engagement Heatmaps & Analytics: Full weekly interaction density matrix, Time-To-Read (TTR) distributions, and CTOR engagement metrics',
+      'Visual Template Builder: GrapesJS drag-and-drop responsive email composer, reusable template library, and dynamic tracking links',
+      'Go embed.FS Single Binary Architecture: Zero external container overhead, near-instant boot, minimal memory footprint, and Chi Router efficiency'
+    ],
+    category: 'commercial',
+    categories: ['commercial', 'ai', 'web'],
+    techStack: ['Go', 'PostgreSQL', 'Tailwind CSS', 'Alpine.js', 'GrapesJS', 'Chart.js', 'Chi Router', 'Docker'],
+    image: '/images/commercial/tracemailer-cover.webp',
+    links: {
+      live: 'https://tracemailer.com',
+    },
+    featured: true,
+  },
+  {
     id: 'gecer',
     title: 'GEÇER — SMMM Yeterlilik Soru Bankası & Sınav Platformu',
     description: 'SMMM Yeterlilik sınavına hazırlanan adaylar için 5.000+ çözümlü soru, 8 dersin tamamı, gerçek formatta süreli deneme sınavları, bilgi kartları ve RevenueCat abonelik altyapısı sunan iOS & Android mobil uygulaması.',

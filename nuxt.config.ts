@@ -245,6 +245,18 @@ export default defineNuxtConfig({
                 'url': 'https://gecer.dagsolution.com'
               },
               {
+                '@type': 'SoftwareApplication',
+                'name': 'TraceMailer',
+                'applicationCategory': 'BusinessApplication',
+                'operatingSystem': 'Web, Cloud, Linux',
+                'offers': {
+                  '@type': 'Offer',
+                  'price': '0',
+                  'priceCurrency': 'EUR'
+                },
+                'url': 'https://tracemailer.com'
+              },
+              {
                 '@type': 'Person',
                 '@id': 'https://dagsolution.com/me/#person',
                 'name': 'Mustafa Biçer',
